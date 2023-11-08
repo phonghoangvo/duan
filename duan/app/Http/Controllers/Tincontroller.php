@@ -85,19 +85,23 @@ class Tincontroller extends Controller
         ]);
     }
 
-    public function cuahangtheoloai($id)
+    public function cuahang($id = null)
     {
-        $perpage=24;
-        // $data = Cuahang::paginate($page)->withQueryString();
-        $products = Cuahang::where('idCategory', $id)->paginate($perpage)->withQueryString();
-
-        return view('cuahangtheoloai', ['products' => $products]);
+        $perpage = 24;
+    
+        // Kiểm tra xem có $id được truyền vào hay không
+        if ($id !== null) {
+            // Nếu có $id được truyền vào, thực hiện tìm kiếm theo thể loại
+            $products = Cuahang::where('idCategory', $id)->paginate($perpage)->withQueryString();
+        } else {
+            // Ngược lại, hiển thị tất cả sản phẩm
+            $products = Cuahang::paginate($perpage)->withQueryString();
+        }
+    
+        // Trả về view 'cuahang.blade.php' với dữ liệu sản phẩm
+        return view('cuahang', ['products' => $products]);
     }
+    
 
-    function cuahang()
-    {
-        $page=24;
-        $data = Cuahang::paginate($page)->withQueryString();
-        return view("cuahang",['data'=>$data]);
-    }
+    
 }

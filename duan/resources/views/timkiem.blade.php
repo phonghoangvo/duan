@@ -19,7 +19,7 @@
                     <ul>
                         @foreach ($danhmuc as $dm)
                         <li>
-                            <a href=""><span>{{$dm->name}}</span></a>
+                            <a href="{{ route('cuahang', ['id' => $dm->id]) }}"><span>{{$dm->name}}</span></a>
                         </li>
                         @endforeach
 
@@ -72,7 +72,7 @@
                         <div class="boxsanpham  p-2">
                             <div class="img">
                                 <img src="uploads/{{$result->img}}"
-                                    alt="muahekhongten" width="200px" height="200px">
+                                    alt="{{$result->img}}" width="200px" height="200px">
                             </div>
                             <div class="title">
                                 <h3>

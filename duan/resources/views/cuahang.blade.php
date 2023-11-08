@@ -61,7 +61,7 @@
                     <ul>
                         @foreach ($danhmuc as $dm)
                         <li>
-                            <a href="{{ route('cuahangtheoloai', ['id' => $dm->id]) }}"><span>{{$dm->name}}</span></a>
+                            <a href="{{ route('cuahang', ['id' => $dm->id]) }}"><span>{{$dm->name}}</span></a>
                         </li>
                         @endforeach
 
@@ -109,12 +109,12 @@
             <hr>
             <div class="box">
                 <div class="row p-3">
-                    @foreach ($data as $sanpham)
+                    @foreach ($products as $sanpham)
                     <div class="col-md-6 col-xl-3 p-2 sanpham ">
                         <div class="boxsanpham  p-2">
                             <div class="img">
                                 <img src="uploads/{{$sanpham->img}}"
-                                    alt="muahekhongten" width="200px" height="200px">
+                                    alt="{{$sanpham->img}}" width="200px" height="200px">
                             </div>
                             <div class="title">
                                 <h3>
@@ -129,7 +129,7 @@
                     </div>
                     @endforeach
                     
-                    {{ $data->links() }}
+                    {{ $products->links() }}
         </section>
     </div>
 </div>

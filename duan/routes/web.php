@@ -14,8 +14,9 @@ use App\Http\Controllers\Tincontroller;
 */
 
 Route::get('/',[TinController::class, 'index']);
-Route::get('/cuahang',[TinController::class, 'cuahang']);
+// Route::get('/cuahang',[TinController::class, 'cuahang']);
 Route::get('/timkiem', 'App\Http\Controllers\TimkiemController@timkiem')->name('timkiem');
-Route::get('/cuahangtheoloai/{id}', [Tincontroller::class, 'cuahangtheoloai'])->name('cuahangtheoloai');
+// Route::get('/cuahangtheoloai/{id}', [Tincontroller::class, 'cuahangtheoloai'])->name('cuahangtheoloai');
+Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
 
 
