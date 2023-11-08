@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Tincontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[TinController::class, 'index']);
+Route::get('/cuahang',[TinController::class, 'cuahang']);
+Route::get('/timkiem', 'App\Http\Controllers\TimkiemController@timkiem')->name('timkiem');
+Route::get('/cuahangtheoloai/{id}', [Tincontroller::class, 'cuahangtheoloai'])->name('cuahangtheoloai');
+
+
