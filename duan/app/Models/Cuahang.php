@@ -19,8 +19,13 @@ class Cuahang extends Model
         'moTa',
         'hot',
         'hidden',
+        'tacgia',
+        'nhaxuatban',
         'idCategory',
         'tomTat',
         'ngayDang',
     ];
+    public function category(){
+        return $this->belongsTo('App\Models\Category','idCategory');
+    }
 }

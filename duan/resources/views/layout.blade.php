@@ -41,11 +41,11 @@
 
 
     <!-- javascript -->
-    <script src="assets/vendors/jquery.min.js"></script>
-    <script src="assets/owlcarousel/owl.carousel.js"></script>
+    <script src="/assets/vendors/jquery.min.js"></script>
+    <script src="/assets/owlcarousel/owl.carousel.js"></script>
 
-    <script src="js/script.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="/js/script.min.js"></script>
+    <script src="/js/script.js"></script>
 
     <script>
         let mybutton = document.getElementById("back-top");

@@ -219,6 +219,9 @@ a span {
 .thanhsapxep {
     max-width: 200px;
 }
+.thanhchucnang{
+    border-bottom: 1px solid rgb(182, 179, 179);
+}
 
 .boxsanpham h3{
     font-style: normal;

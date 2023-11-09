@@ -169,8 +169,10 @@
             
             
         </div>
+       
+
         <div class="text-center">
-            <a class="" href="#">
+            <a class="" href="{{ route('cuahang') }}">
                 <button class="btn btn-primary border-0" style="border-radius: 40px;">
                     Xem tất cả
                     <i class="bi bi-chevron-right"></i>
@@ -348,7 +350,8 @@
             </div>
         </div>
         <div class="text-center">
-            <a class="" href="#">
+            
+            <a class="" href="{{ route('cuahang') }}">
                 <button class="btn btn-primary border-0" style="border-radius: 40px;">
                     Xem tất cả
                     <i class="bi bi-chevron-right"></i>
@@ -528,7 +531,7 @@
             
         </div>
         <div class="text-center">
-            <a class="" href="#">
+            <a class="" href="{{ route('cuahang', ['id' => 28]) }}">
                 <button class="btn btn-primary border-0" style="border-radius: 40px;">
                     Xem tất cả
                     <i class="bi bi-chevron-right"></i>
@@ -706,7 +709,7 @@
             </div>
         </div>
         <div class="text-center">
-            <a class="" href="#">
+            <a class="" href="{{ route('cuahang', ['id' => 29]) }}">
                 <button class="btn btn-primary border-0" style="border-radius: 40px;">
                     Xem tất cả
                     <i class="bi bi-chevron-right"></i>
@@ -884,7 +887,7 @@
             </div>
         </div>
         <div class="text-center">
-            <a class="" href="#">
+            <a class="" href="{{ route('cuahang', ['id' => 30]) }}">
                 <button class="btn btn-primary border-0" style="border-radius: 40px;">
                     Xem tất cả
                     <i class="bi bi-chevron-right"></i>
@@ -900,7 +903,7 @@
 
 
 <!-- Post start -->
-<section>
+{{-- <section>
     <div class="container p-2">
         <div class="row">
             <div class="col-sm-6 p-2">
@@ -989,6 +992,6 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- Post end -->
 @endsection
