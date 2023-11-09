@@ -44,8 +44,8 @@
         <section class="col-lg-9">
             <div class="thanhchucnang mt-3 bg-white">
                 <div class="row p-3">
-                    <div class="col-2 mt-2"> <label>Sắp xếp theo: </label></div>
-                    <div class="col-5">
+                    <div class="col-sm-3 mt-2"> <label>Sắp xếp theo: </label></div>
+                    <div class="col-sm-5">
                         <form action="">
                             @csrf
                             <select name="sort" id="sort" class="form-select thanhsapxep" aria-label="Default select example">
