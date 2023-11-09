@@ -131,21 +131,6 @@ class Tincontroller extends Controller
     return view('cuahang', ['products' => $products, 'danhmucsach' => $danhmucsach]);
 }
 
-
-
-
-    
-    public function searchProducts(Request $request)
-    {
-        $selectedPublishers = $request->input('nhaxuatban');
-        
-        // Thực hiện truy vấn cơ sở dữ liệu để lấy danh sách sản phẩm dựa trên danh sách nhà xuất bản
-        // Ví dụ:
-        $products = Cuahang::whereIn('publisher', $selectedPublishers)->get();
-        
-        // Trả về kết quả dưới dạng JSON hoặc HTML
-        return response()->json($products);
-    }
     
     public function timkiem(Request $request)
     {
