@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+
 use App\Http\Controllers\Tincontroller;
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use App\Http\Controllers\Tincontroller;
 |
 */
 
+Route::get('/lienhe',[ContactController::class,'lienhe']);
+Route::post('/send',[ContactController::class,'send'])->name('sendemail');
 Route::get('/',[TinController::class, 'index']);
 
 Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
