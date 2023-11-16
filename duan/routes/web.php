@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 
+use App\Http\Controllers\Tincontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,9 @@ use App\Http\Controllers\ContactController;
 
 Route::get('/lienhe',[ContactController::class,'lienhe']);
 Route::post('/send',[ContactController::class,'send'])->name('sendemail');
+Route::get('/',[TinController::class, 'index']);
+
+Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
+
+Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
+
