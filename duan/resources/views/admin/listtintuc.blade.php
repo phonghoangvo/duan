@@ -5,46 +5,53 @@ Dashboard - Quản Trị Website
 @endsection
 
 @section('noidung')
-<td><button type="submit"><a href="{{url('tin/themtin')}}">Thêm</a></button></td>
+<div class="container">
+  <div class="row mt-3">
+      <div class="col-12">
+          <a href="{{ url('admin/themtin') }}" class="btn btn-primary">Thêm</a>
+      </div>
+  </div>
 
-                <div class="container-fluid">
+  <div class="row mt-3">
+      <div class="col-12">
+          <div class="card">
+              <div class="card-body p-0">
+                  <table class="table table-striped mb-0 text-center">
+                      <thead>
+                          <tr>
+                              <th scope="col">STT</th>
+                              <th scope="col">Tiêu Đề</th>
+                              <th scope="col">Ảnh</th>
+                              <th scope="col" class="col-lg-3">Tóm tắt</th>
+                              <th scope="col" class="col-lg-3">Nội dung</th>
+                              <th scope="col">Thời gian</th>
+                              <th scope="col">Ẩn hiện</th>
+                              <th scope="col">Chức năng</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          @foreach ($listtintuc as $loadtin)
+                              <tr>
+                                  <th scope="row">{{ $loadtin->id }}</th>
+                                  <td>{{ $loadtin->title }}</td>
+                                  <td><img src="upload/{{ $loadtin->img }}" alt="" style="max-width: 50px;"></td>
+                                  <td>{{ $loadtin->summary }}</td>
+                                  <td>{{ $loadtin->content }}</td>
+                                  <td>{{ $loadtin->time }}</td>
+                                  <td>{{ $loadtin->hidden }}</td>
+                                  <td>
+                                      <a href="{{ url("xoa/{$loadtin->id}") }}" class="btn btn-danger w-100" onclick="return confirm('Xoa ha')">Xóa</a>
 
-                    <section class="intro" style="float:left">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-12">
-                                    <div class="card-body p-0">
-                                        <div class="bangsp">
-                                            <table border="1px" class="table table-striped mb-0" style="width: 500px">
-                                              <thead>
-                                                <tr>
-                                                  <th scope="col">ID</th>
-                                                  <th scope="col">title</th>
-                                                  <th scope="col">img</th>
-                                                  <th scope="col">description</th>
-                                                  <th scope="col">chuc nang</th>
-                                                </tr>
-                                              </thead>
-                                                <tbody>
-                                                  @foreach ($listtintuc as $loadtin)
-                                                    <tr>
-                                                      <tr>
-                                                        <th scope="row">{{$loadtin->id}}</th>
-                                                        <td>{{$loadtin->title}}</td>
-                                                        <td><img src="{{$loadtin->img}}" alt=""></td>
-                                                        <td>{{$loadtin->description}}</td>
-                                                        <td><a href="xoa/{{$loadtin->id}}"><button type="submit" onclick="return confirm('Xoa ha')">Xóa</button></a></td>
-                                                        <td> <button type="submit" class=""><a href="/tin/suatin/{{$loadtin->id}}">Cập nhật</a></button></td>
-                                                      </tr>
-                                                    </tr>
-                                                  @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>  
+                                      <a href="{{ url("/tin/suatin/{$loadtin->id}") }}" class="btn btn-info w-100">Cập nhật</a>
+                                  </td>
+                              </tr>
+                          @endforeach
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
 @endsection

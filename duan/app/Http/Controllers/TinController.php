@@ -1,64 +1,76 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Tintuc;
-use DB;
 use Illuminate\Http\Request;
 
 class TinController extends Controller
 {
-    function index(){   
+    function index() {
         return view('index');
     }
-    function news(){
+
+    function news() {
         $news = Tintuc::all();
-        return view('news',['news'=>$news]);
+        return view('news', ['news' => $news]);
     }
-    
-    function lienhe(){
+
+    function lienhe() {
         return view('lienhe');
     }
 
-    function gioithieu(){
+    function gioithieu() {
         return view('gioithieu');
     }
 
-    function listtintuc(){
-        $listtintuc = tintuc::all();
-        return view('admin.listtintuc',compact('listtintuc'));
+    public function listtintuc() {
+        $listtintuc = Tintuc::all();
+        return view('admin.listtintuc', compact('listtintuc'));
     }
 
-    function admin(){
-        return view('admin.admin');   
+    function admin() {
+        return view('admin.admin');
     }
 
-    function themtin(){
-        return view('tin/themtin');
+    function themtin() {
+        return view('admin.tin/themtin');
     }
 
-    function themtin_(){
+    function themtin_(Request $request) {
+        $request->validate([
+            'title' => 'required',
+            'img' => 'required|url',
+            'summary' => 'required',
+            'content' => 'required',
+            'hidden' => 'required',
+        ]);
+    
         $t = new Tintuc;
-        $t->title = $_POST['title'];
-        $t->img = $_POST['img'];
-        $t->description = $_POST['description'];
+        $t->title = $request->input('title');
+        $t->img = $request->input('img');
+        $t->summary = $request->input('summary');
+        $t->content = $request->input('content');
+        $t->hidden = $request->input('hidden');
         $t->save();
-        return redirect('listtintuc');
+    
+        return redirect()->route('listtintuc');
     }
     
-    function xoa($id){
+
+    function xoa($id) {
         $t = Tintuc::find($id);
-        if ($t==null) return redirect('/thongbao');
+        if ($t == null) return redirect('/thongbao');
         $t->delete();
         return redirect('listtintuc');
     }
-    
-   
-    function suatin($id){
+
+    function suatin($id) {
         $fix = Tintuc::find($id);
-        return view("/tin/suatin",['Tintuc'=>$fix]);
+        return view("/tin/suatin", ['Tintuc' => $fix]);
     }
 
-    function capnhat($id){
+    function capnhat($id) {
         $fix = Tintuc::find($id);
         $fix->title = $_POST['title'];
         $fix->img = $_POST['img'];

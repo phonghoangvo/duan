@@ -100,8 +100,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản Lý Tin Tức:</h6>
-                        <a class="collapse-item" href="">Tất Cả Tin Tức</a>
-                        <a class="collapse-item" href="utilities-border.html">Thêm Tin Tức</a>
+                        <a class="collapse-item" href="{{route('listtintuc')}}">Tất Cả Tin Tức</a>
+                        <a class="collapse-item" href="{{route('themtin')}}">Thêm Tin Tức</a>
                         
                     </div>
                 </div>
