@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,5 @@ Route::get('/edit/{id}',[ProductController::class,'edit']);
 Route::put('/update/{id}',[ProductController::class,'update']);
 Route::get('/del/{id}',[ProductController::class,'del']);
 
+Route::get('/comment/list',[CommentController::class,'list']);
+Route::get('/comment/add',[CommentController::class,'add']);
