@@ -38,17 +38,10 @@ class TinController extends Controller
     }
 
     function themtin_(Request $request) {
-        $request->validate([
-            'title' => 'required',
-            'img' => 'required|url',
-            'summary' => 'required',
-            'content' => 'required',
-            'hidden' => 'required',
-        ]);
-    
+        $imgPath = $request->file('img')->store('img', 'public');
         $t = new Tintuc;
         $t->title = $request->input('title');
-        $t->img = $request->input('img');
+        $t->img = '/storage/' . $imgPath;
         $t->summary = $request->input('summary');
         $t->content = $request->input('content');
         $t->hidden = $request->input('hidden');
@@ -60,14 +53,13 @@ class TinController extends Controller
 
     function xoa($id) {
         $t = Tintuc::find($id);
-        if ($t == null) return redirect('/thongbao');
         $t->delete();
-        return redirect('listtintuc');
+        return redirect()->route('listtintuc');
     }
 
     function suatin($id) {
         $fix = Tintuc::find($id);
-        return view("/tin/suatin", ['Tintuc' => $fix]);
+        return view("admin.tin/suatin", ['Tintuc' => $fix]);
     }
 
     function capnhat($id) {

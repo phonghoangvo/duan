@@ -5,15 +5,17 @@ Dashboard - Quản Trị Website
 
 @section('noidung')
 <div class="container">
-    <form action="{{ route('themtin_') }}" method="POST">
+    <form action="{{ route('themtin_') }}" method="POST" enctype="multipart/form-data">
         @csrf
+        <h2>Thêm Tin Tức</h2>
+        <hr>
         <div class="mb-3">
             <label for="title" class="form-label">Tiêu đề:</label>
             <input type="text" name="title" class="form-control" id="title" required>
         </div>
         <div class="mb-3">
             <label for="img" class="form-label">Hình ảnh:</label>
-            <input type="text" name="img" class="form-control" id="img" required>
+            <input type="file" name="img" class="form-control" id="img" required>
         </div>
         <div class="mb-3">
             <label for="summary" class="form-label">Tóm tắt:</label>
@@ -25,8 +27,12 @@ Dashboard - Quản Trị Website
         </div>
         <div class="mb-3">
             <label for="hidden" class="form-label">Ẩn hiện:</label>
-            <input type="text" name="hidden" class="form-control" id="hidden" required>
+            <select name="hidden" class="form-control" id="hidden" required>
+                <option value="0" selected>Ẩn</option>
+                <option value="1">Hiện</option>
+            </select>
         </div>
+        
         <button type="submit" class="btn btn-warning">Thêm tin</button>
     </form>
 </div>

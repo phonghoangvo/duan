@@ -5,7 +5,10 @@ Dashboard - Quản Trị Website
 @endsection
 
 @section('noidung')
-<div class="container">
+
+
+
+<div class="container-fluid">
   <div class="row mt-3">
       <div class="col-12">
           <a href="{{ url('admin/themtin') }}" class="btn btn-primary">Thêm</a>
@@ -16,31 +19,47 @@ Dashboard - Quản Trị Website
       <div class="col-12">
           <div class="card">
               <div class="card-body p-0">
+                <div class="table-responsive">
                   <table class="table table-striped mb-0 text-center">
                       <thead>
                           <tr>
-                              <th scope="col">STT</th>
-                              <th scope="col">Tiêu Đề</th>
-                              <th scope="col">Ảnh</th>
-                              <th scope="col" class="col-lg-3">Tóm tắt</th>
-                              <th scope="col" class="col-lg-3">Nội dung</th>
-                              <th scope="col">Thời gian</th>
-                              <th scope="col">Ẩn hiện</th>
-                              <th scope="col">Chức năng</th>
+                              <th scope="col" class="col-lg-1">STT</th>
+                              <th scope="col" class="col-lg-1">Tiêu Đề</th>
+                              <th scope="col" class="col-lg-1">Ảnh</th>
+                              <th scope="col" class="col-lg-2 limited-text">Tóm tắt</th>
+                              <th scope="col" class="col-lg-2 limited-text">Nội dung</th>
+                              <th scope="col" class="col-lg-1">Thời gian</th>
+                              <th scope="col" class="col-lg-1">Trạng thái</th>
+                              <th scope="col" class="col-lg-1">Chức năng</th>
                           </tr>
                       </thead>
                       <tbody>
                           @foreach ($listtintuc as $loadtin)
                               <tr>
-                                  <th scope="row">{{ $loadtin->id }}</th>
-                                  <td>{{ $loadtin->title }}</td>
-                                  <td><img src="upload/{{ $loadtin->img }}" alt="" style="max-width: 50px;"></td>
-                                  <td>{{ $loadtin->summary }}</td>
-                                  <td>{{ $loadtin->content }}</td>
-                                  <td>{{ $loadtin->time }}</td>
-                                  <td>{{ $loadtin->hidden }}</td>
+                                <th scope="row">{{ $loadtin->id }}</th>
+                                <td>{{ $loadtin->title }}</td>
+                                <td><img src="{{ $loadtin->img }}" alt="" style= " max-width: 100px; max-height: 50px;"></td>
+                                <td data-original-text="{{ $loadtin->summary }}" class="limited-text">{{ $loadtin->summary }}</td>
+                                <td data-original-text="{{ $loadtin->content }}" class="limited-text">{{ $loadtin->content }}</td>
+
+                                @if($loadtin->created_at)
+                                    <td>{{ $loadtin->created_at->format('d/m/Y') }}</td>
+                                @else
+                                    <td>Ngày tạo không xác định</td>
+                                @endif
+                                <td>
+
+                                @if ($loadtin->hidden == 0)
+                                    Ẩn
+                                @elseif ($loadtin->hidden == 1)
+                                    Hiện
+                                @else
+                                    Không xác định
+                                @endif
+                                </td>
+                                
                                   <td>
-                                      <a href="{{ url("xoa/{$loadtin->id}") }}" class="btn btn-danger w-100" onclick="return confirm('Xoa ha')">Xóa</a>
+                                      <a href="{{ url("xoa/{$loadtin->id}") }}" class="btn btn-danger w-100" onclick="return confirm('Bạn có thật sự muốn xóa không?')">Xóa</a>
 
                                       <a href="{{ url("/tin/suatin/{$loadtin->id}") }}" class="btn btn-info w-100">Cập nhật</a>
                                   </td>
@@ -49,6 +68,7 @@ Dashboard - Quản Trị Website
                       </tbody>
                   </table>
               </div>
+            </div>
           </div>
       </div>
   </div>
