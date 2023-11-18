@@ -29,7 +29,7 @@ class TinController extends Controller
     }
 
     function admin(){
-        return view('admin');   
+        return view('admin.admin');   
     }
 
     function themtin(){

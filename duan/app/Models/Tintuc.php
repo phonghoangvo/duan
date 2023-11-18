@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Tintuc extends Model
 {
     use HasFactory;
-    protected $table = 'blog';
+    protected $table = 'news';
     protected $primaryKey = 'id';
     protected $fillable = [
         'title',
         'img',
-        'description',
+        'content',
+        'hidden',
+        'summary',
+        'time',
     ];
 }
