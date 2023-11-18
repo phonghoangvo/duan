@@ -25,7 +25,7 @@ class TinController extends Controller
 
     function listtintuc(){
         $listtintuc = tintuc::all();
-        return view('listtintuc',compact('listtintuc'));
+        return view('admin.listtintuc',compact('listtintuc'));
     }
 
     function admin(){
