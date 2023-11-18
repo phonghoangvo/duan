@@ -22,29 +22,28 @@ class RuleThemsp extends FormRequest
     public function rules(): array
     {
         return [
-            'tsp' => ['required'],
-            'gia' => ['required'],
-            'giamgia'=> ['required'],
-            'ncc'=> ['required'],
-            'nxb'=> ['required'],
-            'tg'=> ['required'],
-            'nd'=> ['required','regex:/\d{1,2}\/\d{1,2}\/\d{4}/'],
-            'tomtat'=> ['required'],
-            'dm'=> ['required'],
+            'name' => ['required'],
+            'price' => ['required'],
+            'priceSale'=> ['required'],
+            'nhacungcap'=> ['required'],
+            'nhaxuatban'=> ['required'],
+            'tacgia'=> ['required'],
+            'moTa'=> ['required'],
+            'idCategory'=> ['required'],
             'img'=> ['required']
         ];
     }
     public function messages(){
         return [
-            'tsp.required' => 'Phải nhập tên sản phẩm',
-            'gia.required' => 'Phải nhập giá sản phẩm',
-            'giamgia.required'=> 'Có thể nhập 0',
-            'ncc.required'=> 'Phải nhập nhà cung cấp',
-            'nxb.required'=> 'Phải nhập nhà xuất bản',
-            'tg.required'=> 'Phải nhập tên tác giả',
-            'nd.required'=> 'Cần nhập ngày đăng ',
-            'tomtat.required'=> 'Phải có tóm tắt',
-            'dm.required'=> 'Phải có danh mục sản phẩm',
+            'name.required' => 'Phải nhập tên sản phẩm',
+            'price.required' => 'Phải nhập giá sản phẩm',
+            'priceSale.required'=> 'Có thể nhập 0',
+            'nhacungcap.required'=> 'Phải nhập nhà cung cấp',
+            'nhaxuatban.required'=> 'Phải nhập nhà xuất bản',
+            'tacgia.required'=> 'Phải nhập tên tác giả',
+            'ngayDang.required'=> 'Cần nhập ngày đăng ',
+            'moTa.required'=> 'Phải có moTa',
+            'idCategory.required'=> 'Phải có danh mục sản phẩm',
             'img.required'=> 'Phải có hình ảnh'
         ];
     }
