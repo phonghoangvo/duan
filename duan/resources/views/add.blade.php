@@ -84,7 +84,21 @@
                     </div>
                 </div>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="true" aria-controls="collapseThree">
+                    <i class="fas fa-comment"></i>
+                    <span>Quản Lý Binh Luan</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="collapseThree"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Quản Lý Binh Luan</h6>
+                        <a class="collapse-item" href="{{url('/comment/list')}}">Tất Cả Binh Luan</a>
+                        <a class="collapse-item" href="utilities-border.html">Thêm Binh Luan</a>
+                    </div>
+                </div>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -285,13 +299,12 @@
                 @csrf
                 <div class="formbold-input-flex">
                     <div>
-                        <input type="text" name="name" id="name" value="{{old('tsp')}}" placeholder="Nhập Tên Sản Phẩm"
-                            class="formbold-form-input" />
+                        <input type="text" style="width:550px" name="name" id="name" placeholder="Nhập Tên Sản Phẩm"
+                            class="formbold-form-input" value="{{old('name')}}" />
                         <label for="name" class="formbold-form-label"> Tên Sản Phẩm </label>
                     </div>
                 </div>
-
-                @error('tsp')
+                @error('name')
                 <div class="alert alert-danger">
                     {{ $message }}
                 </div>
@@ -299,21 +312,21 @@
                     
                 <div class="formbold-input-flex">
                     <div>
-                        <input type="number" name="price" id="price" value="{{old('gia')}}" placeholder="Nhập Giá Sản Phẩm"
+                        <input type="number" name="price" id="price" value="{{old('price')}}" placeholder="Nhập Giá Sản Phẩm"
                             class="formbold-form-input" />
                         <label for="email" class="formbold-form-label"> Giá Sản Phẩm </label>
                     </div>
-                @error('gia')
+                @error('price')
                 <div class="alert alert-danger">
                     {{ $message }}
                 </div>
                 @enderror
                 <div>
-                    <input type="number" name="priceSale" id="priceSale" value="{{old('giamgia')}}" placeholder="Nhập Giảm giá (nếu có)"
+                    <input type="number" name="priceSale" id="priceSale" value="{{old('priceSale')}}" placeholder="Nhập Giảm giá (nếu có)"
                         class="formbold-form-input" />
                     <label for="phone" class="formbold-form-label"> Giảm giá </label>
                 </div>
-                @error('giamgia')
+                @error('priceSale')
                 <div class="alert alert-danger">
                     {{ $message }}
                 </div>
@@ -321,20 +334,20 @@
                 </div>
                 <div class="formbold-input-flex">
                     <div>
-                        <input type="text" name="nhacungcap" id="nhacungcap" value="{{old('ncc')}}" placeholder="Nhập Nhà Cung Cấp"
+                        <input type="text" name="nhacungcap" id="nhacungcap" value="{{old('nhacungcap')}}" placeholder="Nhập Nhà Cung Cấp"
                             class="formbold-form-input" />
                         <label for="name" class="formbold-form-label"> Nhà cung cấp</label>
-                        @error('ncc')
+                        @error('nhacungcap')
                         <div class="alert alert-danger">
                             {{ $message }}
                         </div>
                         @enderror
                     </div>
                     <div>
-                        <input type="text" name="nhaxuatban" id="nhaxuatban" value="{{old('nxb')}}" placeholder="Nhập nhà xuất bản"
+                        <input type="text" name="nhaxuatban" id="nhaxuatban" value="{{old('nhaxuatban')}}" placeholder="Nhập nhà xuất bản"
                             class="formbold-form-input" />
                         <label for="name" class="formbold-form-label"> Nhà xuất bản </label>
-                        @error('nxb')
+                        @error('nhaxuatban')
                         <div class="alert alert-danger">
                             {{ $message }}
                         </div>
@@ -343,32 +356,27 @@
                 </div>
                 <div class="formbold-input-flex">
                     <div>
-                        <input type="text" name="tacgia" id="tacgia" value="{{old('tg')}}" placeholder="Nhập Tên tác giả"
+                        <input type="text" name="tacgia" id="tacgia" value="{{old('tacgia')}}" placeholder="Nhập Tên tác giả"
                             class="formbold-form-input" />
                         <label for="name" class="formbold-form-label"> Tác giả</label>
-                        @error('tg')
+                        @error('tacgia')
                         <div class="alert alert-danger">
                             {{ $message }}
                         </div>
                         @enderror
                     </div>
                     <div>
-                        <input type="date" name="ngayDang" id="ngayDang" value="{{old('nd')}}" placeholder="Nhập ngày đăng"
+                        <input type="date" name="ngayDang" id="ngayDang" value="{{old('ngayDang')}}" placeholder="Nhập ngày đăng"
                             class="formbold-form-input" />
                         <label for="name" class="formbold-form-label"> Ngày đăng </label>
-                        @error('nd')
-                        <div class="alert alert-danger">
-                            {{ $message }}
-                        </div>
-                        @enderror
                     </div>
                 </div>
                 <div class="formbold-textarea">
-                    <textarea rows="6" name="tomTat" id="tomTat" value="{{old('tomtat')}}" placeholder="Viết tóm tắt sản phẩm"
+                    <textarea rows="6" name="moTa" id="moTa" value="{{old('moTa')}}" placeholder="Viết mô tả sản phẩm"
                         class="formbold-form-input">
                     </textarea>
-                    <label for="message" class="formbold-form-label">Tóm tắt sản phẩm </label>
-                    @error('tomtat')
+                    <label for="message" class="formbold-form-label">Mô tả sản phẩm </label>
+                    @error('moTa')
                     <div class="alert alert-danger">
                         {{ $message }}
                     </div>
@@ -376,13 +384,13 @@
                 </div>
                 <div class="formbold-form-label">
                     <label>Danh mục:</label><br>
-                    <select name="idCategory" value="{{old('dm')}}" required class="form-control">
+                    <select name="idCategory" value="{{old('idCategory')}}" required class="form-control">
                         <option value="1">--Danh Muc--</option>
                         @foreach ($category as $category)
                         <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
                     </select>
-                    @error('dm')
+                    @error('idCategory')
                     <div class="alert alert-danger">
                         {{ $message }}
                     </div>
