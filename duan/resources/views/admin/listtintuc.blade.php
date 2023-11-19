@@ -29,7 +29,7 @@ Dashboard - Quản Trị Website
                               <th scope="col" class="col-lg-2 limited-text">Tóm tắt</th>
                               <th scope="col" class="col-lg-2 limited-text">Nội dung</th>
                               <th scope="col" class="col-lg-1">Thời gian đăng</th>
-                              <th scope="col" class="col-lg-1">Cập nhật gần đây</th>
+                              <th scope="col" class="col-lg-1">Thời gian cập nhật</th>
                               <th scope="col" class="col-lg-1">Trạng thái</th>
                               <th scope="col" class="col-lg-1">Chức năng</th>
                           </tr>
