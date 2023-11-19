@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Tintuc;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class TinController extends Controller
 {
@@ -44,7 +46,7 @@ class TinController extends Controller
         $t->img = '/storage/' . $imgPath;
         $t->summary = $request->input('summary');
         $t->content = $request->input('content');
-        $t->hidden = $request->input('hidden');
+        $t->hidden = $request->input('visibility',1);
         $t->save();
     
         return redirect()->route('listtintuc');
@@ -58,16 +60,24 @@ class TinController extends Controller
     }
 
     function suatin($id) {
-        $fix = Tintuc::find($id);
-        return view("admin.tin/suatin", ['Tintuc' => $fix]);
-    }
+        $tintuc = Tintuc::find($id);
+        return view("admin.tin.suatin", compact('tintuc'));
+    }    
 
-    function capnhat($id) {
-        $fix = Tintuc::find($id);
-        $fix->title = $_POST['title'];
-        $fix->img = $_POST['img'];
-        $fix->description = $_POST['description'];
-        $fix->update();
-        return redirect('listtintuc');
+    public function capnhat(Request $request, $id) {
+        $tintuc = Tintuc::find($id);
+        $imgPath = $request->file('img')->store('img', 'public');
+        $tintuc->title = $request->input('title');
+        $tintuc->img = '/storage/' . $imgPath;
+        $tintuc->summary = $request->input('summary');
+        $tintuc->content = $request->input('content');
+        $tintuc->hidden = $request->input('visibility', 1);
+
+    
+        $tintuc->save();
+    
+        return redirect()->route('listtintuc');
     }
+    
+    
 }

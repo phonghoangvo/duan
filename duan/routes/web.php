@@ -15,5 +15,5 @@ Route::get('/admin', [TinController::class, 'admin']);
 Route::get('/admin/themtin', [TinController::class, 'themtin'])->name('themtin');
 Route::post('/admin/themtin', [TinController::class, 'themtin_'])->name('themtin_');
 Route::get('xoa/{id}', [TinController::class, 'xoa']);
-Route::get('tin/suatin/{id}', [TinController::class, 'suatin']);
-Route::post('capnhat/{id}', [TinController::class, 'capnhat']);
+Route::get('/admin/suatin/{id}', [TinController::class, 'suatin'])->name('suatin');
+Route::put('/admin/capnhat/{id}', [TinController::class, 'capnhat'])->name('capnhat');

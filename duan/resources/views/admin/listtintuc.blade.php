@@ -28,7 +28,8 @@ Dashboard - Quản Trị Website
                               <th scope="col" class="col-lg-1">Ảnh</th>
                               <th scope="col" class="col-lg-2 limited-text">Tóm tắt</th>
                               <th scope="col" class="col-lg-2 limited-text">Nội dung</th>
-                              <th scope="col" class="col-lg-1">Thời gian</th>
+                              <th scope="col" class="col-lg-1">Thời gian đăng</th>
+                              <th scope="col" class="col-lg-1">Cập nhật gần đây</th>
                               <th scope="col" class="col-lg-1">Trạng thái</th>
                               <th scope="col" class="col-lg-1">Chức năng</th>
                           </tr>
@@ -47,8 +48,15 @@ Dashboard - Quản Trị Website
                                 @else
                                     <td>Ngày tạo không xác định</td>
                                 @endif
-                                <td>
+                                
 
+                                @if($loadtin->updated_at)
+                                    <td>{{ $loadtin->updated_at->format('d/m/Y') }}</td>
+                                @else
+                                    <td>Ngày tạo không xác định</td>
+                                @endif
+                                
+                                <td>
                                 @if ($loadtin->hidden == 0)
                                     Ẩn
                                 @elseif ($loadtin->hidden == 1)
@@ -61,7 +69,7 @@ Dashboard - Quản Trị Website
                                   <td>
                                       <a href="{{ url("xoa/{$loadtin->id}") }}" class="btn btn-danger w-100" onclick="return confirm('Bạn có thật sự muốn xóa không?')">Xóa</a>
 
-                                      <a href="{{ url("/tin/suatin/{$loadtin->id}") }}" class="btn btn-info w-100">Cập nhật</a>
+                                      <a href="{{ route('suatin', ['id' => $loadtin->id]) }}" class="btn btn-info w-100">Cập nhật</a>
                                   </td>
                               </tr>
                           @endforeach

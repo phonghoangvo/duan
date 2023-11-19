@@ -25,11 +25,11 @@ Dashboard - Quản Trị Website
             <label for="content" class="form-label">Nội dung:</label>
             <input type="text" name="content" class="form-control" id="content" required>
         </div>
-        <div class="mb-3">
-            <label for="hidden" class="form-label">Ẩn hiện:</label>
-            <select name="hidden" class="form-control" id="hidden" required>
-                <option value="0" selected>Ẩn</option>
-                <option value="1">Hiện</option>
+        <div class="form-group">
+            <label for="visibility">Trạng thái:</label>
+            <select class="form-control" id="visibility" name="visibility">
+                <option value="0" {{ old('visibility') == 0 ? 'selected' : '' }}>Ẩn tin</option>
+                <option value="1" {{ old('visibility') == 1 ? 'selected' : '' }}>Hiển thị tin</option>
             </select>
         </div>
         

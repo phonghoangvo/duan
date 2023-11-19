@@ -17,5 +17,6 @@ class Tintuc extends Model
         'hidden',
         'summary',
         'created_at',
+        'updated_at',
     ];
 }

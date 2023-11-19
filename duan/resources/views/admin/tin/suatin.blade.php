@@ -1,19 +1,54 @@
-
 @extends('admin.layoutadmin')
 @section('tieudetrang')
-Dashboard - Quản Trị Website
+    Dashboard - Quản Trị Website
 @endsection
 
 @section('noidung')
-<form action="/tin/suatin/{{$fix->id}}" method="post" class="col-7 m-auto">
-    <p> Tiêu đề: <input name="title" value="{{$fix->title}}" class="form-control"></p>
-    <p> Hình ảnh: <input type="file" value="{{$fix->img}}" name="img" class="form-control"></p>
-    <p> Diễn tả: <textarea name="description" value="{{$fix->description}}" class="form-control"></textarea></p>
-    </select>
-    </p>
-    <p><button type="submit" class="bg-warning p-2">Sua tin</button></p>
+
+<form action="{{ url('admin/capnhat/' . $tintuc->id) }}" method="POST" class="col-7 m-auto" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
+
+    <h2>Sửa tin tức</h2>
+    <hr>
+
+    <div class="form-group">
+        <label for="title">Tiêu đề:</label>
+        <input type="text" name="title" value="{{ $tintuc->title }}" class="form-control">
+    </div>
+
+    <div class="form-row">
+        <div class="col-10">
+            <label for="img">Hình ảnh:</label>
+            <input type="file" name="img" class="form-control">
+        </div>
+        <div class="col-2">
+            @if($tintuc->img)
+                <img src="{{ asset($tintuc->img) }}" alt="{{ $tintuc->img }}" style="max-width: 100px;">
+            @endif
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="summary">Tóm tắt:</label>
+        <textarea name="summary" class="form-control" style="width: 100%; height: 80px">{{ $tintuc->summary }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="content">Nội dung:</label>
+        <textarea name="content" class="form-control" style="width: 100%; height: auto">{{ $tintuc->content }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="visibility">Trạng thái:</label>
+        <select class="form-control" id="visibility" name="visibility">
+            <option value="0" {{ old('visibility', $tintuc->hidden) == 0 ? 'selected' : '' }}>Ẩn tin</option>
+            <option value="1" {{ old('visibility', $tintuc->hidden) == 1 ? 'selected' : '' }}>Hiển thị tin</option>
+        </select>
+    </div>
     
-    {{-- @method('put') --}}
-    </form>
+    <button type="submit" class="bg-warning p-2">Sửa tin</button>
+
+</form>
+
 @endsection
