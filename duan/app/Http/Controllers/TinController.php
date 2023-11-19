@@ -36,7 +36,7 @@ class TinController extends Controller
     }
 
     function themtin() {
-        return view('admin.tin/themtin');
+        return view('admin.tin.themtin');
     }
 
     function themtin_(Request $request) {
