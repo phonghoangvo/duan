@@ -66,7 +66,7 @@ box-shadow: -1px 0px 10px 12px rgba(204,187,187,0.41);
     {{-- @include('partials.formerrors') --}}
 </form>
     </div>
-
-
+</div>
+</div>
 
 @endsection
