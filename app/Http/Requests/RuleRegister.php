@@ -23,7 +23,7 @@ class RuleRegister extends FormRequest
     {
         return [
             'name' => ['required','min:3','max:20'],
-            'email'=> ['required','email|ends_with:@gmail.com'],
+            'email'=> ['required'],
             'password'=> ['required']
             // 'tuoi' => 'required|integer|min:16|max:100',
             // 'ns' =>['required','regex:/\d{1,2}\/\d{1,2}\/\d{4}/'],

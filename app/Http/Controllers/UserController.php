@@ -10,16 +10,16 @@ class UserController extends Controller
     // tao user
 public function create()
 {
-    return view('user/create'); 
+    return view('user.create'); 
 
     
 }
  //validation register
 
- public function register_store(RuleRegister $request){  
+//  public function store_(RuleRegister $request){  
         
           
- }   
+//  }   
 
 
 // public function store()
@@ -43,7 +43,7 @@ public function create()
 //  }
 
 
-        public function store(Request $request){
+        public function store_(RuleRegister $request){
             // Kiểm tra xem dữ liệu từ client gửi lên bao gốm những gì
             // dd($request);
 

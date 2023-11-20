@@ -1,9 +1,10 @@
 @extends('admin.layout')
 @section('container')
-<h2>Add User</h2>
+<div class="container-fluid">
+<h2>Đăng kí tài khoản </h2>
 {{-- <div class="card-body">
     <div class="table-responsive"> --}}
-<form method="post" action="{{route('register_store')}}">@csrf
+<form method="post" >@csrf
     {{-- @if ($errors->any())
 <div class="alert alert-danger">
    <ul>
@@ -27,7 +28,7 @@
     </div> --}}
     <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" value="{{old('email')}}" class="form-control" id="email" name="email">
+        <input type="text" value="{{old('email')}}" class="form-control" id="email" name="email">
         @error('email')
         {{ $message }}
      @enderror
@@ -63,6 +64,6 @@
 </form>
     </div>
 </div>
-
+</div>
 
 @endsection

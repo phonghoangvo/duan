@@ -76,8 +76,23 @@
                         {{-- <td>{{$user->status}}</td>
                         <td>{{$user->role}}</td> --}}
                         <td>
-                            <a href="/user/update/{{ $user->id }}">Update</a> <br>
-                            <a href="/user/delete/{{ $user->id }}">Delete</a>
+                            <p><a href="/user/delete/{{$user->id}}"onclick="return confirm('Bạn có chắc muốn bỏ vào thùng rác?')" class="btn btn-warning btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-trash" ></i>
+                                </span>
+                                <span class="text" style="width:120px">Thùng Rác</span>
+                               
+                            </a>
+                        </p>
+                            <p><a href="/user/update/{{$user->id}}" class="btn btn-info btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-edit" style="font-size: 14px"></i>
+                                </span>
+                                <span class="text" style="width:120px" >Cập nhật</span>
+                                {{-- <span class="text" style="width:120px"><a href="/user/delete/{{$user->id}}"></a>Delete</span> --}}
+                            </a></p>
+                            {{-- <a href="/user/update/{{ $user->id }}">Update</a> <br>
+                            <a href="/user/delete/{{ $user->id }}">Delete</a> --}}
                         </td>
                     </tr>
                         @endforeach
