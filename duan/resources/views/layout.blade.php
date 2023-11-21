@@ -18,8 +18,15 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- Owl Carousel Stylesheets -->
-    <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<!-- Owl Carousel JavaScript -->
+
+    <!-- Owl Carousel JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
 
     <!-- Owl Carousel JavaScript -->
     <script src="/assets/owlcarousel/owl.carousel.js"></script>
@@ -50,31 +57,38 @@
     </button>
 
 
+   <!-- JavaScript -->
+   <script src="/assets/vendors/jquery.min.js"></script>
+   <script src="/assets/owlcarousel/owl.carousel.js"></script>
+   <script src="/js/script.min.js"></script>
+   
+<script src="/js/script.js"></script>
 
+<script>
+  $(document).ready(function() {
+    $(".owl-carousel").owlCarousel({
+      // Các tùy chọn của Owl Carousel ở đây
+    });
+  });
 
-    <!-- javascript -->
-    <script src="/assets/vendors/jquery.min.js"></script>
+  let mybutton = document.getElementById("back-top");
+  window.onscroll = function() {
+    scrollFunction()
+  };
 
-    <script src="/js/script.min.js"></script>
-    <script src="/js/script.js"></script>
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
 
-    <script>
-        let mybutton = document.getElementById("back-top");
-        
-        window.onscroll = function() {scrollFunction()};
-        
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-        </script>
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
 </body>
 </html>
