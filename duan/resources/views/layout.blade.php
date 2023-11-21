@@ -14,10 +14,17 @@
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     
-    <!-- Owl Stylesheets -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Owl Carousel Stylesheets -->
     <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="path/to/your/output.css">
+
+    <!-- Owl Carousel JavaScript -->
+    <script src="/assets/owlcarousel/owl.carousel.js"></script>
+
+
 
 </head>
 <body>
@@ -47,7 +54,6 @@
 
     <!-- javascript -->
     <script src="/assets/vendors/jquery.min.js"></script>
-    <script src="/assets/owlcarousel/owl.carousel.js"></script>
 
     <script src="/js/script.min.js"></script>
     <script src="/js/script.js"></script>
