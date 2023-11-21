@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tintuc;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -13,10 +14,13 @@ class TinController extends Controller
         return view('index');
     }
 
+
     function news() {
-        $news = Tintuc::all();
+        $news = Tintuc::where('hidden', 1)->paginate(4);
+
         return view('news', ['news' => $news]);
     }
+
 
     function lienhe() {
         return view('lienhe');

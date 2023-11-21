@@ -37,10 +37,13 @@
                             <a class="nav-link text-dark" href="/cuahang">Cửa hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="lienhe.html">Liên hệ</a>
+                            <a class="nav-link text-dark" href="/lienhe">Liên hệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="gioithieu.html">Giới thiệu</a>
+                            <a class="nav-link text-dark" href="/gioithieu">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/news">Tin tức</a>
                         </li>
                         <li class="nav-item d-flex">
                             <a class="nav-link text-primary" href="giohang.html">
