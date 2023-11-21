@@ -47,7 +47,7 @@
                         <p>Gọi mua hàng: <b>0123456789</b> (7h30-17h00)</p>
                         <p>Gọi khiếu nại: <b>0123456789</b> (7h30-17h00)</p>
                         <h5>Phương thức thanh toán</h5>
-                        <p><img class="w-75" src="img/footer-pay.jpg" alt=""></p>
+                        <p><img class="w-75" src="upload/footer-pay.jpg" alt=""></p>
                     </div>
                 </div>
             </div>
