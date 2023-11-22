@@ -24,7 +24,9 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     -webkit-line-clamp: 3;
+    
 }
+
 
 
 </style>
@@ -60,7 +62,7 @@
                         </div>
                          @endif
                         @endforeach        
-                        {{ $news->links() }}
+                                               
                     </section>
                     
                 </div>
