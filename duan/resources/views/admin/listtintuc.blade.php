@@ -6,9 +6,19 @@ Dashboard - Quản Trị Website
 
 @section('noidung')
 
+<style>
+    .limited-text {
+        max-width: 200px; /* Điều chỉnh giới hạn chiều rộng tối đa theo nhu cầu */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+
 
 
 <div class="container-fluid">
+    <h2>Danh sách tin</h2>
   <div class="row mt-3">
       <div class="col-12">
           <a href="{{ url('admin/themtin') }}" class="btn btn-primary">Thêm</a>
@@ -26,8 +36,8 @@ Dashboard - Quản Trị Website
                               <th scope="col" class="col-lg-1">STT</th>
                               <th scope="col" class="col-lg-1">Tiêu Đề</th>
                               <th scope="col" class="col-lg-1">Ảnh</th>
-                              <th scope="col" class="col-lg-2 limited-text">Tóm tắt</th>
                               <th scope="col" class="col-lg-2 limited-text">Nội dung</th>
+                              <th scope="col" class="col-lg-2 limited-text">Tóm tắt</th>
                               <th scope="col" class="col-lg-1">Thời gian đăng</th>
                               <th scope="col" class="col-lg-1">Thời gian cập nhật</th>
                               <th scope="col" class="col-lg-1">Trạng thái</th>
@@ -40,8 +50,9 @@ Dashboard - Quản Trị Website
                                 <th scope="row">{{ $loadtin->id }}</th>
                                 <td>{{ $loadtin->title }}</td>
                                 <td><img src="{{ $loadtin->img }}" alt="" style= " max-width: 100px; max-height: 50px;"></td>
-                                <td data-original-text="{{ $loadtin->summary }}" class="limited-text">{{ $loadtin->summary }}</td>
                                 <td data-original-text="{{ $loadtin->content }}" class="limited-text">{{ $loadtin->content }}</td>
+                                <td data-original-text="{{ $loadtin->summary }}" class="limited-text">{{ $loadtin->summary }}</td>
+                                
 
                                 @if($loadtin->created_at)
                                     <td>{{ $loadtin->created_at->format('d/m/Y') }}</td>
@@ -69,7 +80,7 @@ Dashboard - Quản Trị Website
                                   <td>
                                       <a href="{{ url("xoa/{$loadtin->id}") }}" class="btn btn-danger w-100" onclick="return confirm('Bạn có thật sự muốn xóa không?')">Xóa</a>
 
-                                      <a href="{{ route('suatin', ['id' => $loadtin->id]) }}" class="btn btn-info w-100">Cập nhật</a>
+                                      <a href="{{ route('suatin', ['id' => $loadtin->id]) }}" class="btn btn-info w-100">Sửa</a>
                                   </td>
                               </tr>
                           @endforeach

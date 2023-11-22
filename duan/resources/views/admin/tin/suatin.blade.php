@@ -4,7 +4,7 @@
 @endsection
 
 @section('noidung')
-
+<div class="container">
 <form action="{{ url('admin/capnhat/' . $tintuc->id) }}" method="POST" class="col-7 m-auto" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -31,12 +31,12 @@
 
     <div class="form-group">
         <label for="summary">Tóm tắt:</label>
-        <textarea name="summary" class="form-control" style="width: 100%; height: 80px">{{ $tintuc->summary }}</textarea>
+        <textarea name="summary" class="form-control" style="width: 100%; height: 100px">{{ $tintuc->summary }}</textarea>
     </div>
 
     <div class="form-group">
         <label for="content">Nội dung:</label>
-        <textarea name="content" class="form-control" style="width: 100%; height: auto">{{ $tintuc->content }}</textarea>
+        <textarea name="content" class="form-control" style="width: 100%; height: 200px">{{ $tintuc->content }}</textarea>
     </div>
 
     <div class="form-group">
@@ -50,5 +50,5 @@
     <button type="submit" class="bg-warning p-2">Sửa tin</button>
 
 </form>
-
+</div>
 @endsection

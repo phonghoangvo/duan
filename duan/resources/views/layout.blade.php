@@ -61,8 +61,7 @@
    <script src="/assets/vendors/jquery.min.js"></script>
    <script src="/assets/owlcarousel/owl.carousel.js"></script>
    <script src="/js/script.min.js"></script>
-   
-<script src="/js/script.js"></script>
+   <script src="/js/script.js"></script>
 
 <script>
   $(document).ready(function() {
