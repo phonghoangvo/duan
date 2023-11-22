@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('tieudetrang')</title>
+
   <!-- Css -->
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -15,12 +16,6 @@
   <!-- Owl Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-  <!-- Include jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-  <!-- Include Owl Carousel -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 </head>
 
@@ -43,10 +38,14 @@
   </button>
 
   <!-- JavaScript -->
-  <script src="/assets/vendors/jquery.min.js"></script>
-  <script src="/assets/owlcarousel/owl.carousel.js"></script>
+  <!-- Include jQuery once -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  <!-- Include Owl Carousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-  <script src="/js/script.min.js"></script>
+  <!-- Your custom scripts -->
+  <script src="/assets/owlcarousel/owl.carousel.js"></script>
   <script src="/js/script.js"></script>
 
   <script>
