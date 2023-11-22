@@ -48,23 +48,18 @@
                 <div class="col-9">
                     <section>
                         <div class="row">
-                            @foreach ($news as $tintuc)
-                            @if ($tintuc->hidden == 1)
-                                <div class="col-md-6 pb-3 text-center">
-                                    <div class="card">
-                                        <img src="{{$tintuc->img}}" class="card-img-top"  alt="{{$tintuc->title}}" style="max-width: 100%; max-height: 400px;">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{$tintuc->title}}</h5>
-                                            <p class="card-text">{{$tintuc->summary}}</p>
-                                            <a href="{{ route('chitietnew', ['id' => $tintuc->id]) }}" class="btn btn-primary">Xem thêm</a>
-                                        </div>
+                            <div class="col-md-12 pb-3">
+                                <div class="card">
+                                    <img src="{{$chitietnew->img}}" class="card-img" alt="{{$chitietnew->title}}" style="max-width: 100%; max-height:600px">
+                                    <div class="card-body" style="  line-height: 1.8;">
+                                        <i class="bi bi-calendar3" style="font-size: 1.5em; color: orange;"></i>
+                                        <span style="font-size: 1.2em; color: orange;"> {{ $chitietnew->created_at->format('d/m/Y, H:i') }} </span> 
+                                        <h5 class="card-title">{{$chitietnew->title}}</h5>
+                                        <p class="text">{{$chitietnew->content}}</p>
                                     </div>
                                 </div>
-                            @endif
-                        @endforeach
-
-                                {{ $news->links() }}
-                     
+                            </div>
+                        </div>                                                                                                
                     </section>
                     
                 </div>

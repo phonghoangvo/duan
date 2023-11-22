@@ -43,7 +43,7 @@
                             <a class="nav-link text-dark" href="/gioithieu">Giới thiệu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/tintuc">Tin tức</a>
+                            <a class="nav-link text-dark" href="/news">Tin tức</a>
                         </li>
                         <li class="nav-item d-flex">
                             <a class="nav-link text-primary" href="giohang.html">

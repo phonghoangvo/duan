@@ -13,14 +13,17 @@ class TinController extends Controller
     function index() {
         return view('index');
     }
+    
+    function news()
+    {
+        $news = Tintuc::where('hidden', 1)->simplePaginate(8);
+        return view('news', ['news' => $news]);
+    }
 
-
-    public function news()
-{
-    $news = Tintuc::where('hidden', 1)->paginate(8);
-    return view('news', ['news' => $news]);
-}
-
+    function chitietnew($id){
+        $chitietnew = Tintuc::find($id);
+        return view('chitietnew',['chitietnew'=>$chitietnew]);
+    }
 
     function lienhe() {
         return view('lienhe');
@@ -30,7 +33,7 @@ class TinController extends Controller
         return view('gioithieu');
     }
 
-    public function listtintuc() {
+    function listtintuc() {
         $listtintuc = Tintuc::all();
         return view('admin.listtintuc', compact('listtintuc'));
     }
