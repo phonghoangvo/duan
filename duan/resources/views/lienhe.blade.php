@@ -77,22 +77,37 @@
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="col-md-6">
-                        <form method="post" class="loginform">
+                        <form method="post" action="{{route('sendemail')}}" class="loginform">
+                            @csrf
+                            @if(Session::has('error'))
+                            <div class="alert alert-danger">
+                                {{Session::get('error')}}
+                            </div>
+                            @endif
+                            @if(Session::has('success'))
+                            <div class="alert alert-success">
+                                {{Session::get('success')}}
+                            </div>
+                            @endif
                             <div class="mb-0 p-3">
                                 <label for="Name"><b>Họ và tên</b></label>
-                                <input type="text" class="form-control" id="name" placeholder="Họ và tên">
+                                <input type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="Họ và tên">
+                                @error('name') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-0 p-3">
                                 <label for="Email"><b>Email</b></label>
-                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <input type="email" class="form-control" value="{{old('email')}}" name="email" placeholder="Email">
+                                @error('email') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-0 p-3">
                                 <label for="Name"><b>Chủ đề</b></label>
-                                <input type="text" class="form-control" id="name" placeholder="Họ và tên">
+                                <input type="text" class="form-control" value="{{old('chude')}}" name="chude" placeholder="Chủ đề">
+                                @error('chude') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-0 p-3">
                                 <label for="Name"><b>Nội dung</b></label>
-                                <textarea name="message" class="form-control" id="message"></textarea>
+                                <textarea name="message" class="form-control"  id="message" cols="5" rows="5">{{old('message')}}</textarea>
+                                @error('message') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-0 p-3">
                                 <button class="btn btn-primary" type="submit">Gửi lời nhắn</button>
