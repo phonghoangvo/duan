@@ -91,26 +91,7 @@ main{
     margin-right: -10px;
     justify-content: right;
   }
-  
-.pagination a {
-    text-decoration: none;
-    background-color: #fafdff;
-    color: #052a4f;
-    border: 1px solid #052a4f;
-    padding: 5px 10px;
-    margin-right: 5px;
-    border-radius: 50%; /* Điều này làm cho góc bo tròn */
-    display: flex;
-    align-items: center; /* Căn giữa văn bản và biểu tượng */
-    width: 30px;
-    height: 30px;
-}
 
-
-
-.pagination a:hover {
-background-color: #2980b9;
-}
 /* Shop */
 
 /* Detail */
