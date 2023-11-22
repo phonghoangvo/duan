@@ -1,6 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('tieudetrang')</title>
@@ -11,39 +11,19 @@
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap">
 
-    <!-- Bootstrap 5 -->
+    <!-- Bootstrap 5 Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- Owl Carousel Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-<!-- Owl Carousel JavaScript -->
-
-    <!-- Owl Carousel JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-
-
-    <!-- Owl Carousel JavaScript -->
-    <script src="/assets/owlcarousel/owl.carousel.js"></script>
-
-
-
 </head>
 <body>
     @include('navbar')
    
     <main>
-       
-       @yield('noidung')
-       
-        
+        @yield('noidung')
     </main>
-
 
     <!-- Footer Start -->
     <footer>
@@ -56,20 +36,15 @@
         <i class="bi bi-arrow-up" style="font-size: 22px;"></i>
     </button>
 
-
    <!-- JavaScript -->
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
    <script src="/assets/vendors/jquery.min.js"></script>
    <script src="/assets/owlcarousel/owl.carousel.js"></script>
    <script src="/js/script.min.js"></script>
    <script src="/js/script.js"></script>
 
 <script>
-  $(document).ready(function() {
-    $(".owl-carousel").owlCarousel({
-      // Các tùy chọn của Owl Carousel ở đây
-    });
-  });
-
   let mybutton = document.getElementById("back-top");
   window.onscroll = function() {
     scrollFunction()
