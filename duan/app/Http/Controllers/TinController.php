@@ -15,10 +15,10 @@ class TinController extends Controller
     }
 
 
-    public function tintuc()
+    public function news()
 {
     $news = Tintuc::where('hidden', 1)->paginate(8);
-    return view('tintuc', ['news' => $news]);
+    return view('news', ['news' => $news]);
 }
 
 
