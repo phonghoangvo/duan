@@ -37,12 +37,13 @@
     </button>
 
    <!-- JavaScript -->
-   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-   <script src="/assets/vendors/jquery.min.js"></script>
-   <script src="/assets/owlcarousel/owl.carousel.js"></script>
-   <script src="/js/script.min.js"></script>
-   <script src="/js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="/assets/vendors/jquery.min.js"></script>
+  <script src="/assets/owlcarousel/owl.carousel.js"></script>
+  <script src="/js/script.min.js"></script>
+  <script src="/js/script.js"></script>
+
 
 <script>
   let mybutton = document.getElementById("back-top");
