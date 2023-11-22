@@ -9,7 +9,8 @@
   <!-- Css -->
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="/css/lienhe.css">
+  <link rel="stylesheet" href="/css/gioithieu.css">
   <!-- Bootstrap 5 Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
