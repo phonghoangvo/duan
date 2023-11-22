@@ -7,7 +7,6 @@ use App\Http\Controllers\TinController;
 
 Route::get('/', [TinController::class, 'index']);
 Route::get('/news', [TinController::class, 'news']);
-Route::get('/news/{id}', [TinController::class, 'chitietnew'])->name('chitietnew');
 Route::get('/lienhe', [TinController::class, 'lienhe']);
 Route::get('/gioithieu', [TinController::class, 'gioithieu']);
 
