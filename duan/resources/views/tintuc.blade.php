@@ -63,7 +63,11 @@
                          @endif
                         @endforeach        
                         
-                            {{ $news->links() }}
+                          
+                            <div class="pagination">
+                                {{ $news->links() }}
+                            </div>
+
                                             
                     </section>
                     

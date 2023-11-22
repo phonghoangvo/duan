@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TinController;
 
 Route::get('/', [TinController::class, 'index']);
-Route::get('/news', [TinController::class, 'news']);
+Route::get('/tintuc', [TinController::class, 'tintuc'])->name('tintuc');
 Route::get('/lienhe', [TinController::class, 'lienhe']);
 Route::get('/gioithieu', [TinController::class, 'gioithieu']);
 
