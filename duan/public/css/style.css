@@ -142,7 +142,6 @@ label{
 /* Login - Register -Forgot */
 /* resources/css/app.css */
 .card-body a{
-    color: gray;
     display: -webkit-box;
     max-height: 200px;
     -webkit-box-orient: vertical;
