@@ -7,9 +7,12 @@
     <!-- Css -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="/css/lienhe.css">
+    <link rel="stylesheet" href="/css/gioithieu.css">
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap">
     
     <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.carousel.min.css">
@@ -46,7 +49,7 @@
 
     <script src="/js/script.min.js"></script>
     <script src="/js/script.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let mybutton = document.getElementById("back-top");
         
