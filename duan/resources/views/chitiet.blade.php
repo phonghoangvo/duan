@@ -7,73 +7,16 @@
     <!-- Navbar end -->
     <!-- Main Start -->
     <main>
-        <div class="container pt-2 px-0">
-            <div class="row">
-                <div class="col-lg-3">
-                    <p class=" gap-1">
-                        <a class="btn bg-primary align-items-center justify-content-between shadow-none d-flex text-white w-100"
-                            data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-                            aria-controls="collapseExample" style="border-radius: 0%;">
-                            DANH MỤC SẢN PHẨM
-                            <i class="bi bi-list"></i>
-                        </a>
-                    </p>
-                    <div class="collapse pb-3" id="collapseExample">
-                        <div class="card card-body">
-                            <!-- Default dropend button -->
-                            <div class="btn-group drop">
-                                <button type="button"
-                                    class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    SÁCH TIẾNG VIỆT
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <!-- Dropdown menu links -->
-                                </ul>
-                            </div>
-                            <div class="btn-group drop">
-                                <button type="button"
-                                    class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    VĂN PHÒNG PHẨM
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <!-- Dropdown menu links -->
-                                </ul>
-                            </div>
-                            <div class="btn-group drop">
-                                <button type="button"
-                                    class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    LỊCH
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <!-- Dropdown menu links -->
-                                </ul>
-                            </div>
-                            <div class="btn-group drop">
-                                <button type="button"
-                                    class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    TẬP
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <!-- Dropdown menu links -->
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @foreach($products as $value)
-                <div class="col-lg-9">
-                    <div class="bg-primary-subtle justify-content-center h-75 p-2 pb-3">
-                        <a class="text-decoration-none text-dark" href="home.html">Trang chủ</a> /
-                        <a class="text-decoration-none text-dark" href="#">Loại sản phẩm</a> /
-                        <small>{{$value->name}}</small>
-                    </div>
-                </div>
-            </div>
+        @foreach($products as $value)
+        <div class="container px-0 pt-3 pb-3">
+            <a class="text-decoration-none text-dark" href="">
+                Trang chủ
+            </a> 
+            <small>/ Chi tiết</small>
+            <small>/ {{$value->name}}</small>
+            
         </div>
+       
         <div class="container pt-5 pb-5 px-0">
             <div class="row">
                 <div class="col-sm-5">
@@ -111,7 +54,7 @@
                         <small>Thương hiệu: <b>{{$value->nhaxuatban}}</b></small><br>
                         <small>Mã sản phẩm: <a href="#">{{$value->id}}</a></small>
                     </div>
-                    <div class="pt-3 pb-3" style="font-size: 25px;"><b class="text-danger">{{$value->price}} </b></div>
+                    <div class="pt-3 pb-3" style="font-size: 25px;"><b class="text-danger">{{number_format($value->price)}} đ</b></div>
                     <div id="amount" class="d-flex align-items-center pt-3 pb-3">
                         <span>Số lượng:</span>
                         <div class="input-group mx-3" style="width: 130px;">

@@ -8,7 +8,7 @@ use App\Http\Controllers\TinController;
 Route::get('/', [TinController::class, 'index']);
 Route::get('/news', [TinController::class, 'news']);
 Route::get('/gioithieu', [TinController::class, 'gioithieu']);
-Route::get('/chitietnew/{id}',[TinController::class,'chitietnew'])->name('chitietnew');
+Route::get('/news/{id}', [TinController::class, 'chitietnew'])->name('chitietnew');
 //Quanlitintuc
 Route::get('/admin/listtintuc', [TinController::class, 'listtintuc'])->name('listtintuc');
 Route::get('/admin', [TinController::class, 'admin']);

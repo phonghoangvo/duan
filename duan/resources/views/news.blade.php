@@ -56,7 +56,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{$tintuc->title}}</h5>
                                     <p class="card-text">{{$tintuc->summary}}</p>
-                                    <a href="{{ route('chitietnew', ['id' => $id]) }}" class="btn btn-primary">Xem thêm</a>
+                                    <a href="{{ route('chitietnew', ['id' => $tintuc->id]) }}" class="btn btn-primary">Xem thêm</a>
                                 </div>
                             </div>
                         </div>

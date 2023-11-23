@@ -70,7 +70,7 @@
                             </div>
                             <div class="title">
                                 <h3>
-                                    <a href="">{{$sanpham->name}}</a>
+                                    <a href="{{url('/chitiet/'.$sanpham->id)}}">{{$sanpham->name}}</a>
                                 </h3>
                             </div>
                             <div class="gia">
