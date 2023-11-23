@@ -22,4 +22,5 @@ Route::get('/',[TinController::class, 'index']);
 Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
 
 Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
+Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 
