@@ -21,7 +21,7 @@
                     <ul class="navbar-nav justify-content-center align-items-center flex-grow-1">
                         <div class="input-group w-50 mx-5">
                                                      
-                            <form action="{{route('timkiem')}}" method="GET">
+                            
                                 <div class="row">
                                     <div class="col-md-10">
                                     <input type="text" name="timkiem" class="form-control" placeholder="Tìm kiếm sản phẩm" aria-label="Tìm kiếm sản phẩm" aria-describedby="button-addon2">
@@ -30,17 +30,20 @@
                                     <button class="btn btn-primary border-0" type="submit" id="button-addon2"><i class="bi bi-search"></i></button>
                                     </div>
                                 </div>
-                            </form>
+                            
                         </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="/cuahang">Cửa hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="lienhe.html">Liên hệ</a>
+                            <a class="nav-link text-dark" href="/lienhe">Liên hệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="gioithieu.html">Giới thiệu</a>
+                            <a class="nav-link text-dark" href="/gioithieu">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/news">Tin tức</a>
                         </li>
                         <li class="nav-item d-flex">
                             <a class="nav-link text-primary" href="giohang.html">

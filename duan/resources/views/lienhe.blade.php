@@ -1,74 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu</title>
-    <!-- Css -->
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+@section('tieudetrang')
+    Trang liên hệ
+@endsection
 
-    <!-- Icon Bootsrap 5 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-</head>
-
-<body>
-    <!-- Navbar -->
-    <section>
-        <nav class="navbar navbar-expand-lg bg-transparent">
-            <div class="container px-0">
-                <!-- Logo -->
-                <a class="navbar-brand" href="trangchu.html">
-                    <img src="img/logo.png" alt="" style="width: 180px;">
-                </a>
-                <!-- Toggle Btn -->
-                <button class="navbar-toggler shadow-none border-" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- SideBar -->
-                <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <!-- SideBar Header -->
-                    <div class="offcanvas-header text-dark border-bottom">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Fighting Together</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <!-- SideBar Body -->
-                    <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-                        <ul class="navbar-nav justify-content-center align-items-center flex-grow-1">
-                            <div class="input-group w-50 mx-5">
-                                <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm" aria-label="Tìm kiếm sản phẩm" aria-describedby="button-addon2">
-                                <button class="btn btn-primary border-0" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
-                            </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="cuahang.html">Cửa hàng</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="lienhe.html">Liên hệ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="gioithieu.html">Giới thiệu</a>
-                            </li>
-                            <li class="nav-item d-flex">
-                                <a class="nav-link text-primary" href="giohang.html">
-                                    <button class="btn">
-                                        <i class="bi bi-cart-check-fill"></i>
-                                        0
-                                    </button>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- Login/Logout -->
-                        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                            <a href="dangnhap.html" class="text-dark text-decoration-none px-3 py-1 rounded-4" style="background-color: antiquewhite;">Đăng nhập</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </section>
-    <!-- Navbar end -->
+@section('noidung')
     <main>
         <div class="container px-0 pt-3 pb-3">
             <a class="text-decoration-none text-dark" href="">
@@ -79,7 +15,7 @@
         <div class="container pb-3 pt-3 px-0">
             <h2 class="text-center mb-5">Liên hệ với chúng tôi</h2>
             <div class="row">
-                <div class="col-md-3 mb-3">
+                <div class="col-md-3 mb-3"> 
                     <div class="text-center">
                         <div class="icon">
                             <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
@@ -183,73 +119,11 @@
         </div>
     </main>
 
-    <!-- Footer Start -->
-    <footer>
-        <section>
-            <div class="container pt-5">
-                <div class="row">
-                    <div class="col-lg-5 text-start">
-                        <a href="#">
-                            <img class="w-75 mb-3" src="img/logo.png" alt="">
-                        </a>
-                        <p>
-                            <i class="bi bi-geo-alt"></i>
-                            <strong>Địa chỉ: </strong>
-                            <span style="color: rgb(48, 48, 48);">Cong vien phan mem Quang Trung</span>
-                        </p>
-                        <p>
-                            <i class="bi bi-telephone"></i>
-                            <strong>Số điện thoại: </strong>
-                            <span style="color: rgb(48, 48, 48);"> 0123456789</span>
-                        </p>
-                        <p>
-                            <i class="bi bi-envelope"></i>
-                            <strong>Email: </strong>
-                            <span style="color: rgb(48, 48, 48);">fightingtogether@gmail.com</span>
-                        </p>
-                    </div>
-                    <div class="col-lg-4 p-3">
-                        <h5>Về Fighting Together</h5>
-                        <div>
-                            <p>
-                                <a class="text-decoration-none text-dark" href="#" title="Home">Trang chủ</a>
-                            </p>
-                            <p>
-                                <a class="text-decoration-none text-dark" href="#" title="Shop">Cửa hàng</a>
-                            </p>
-                            <p>
-                                <a class="text-decoration-none text-dark" href="#" title="Contact">Liên hệ</a>
-                            </p>
-                            <p>
-                                <a class="text-decoration-none text-dark" href="#" title="About">Giới thiệu</a>
-                            </p>
-                            <p>
-                                <a class="text-decoration-none text-dark" href="#">Chính sách</a>
-                            </p>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-3 p-3">
-                        <h5>Tổng đài hỗ trợ</h5>
-                        <p>Gọi mua hàng: <b>0123456789</b> (7h30-17h00)</p>
-                        <p>Gọi khiếu nại: <b>0123456789</b> (7h30-17h00)</p>
-                        <h5>Phương thức thanh toán</h5>
-                        <p><img class="w-75" src="img/footer-pay.jpg" alt=""></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="container-fluid text-center bg-dark text-light">
-                <span>Bản quyền © 2023 . Thiết kế Khavd</span>
-            </div>
-        </section>
-    </footer>
-    <!-- Footer End -->
 
 
-    <script src="../../js/script.min.js"></script>
-    <script src="../../js/script.js"></script>
+    <script src="/js/script.min.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
+@endsection
