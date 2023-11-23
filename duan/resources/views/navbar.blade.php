@@ -22,6 +22,7 @@
                         <div class="input-group w-50 mx-5">
                                                      
                             
+                            <form action="{{route('timkiem')}}" method="GET">
                                 <div class="row">
                                     <div class="col-md-10">
                                     <input type="text" name="timkiem" class="form-control" placeholder="Tìm kiếm sản phẩm" aria-label="Tìm kiếm sản phẩm" aria-describedby="button-addon2">
@@ -30,6 +31,7 @@
                                     <button class="btn btn-primary border-0" type="submit" id="button-addon2"><i class="bi bi-search"></i></button>
                                     </div>
                                 </div>
+                            </form>
                             
                         </div>
                         </li>

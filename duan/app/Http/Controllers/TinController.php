@@ -113,27 +113,34 @@ class Tincontroller extends Controller
 }
 
     
-    public function timkiem(Request $request)
-    {
-        $searchTerm = $request->input('timkiem');
-        $page = 24;
-    
-        // Thực hiện tìm kiếm dựa trên $searchTerm
-        $query = Cuahang::where('name', 'like', '%' . $searchTerm . '%');
+public function timkiem(Request $request)
+{
+    $searchTerm = $request->input('timkiem');
+    $page = 24;
 
-        // Lọc theo
-        if ($sortBy = $request->input('sort_by')) {
-            $validSortOptions = ['giagiamdan', 'giatangdan', 'tuadenz', 'tuzdena'];
-            if (in_array($sortBy, $validSortOptions)) {
-                $direction = $sortBy === 'giatangdan' ? 'ASC' : 'DESC';
-                $query->orderBy('name', $direction)->orderBy('price', $direction);
-            }
+    // Thực hiện tìm kiếm dựa trên $searchTerm
+    $productsQuery = Cuahang::with('category')
+        ->where('name', 'like', '%' . $searchTerm . '%');
+
+    // Thực hiện tìm kiếm theo tên danh mục
+    $productsQuery->orWhereHas('category', function ($q) use ($searchTerm) {
+        $q->where('name', 'like', '%' . $searchTerm . '%');
+    });
+
+    // Lọc theo
+    if ($sortBy = $request->input('sort_by')) {
+        $validSortOptions = ['giagiamdan', 'giatangdan', 'tuadenz', 'tuzdena'];
+        if (in_array($sortBy, $validSortOptions)) {
+            $direction = $sortBy === 'giatangdan' ? 'ASC' : 'DESC';
+            $productsQuery->orderBy('name', $direction)->orderBy('price', $direction);
         }
-    
-        $products = $query->paginate($page)->withQueryString();
-    
-        return view('cuahang', ['products' => $products]);
     }
+
+    $products = $productsQuery->paginate($page)->appends(request()->query());
+
+    return view('cuahang', ['products' => $products]);
+}
+
     //chitietsanpham
     public function chitiet($id){ 
         $hot = DB::table('product')
