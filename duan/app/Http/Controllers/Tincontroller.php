@@ -154,6 +154,7 @@ class Tincontroller extends Controller
     
         return view('cuahang', ['products' => $products]);
     }
+    //chitiet
     public function chitiet($id){ 
         $hot = DB::table('product')
             ->where('hot', 1)
