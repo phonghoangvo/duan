@@ -57,26 +57,6 @@ class Tincontroller extends Controller
             ->where('hidden', '=', '1')
             ->get();
 
-        $danhmucvpp = DB::table('category')
-            ->select('id', 'name')
-            ->orderby('thutu', 'asc')
-            ->where('name', 'LIKE', '%Sách%')
-            ->where('hidden', '=', '1')
-            ->get();
-
-        $danhmuclich = DB::table('category')
-            ->select('id', 'name')
-            ->orderby('thutu', 'asc')
-            ->where('name', 'LIKE', '%Sách%')
-            ->where('hidden', '=', '1')
-            ->get();
-
-        $danhmuctap = DB::table('category')
-            ->select('id', 'name')
-            ->orderby('thutu', 'asc')
-            ->where('name', 'LIKE', '%Sách%')
-            ->where('hidden', '=', '1')
-            ->get();
 
         return view('index', [
             'giamgia' => $giamgia,
