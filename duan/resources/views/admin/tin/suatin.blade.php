@@ -47,7 +47,7 @@
         </select>
     </div>
     
-    <button type="submit" class="bg-warning p-2">Sửa tin</button>
+    <button type="submit" class="btn btn-warning">Sửa tin</button>
 
 </form>
 </div>
