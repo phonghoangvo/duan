@@ -141,7 +141,6 @@ label{
 }
 /* Login - Register -Forgot */
 /* resources/css/app.css */
-<<<<<<< HEAD
 .card-body a{
     display: -webkit-box;
     max-height: 200px;
@@ -257,8 +256,8 @@ h3 a {
 
 .input-group input{
     width: 300px;
-=======
-.pagination {
+}
+/* .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -287,5 +286,4 @@ h3 a {
     background-color: #007bff;
     color: #fff;
     border: 1px solid #007bff;
->>>>>>> parent of a4fdf86 (chitiettin)
-}
+} */
