@@ -63,7 +63,7 @@
                 <div class="row p-3">
                     @foreach ($products as $sanpham)
                     <div class="col-md-6 col-lg-4 col-xl-3 p-2 sanpham ">
-                        <div class="boxsanpham  p-2">
+                        <div class="boxsanpham  p-2"><a href="{{url('/chitiet/'.$sanpham->id)}}">
                             <div class="img">
                                 <img src="/uploads/{{$sanpham->img}}"
                                     alt="{{$sanpham->img}}" width="200px" height="200px">
@@ -77,6 +77,7 @@
                                 <span>{{number_format($sanpham->price)}} đ</span><br>
                                 <p><del>{{number_format($sanpham->priceSale)}} đ</del></p>
                             </div>
+                            </a>
                         </div>
                     </div>
                     @endforeach

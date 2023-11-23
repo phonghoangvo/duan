@@ -134,6 +134,16 @@ class Tincontroller extends Controller
     
         return view('cuahang', ['products' => $products]);
     }
+    public function chitiet($id){ 
+        $hot = DB::table('product')
+            ->where('hot', 1)
+            ->where('hidden', 1)
+            ->orderBy('ngayDang', 'desc')
+            ->limit(7)
+            ->get();
+        $products = cuahang::where('id','=',$id)->get();
+        return view('chitiet',compact('products','hot'));
+    }
 
     //Tintuc
     public function news()
