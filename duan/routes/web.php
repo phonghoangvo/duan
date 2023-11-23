@@ -7,9 +7,8 @@ use App\Http\Controllers\TinController;
 
 Route::get('/', [TinController::class, 'index']);
 Route::get('/news', [TinController::class, 'news']);
-Route::get('/lienhe', [TinController::class, 'lienhe']);
 Route::get('/gioithieu', [TinController::class, 'gioithieu']);
-
+Route::get('/chitietnew/{id}',[TinController::class,'chitietnew'])->name('chitietnew');
 //Quanlitintuc
 Route::get('/admin/listtintuc', [TinController::class, 'listtintuc'])->name('listtintuc');
 Route::get('/admin', [TinController::class, 'admin']);
@@ -31,7 +30,6 @@ Route::put('/admin/capnhat/{id}', [TinController::class, 'capnhat'])->name('capn
 
 Route::get('/lienhe',[ContactController::class,'lienhe']);
 Route::post('/send',[ContactController::class,'send'])->name('sendemail');
-Route::get('/',[TinController::class, 'index']);
 
 Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
 
