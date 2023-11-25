@@ -155,7 +155,12 @@ class Tincontroller extends Controller
     }
 
    
+    public function cart(){
+        return view('cart');
+    }
 
-
+    public function cartcheck(){
+        return view('cart_check');
+    }
     
 }
