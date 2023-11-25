@@ -21,9 +21,14 @@ Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timk
 Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
 Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 
-//Quanlitintuc
-Route::get('/admin/listtintuc', [TinController::class, 'listtintuc'])->name('listtintuc');
+//admin
+
 Route::get('/admin', [TinController::class, 'admin']);
+Route::get('/admin/list-user',[AdminController::class,'list_user'])->name('listuser');
+
+
+//quanlitintuc
+Route::get('/admin/listtintuc', [TinController::class, 'listtintuc'])->name('listtintuc');
 Route::get('/admin/themtin', [TinController::class, 'themtin'])->name('themtin');
 Route::post('/admin/themtin', [TinController::class, 'themtin_'])->name('themtin_');
 Route::get('xoa/{id}', [TinController::class, 'xoa']);
@@ -52,8 +57,7 @@ Route::post('forgot-password1',[AccountController::class,'forgot_password_'])->n
 Route::get('forgot-password',[AccountController::class,'reset_password'])->name('password.reset');
 Route::delete('logout',[AccountController::class,'logout'])->name('logout');  
 
-Route::prefix('admin')->group(function(){
-    Route::get('/',[AdminController::class,'index_admin']);
-    Route::get('list-user',[AdminController::class,'list_user']);
-});
+// Route::prefix('admin')->group(function(){
+//     Route::get('/',[AdminController::class,'index_admin']);
+//     
  
