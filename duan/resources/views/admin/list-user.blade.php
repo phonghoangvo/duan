@@ -55,7 +55,7 @@
                             <th>phone</th>
                             <th>Trạng Thái</th>                         
                             <th>Vai tro</th> --}}
-                            <th>edit | delete</th>
+                            <th>Hành động</th>
                         </tr>
                         
                         
