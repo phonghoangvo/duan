@@ -5,6 +5,11 @@ Use App\Http\Controllers\AdminController;
 Use App\Http\Controllers\UserController;    
 Use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ContactController;
+<<<<<<< Updated upstream
+=======
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CommentController;
+>>>>>>> Stashed changes
 use App\Http\Controllers\TinController;
 use App\Models\User;
 use App\Http\Requests\RuleRegister;
@@ -34,9 +39,31 @@ Route::post('/admin/themtin', [TinController::class, 'themtin_'])->name('themtin
 Route::get('xoa/{id}', [TinController::class, 'xoa']);
 Route::get('/admin/suatin/{id}', [TinController::class, 'suatin'])->name('suatin');
 Route::put('/admin/capnhat/{id}', [TinController::class, 'capnhat'])->name('capnhat');
+<<<<<<< Updated upstream
 
 
 
+=======
+//quanlisanpham
+Route::get('/admin/list',[ProductController::class,'list']);
+Route::get('/admin/add',[ProductController::class,'add']);
+Route::post('save',[ProductController::class,'save_add'])->name('save_add');
+Route::get('/admin/edit/{id}',[ProductController::class,'edit'])->name('edit');
+Route::put('update/{id}',[ProductController::class,'update']);
+Route::get('/del/{id}',[ProductController::class,'del']);
+
+Route::get('/admin/comment/list',[CommentController::class,'list']);
+
+//contact
+Route::get('/lienhe',[ContactController::class,'lienhe']);
+Route::post('/send',[ContactController::class,'send'])->name('sendemail');
+Route::get('/',[TinController::class, 'index']);
+//Cửahang
+Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
+Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
+//chitiet
+Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
+>>>>>>> Stashed changes
 
  // adduser
  Route::get('/adduser', [UserController::class,'create']);
