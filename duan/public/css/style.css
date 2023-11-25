@@ -272,3 +272,11 @@ h3 a {
 .input-group input{
     width: 300px;
 }
+
+.btn-group a{
+    text-decoration: none;
+    text-transform: uppercase;    
+}
+.btn-group span{
+    color: black;
+}

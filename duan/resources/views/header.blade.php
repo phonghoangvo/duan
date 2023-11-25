@@ -16,7 +16,7 @@
                         </div>
                         <div class="btn-group drop">
                             <button type="button" class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                SÁCH TIẾNG VIỆT
+                                <span>SÁCH TIẾNG VIỆT</span>
                             </button>
                             <ul class="dropdown-menu">
                                 @foreach ($danhmucsach as $dms)
@@ -28,19 +28,19 @@
                         </div>
                         <div class="btn-group drop">
                             @foreach ($danhmucvpp as $dmvpp)
-                            <button type="button" style="text-decoration: none; " class="btn align-items-center justify-content-between shadow-none d-flex w-100 border-bottom border-0 ">
+                            <button type="button"  class="btn align-items-center justify-content-between shadow-none d-flex w-100 border-bottom border-0 ">
                                 <a href="{{ route('cuahang', ['id' => $dmvpp->id]) }}"><span>{{$dmvpp->name}}</span></a>
                             @endforeach
                         </div>
                         <div class="btn-group drop">
                             @foreach ($danhmuclich as $dml)
-                            <button type="button" style="text-decoration: none; " class="btn align-items-center justify-content-between shadow-none d-flex w-100 border-bottom border-0 ">
+                            <button type="button"  class="btn align-items-center justify-content-between shadow-none d-flex w-100 border-bottom border-0 ">
                                 <a href="{{ route('cuahang', ['id' => $dml->id]) }}"><span>{{$dml->name}}</span></a>
                             @endforeach
                         </div>
                         <div class="btn-group drop">
                             @foreach ($danhmuctap as $dmt)
-                            <button type="button" style="text-decoration: none; " class="btn align-items-center justify-content-between shadow-none d-flex w-100 border-bottom border-0 ">
+                            <button type="button" class="btn align-items-center justify-content-between shadow-none d-flex w-100 border-bottom border-0 ">
                                 <a href="{{ route('cuahang', ['id' => $dmt->id]) }}"><span>{{$dmt->name}}</span></a>
                             @endforeach
                         </div>
