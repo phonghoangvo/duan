@@ -116,8 +116,8 @@
                                     <td> 
                                         <input type="number" value="{{ $details['quanlity'] }}" class="form-control quanlity cart-update" min="1">
                                     </td>
-                                    <td>{{ $details['price'] }}₫</td>
-                                    <td>{{ $details['price'] * $details['quanlity'] }}₫</td>
+                                    <td>{{number_format( $details['price']) }}₫</td>
+                                    <td>{{number_format( $details['price'] * $details['quanlity'] )}}₫</td>
                                 </tr>
                             @endforeach
                         @endif
@@ -136,7 +136,7 @@
                             <p>Tạm tính</p>
                         </div>
                         <div class="col-lg-6 text-end">
-                            <p>{{ $total }}₫</p>
+                            <p>{{number_format( $total) }}₫</p>
                         </div>
                     </div>
                     <div class="row">
@@ -155,7 +155,7 @@
                             <p>Tổng cộng</p>
                         </div>
                         <div class="col-lg-6 text-end">
-                            <span>{{ $total + 30000 }}₫</span>
+                            <span>{{number_format ($total + 30000) }}₫</span>
                         </div>
                     </div>
                 </div>

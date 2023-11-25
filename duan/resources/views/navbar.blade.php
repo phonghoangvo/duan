@@ -43,10 +43,10 @@
                             <a class="nav-link text-dark" href="gioithieu.html">Giới thiệu</a>
                         </li>
                         <li class="nav-item d-flex">
-                            <a class="nav-link text-primary" href="giohang.html">
-                                <button class="btn">
+                            <a class="nav-link text-primary" href="{{ url("/giohang") }}">
+                                <button class="btn ">
                                     <i class="bi bi-cart-check-fill"></i>
-                                    0
+                                    {{ count((array) session('cart')) }}
                                 </button>
                             </a>
                         </li>

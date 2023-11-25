@@ -59,21 +59,21 @@ class Tincontroller extends Controller
         $danhmucvpp = DB::table('category')
             ->select('id', 'name')
             ->orderby('thutu', 'asc')
-            ->where('name', 'LIKE', '%Sách%')
+            ->where('name', 'LIKE', '%Văn phòng phẩm%')
             ->where('hidden', '=', '1')
             ->get();
 
         $danhmuclich = DB::table('category')
             ->select('id', 'name')
             ->orderby('thutu', 'asc')
-            ->where('name', 'LIKE', '%Sách%')
+            ->where('name', 'LIKE', '%Lịch%')
             ->where('hidden', '=', '1')
             ->get();
 
         $danhmuctap = DB::table('category')
             ->select('id', 'name')
             ->orderby('thutu', 'asc')
-            ->where('name', 'LIKE', '%Sách%')
+            ->where('name', 'LIKE', '%Tập%')
             ->where('hidden', '=', '1')
             ->get();
 
@@ -84,6 +84,10 @@ class Tincontroller extends Controller
             'lich' => $lich,
             'tap' => $tap,
             'danhmucsach' => $danhmucsach,
+            'danhmucvpp' => $danhmucvpp,
+            'danhmuclich' => $danhmuclich,
+            'danhmuctap' => $danhmuctap,
+
             
         ]);
     }
@@ -155,12 +159,55 @@ class Tincontroller extends Controller
     }
 
    
+    //giohang
     public function cart(){
         return view('cart');
     }
-
     public function cartcheck(){
         return view('cart_check');
     }
+    public function addToCart($id){
+        $product = Cuahang::findOrFail($id);
+        $cart = session()->get('cart', []);
+
+        if(isset($cart[$id])){
+            $cart[$id]['quanlity']++;
+        }else{
+            $cart[$id] = [
+                "id" => $product->id,
+                "name" => $product->name,
+                "img" => $product->img,
+                "quanlity" => 1,
+                "price" => $product->price,
+            ];
+        }
+
+        session()->put("cart", $cart);
+        return redirect()->back()->with("add-to-cart","Bạn đã thêm sản phẩm vào giỏ hàng");
+
+    }
+    public function updateCart(Request $request){
+        if($request->id && $request->quanlity){
+            $cart = session()->get('cart');
+            $cart[$request->id]["quanlity"] = $request->quanlity;
+            session()->put('cart', $cart);
+            session()->flash('success','Gio hang da duoc cap nhat');
+
+        }
+
+    }
+    public function remove(Request $request){
+        if($request->id){
+            $cart = session()->get('cart');
+            if(isset($cart[$request->id])){
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash("success", "Bạn đã xóa sản phẩm khỏi giỏ hàng");
+        }
+    }
     
+
+
+
 }

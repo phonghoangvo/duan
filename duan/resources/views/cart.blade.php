@@ -48,8 +48,8 @@
                                     <td> 
                                         <input type="number" value="{{ $details['quanlity'] }}" class="form-control quantity cart-update" min="1">
                                     </td>
-                                    <td>{{ $details['price'] }}₫</td>
-                                    <td>{{ $details['price'] * $details['quanlity'] }}₫</td>
+                                    <td>{{number_format($details['price']) }}₫</td>
+                                    <td>{{number_format ($details['price'] * $details['quanlity']) }}₫</td>
                                     <td><button class="btn btn-danger btn-sm cart-remove">Xóa</button></td>
                                 </tr>
                             @endforeach
@@ -69,13 +69,13 @@
                             <h5>Tổng cộng:</h5>
                         </div>
                         <div class="col-6">
-                            <h5 class="text-end text-danger">{{ $total }}₫</h5>
+                            <h5 class="text-end text-danger">{{number_format($total) }}₫</h5>
                         </div>
                     </div>
                 </div>
                 <div class="p-2">
                     <button class="btn btn-primary w-100">
-                        <a href="{{ url("/thanh-toan") }}" class="text-light text-decoration-none">
+                        <a href="{{ url("/thanhtoan") }}" class="text-light text-decoration-none">
                             Tiến hành thanh toán
                         </a>
                     </button>

@@ -27,12 +27,10 @@
                             </ul>
                         </div>
                         <div class="btn-group drop">
-                            <button type="button" class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                VĂN PHÒNG PHẨM
-                            </button>
-                            <ul class="dropdown-menu">
-                            <!-- Dropdown menu links -->
-                            </ul>
+                            @foreach ($danhmucvpp as $dmvpp)
+                            <button type="button" style="text-decoration: none; " class="btn align-items-center justify-content-between shadow-none d-flex w-100 border-bottom border-0 ">
+                                <a href="{{ route('cuahang', ['id' => $dmvpp->id]) }}"><span>{{$dmvpp->name}}</span></a>
+                            @endforeach
                         </div>
                         <div class="btn-group drop">
                             <button type="button" class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0" data-bs-toggle="dropdown" aria-expanded="false">
