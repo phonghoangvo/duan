@@ -35,10 +35,13 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
-                <div class="sidebar-brand-icon rotate-n-15">
+                {{-- <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
+                </div> --}}
+                <div>
+                    <img src="/upload/logo.png" alt="" style="width: 200px">
                 </div>
-                <div class="sidebar-brand-text mx-3">FPOLY BOOK <sup>Admin</sup></div>
+                {{-- <div class="sidebar-brand-text mx-3">FPOLY BOOK <sup>Admin</sup></div> --}}
             </a>
 
             <!-- Divider -->
