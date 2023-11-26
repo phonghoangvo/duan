@@ -57,9 +57,40 @@
                         </li>
                     </ul>
                     <!-- Login/Logout -->
+                    @if(Auth::check())
                     <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                        <a href="dangnhap.html" class="text-dark text-decoration-none px-3 py-1 rounded-4" style="background-color: antiquewhite;">Đăng nhập</a>
+                        <div class="dropdown">
+                            <div class="d-flex align-items-center" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ Auth::user()->avatar }} " alt="User Avatar" class="avatar" width="20px"> 
+                                <span style="margin-left: 5px; ">{{ Auth::user()->name }}</span>
+                            </div>
+                    
+                            <!-- resources/views/layouts/app.blade.php hoặc form của bạn -->
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+
+                                <!-- Dropdown menu -->
+                                <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item" href="#">Chỉnh sửa thông tin</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <!-- Trigger JavaScript to submit the form with DELETE method -->
+                                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng xuất</a>
+                                    </li>
+                                </ul>
+
+                        </div>
+                        <!-- Các nút hoặc nội dung khác ở đây -->
                     </div>
+                    
+                    @else
+                        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+                            <a href="/login" class="text-dark text-decoration-none px-3 py-1 rounded-4" style="background-color: antiquewhite;">Đăng nhập</a>
+                        </div>
+                    @endif
+
                 </div>
             </div>
         </div>

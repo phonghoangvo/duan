@@ -15,11 +15,7 @@ main{
 .card-img-top{
     opacity: 1;
     display: block;
-<<<<<<< Updated upstream
     max-width: 100%;
-=======
-    width: 100%;
->>>>>>> Stashed changes
     transition: .5s ease;
     backface-visibility: hidden;
 }
@@ -159,11 +155,6 @@ label{
     }
 }
 /* Login - Register -Forgot */
-<<<<<<< Updated upstream
-=======
-/* resources/css/app.css */
-
->>>>>>> Stashed changes
 .card-body a{
     color: grey;
     display: -webkit-box;
@@ -277,11 +268,8 @@ h3 a {
 
 .input-group input{
     width: 300px;
-<<<<<<< Updated upstream
 }
-=======
-}
-.pagination {
+/* .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -311,5 +299,4 @@ h3 a {
     color: #fff;
     border: 1px solid #007bff;
 /* >>>>>>> parent of a4fdf86 (chitiettin) */
-}
->>>>>>> Stashed changes
+

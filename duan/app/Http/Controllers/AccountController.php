@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Password;
 use App\Models\password_reset_tokens;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\User;
 use App\Http\Requests\RuleRegister;
 
 class AccountController extends Controller
@@ -26,7 +26,7 @@ class AccountController extends Controller
             // nếu role = 1 thì vào admin nếu role = 0 thì vào home
 
 
-                return redirect('admin')->with('thongbao','Đăng nhập thành công');
+                return redirect('/')->with('thongbao','Đăng nhập thành công');
 
         }
 
@@ -36,21 +36,31 @@ class AccountController extends Controller
     public function register(){
         return view('admin.register');
     }
-    public function register_( ){
-        $user = new \App\Models\User();
-        if($_POST['password'] == $_POST['repassword']){
-            $existingUser = \App\Models\User::where('email',$_POST['email'])->first();
+    public function register_()
+    {
+        $user = new User();
+
+        if ($_POST['password'] == $_POST['repassword']) {
+            $existingUser = User::where('email', $_POST['email'])->first();
             if ($existingUser) {
                 return redirect('register')->with('thongbao', 'Email đã tồn tại trong hệ thống, vui lòng chọn email khác');
-            };
-        $user->name = $_POST['name'].' '.$_POST['lastname'];
-        $user->email = $_POST['email'];
-        $user->password = $_POST['password'];
-        $user->save();
-        return redirect('login')->with('thongbao','Đăng ký thành công');
-        }
-        else{
-            return redirect('register')->with('thongbao','Mật khẩu không khớp');
+            }
+
+            // Thiết lập thông tin người dùng
+            $user->name = $_POST['name'] . ' ' . $_POST['lastname'];
+            $user->email = $_POST['email'];
+            $user->password = $_POST['password'];
+
+            // Đặt ảnh đại diện mặc định
+            $defaultAvatarPath = 'img/user.png'; // Đặt đúng đường dẫn của ảnh đại diện mặc định
+            $user->avatar = $defaultAvatarPath;
+
+            // Lưu thông tin người dùng
+            $user->save();
+
+            return redirect('login')->with('thongbao', 'Đăng ký thành công');
+        } else {
+            return redirect('register')->with('thongbao', 'Mật khẩu không khớp');
         }
     }
     public function forgot_password(){
@@ -77,6 +87,6 @@ class AccountController extends Controller
     }
     public function logout(){
         Auth::logout();
-        return redirect()->route('login');
-    }
+        return redirect('/');
+    }    
 }

@@ -24,10 +24,8 @@ Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang')
 Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 
 //admin
-
 Route::get('/admin', [TinController::class, 'admin']);
 Route::get('/admin/list-user',[AdminController::class,'list_user'])->name('listuser');
-
 
 //quanlitintuc
 Route::get('/admin/listtintuc', [TinController::class, 'listtintuc'])->name('listtintuc');
@@ -44,23 +42,23 @@ Route::post('save',[ProductController::class,'save_add'])->name('save_add');
 Route::get('/admin/edit/{id}',[ProductController::class,'edit'])->name('edit');
 Route::put('update/{id}',[ProductController::class,'update']);
 Route::get('/del/{id}',[ProductController::class,'del']);
-
 Route::get('/admin/comment/list',[CommentController::class,'list']);
 
 //contact
 Route::get('/lienhe',[ContactController::class,'lienhe']);
 Route::post('/send',[ContactController::class,'send'])->name('sendemail');
 Route::get('/',[TinController::class, 'index']);
+
 //Cửahang
 Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
 Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
+
 //chitiet
 Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 
- // adduser
- Route::get('/adduser', [UserController::class,'create']);
- Route::post('/adduser', [UserController::class,'store_'])->name ('register_store');
-
+// adduser
+Route::get('/adduser', [UserController::class,'create']);
+Route::post('/adduser', [UserController::class,'store_'])->name ('register_store');
 Route::get('/user/update/{id}', [UserController::class, 'edit']);
 Route::post('/user/update/{id}', [UserController::class, 'update']);
 
