@@ -300,3 +300,10 @@ h3 a {
     border: 1px solid #007bff;
 /* >>>>>>> parent of a4fdf86 (chitiettin) */
 
+.btn-group a{
+    text-decoration: none;
+    text-transform: uppercase;    
+}
+.btn-group span{
+    color: black;
+}
