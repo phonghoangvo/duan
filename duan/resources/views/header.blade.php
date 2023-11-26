@@ -27,28 +27,22 @@
                             </ul>
                         </div>
                         <div class="btn-group drop">
-                            <button type="button" class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                VĂN PHÒNG PHẨM
-                            </button>
-                            <ul class="dropdown-menu">
-                            <!-- Dropdown menu links -->
-                            </ul>
+                            @foreach ($danhmucvpp as $dmvpp)
+                            <button type="button"  class="btn align-items-center justify-content-between shadow-none d-flex w-100 border-bottom border-0 ">
+                                <a href="{{ route('cuahang', ['id' => $dmvpp->id]) }}"><span>{{$dmvpp->name}}</span></a>
+                            @endforeach
                         </div>
                         <div class="btn-group drop">
-                            <button type="button" class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                LỊCH
-                            </button>
-                            <ul class="dropdown-menu">
-                            <!-- Dropdown menu links -->
-                            </ul>
+                            @foreach ($danhmuclich as $dml)
+                            <button type="button"  class="btn align-items-center justify-content-between shadow-none d-flex w-100 border-bottom border-0 ">
+                                <a href="{{ route('cuahang', ['id' => $dml->id]) }}"><span>{{$dml->name}}</span></a>
+                            @endforeach
                         </div>
                         <div class="btn-group drop">
-                            <button type="button" class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                TẬP
-                            </button>
-                            <ul class="dropdown-menu">
-                            <!-- Dropdown menu links -->
-                            </ul>
+                            @foreach ($danhmuctap as $dmt)
+                            <button type="button" class="btn align-items-center justify-content-between shadow-none d-flex w-100 border-bottom border-0 ">
+                                <a href="{{ route('cuahang', ['id' => $dmt->id]) }}"><span>{{$dmt->name}}</span></a>
+                            @endforeach
                         </div>
                     </div>
                 </div>

@@ -58,6 +58,27 @@ class Tincontroller extends Controller
             ->get();
 
 
+            $danhmucvpp = DB::table('category')
+            ->select('id', 'name')
+            ->orderby('thutu', 'asc')
+            ->where('name', 'LIKE', '%Văn phòng phẩm%')
+            ->where('hidden', '=', '1')
+            ->get();
+
+        $danhmuclich = DB::table('category')
+            ->select('id', 'name')
+            ->orderby('thutu', 'asc')
+            ->where('name', 'LIKE', '%Lịch%')
+            ->where('hidden', '=', '1')
+            ->get();
+
+        $danhmuctap = DB::table('category')
+            ->select('id', 'name')
+            ->orderby('thutu', 'asc')
+            ->where('name', 'LIKE', '%Tập%')
+            ->where('hidden', '=', '1')
+            ->get();
+
         return view('index', [
             'giamgia' => $giamgia,
             'hot' => $hot,
@@ -65,7 +86,10 @@ class Tincontroller extends Controller
             'lich' => $lich,
             'tap' => $tap,
             'danhmucsach' => $danhmucsach,
-            
+            'danhmucvpp' => $danhmucvpp,
+            'danhmuclich' => $danhmuclich,
+            'danhmuctap' => $danhmuctap,
+
         ]);
     }
 
