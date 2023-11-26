@@ -48,7 +48,13 @@ Route::get('/admin/comment/list',[CommentController::class,'list']);
 Route::get('/lienhe',[ContactController::class,'lienhe']);
 Route::post('/send',[ContactController::class,'send'])->name('sendemail');
 Route::get('/',[TinController::class, 'index']);
-
+//Danhmuc
+Route::get('/admin/listcate',[CategoryController::class,'listcate']);
+Route::get('/admin/addcate',[CategoryController::class,'addcate']);
+Route::post('save_cate',[CategoryController::class,'save_cate'])->name('save_cate');
+Route::get('/admin/editcate/{id}',[CategoryController::class,'edit'])->name('edit');
+Route::put('update/{id}',[CategoryController::class,'update']);
+Route::get('/delcate/{id}',[CategoryController::class,'del']);
 //Cửahang
 Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
 Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
