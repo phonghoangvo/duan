@@ -24,7 +24,7 @@ Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang')
 Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 
 //admin
-Route::get('/admin', [TinController::class, 'admin']);
+Route::get('/admin', [TinController::class, 'admin'])->name('admin');
 Route::get('/admin/list-user',[AdminController::class,'list_user'])->name('listuser');
 
 //quanlitintuc

@@ -52,7 +52,7 @@ class AccountController extends Controller
             $user->password = $_POST['password'];
 
             // Đặt ảnh đại diện mặc định
-            $defaultAvatarPath = 'img/user.png'; // Đặt đúng đường dẫn của ảnh đại diện mặc định
+            $defaultAvatarPath = '/img/user.png'; // Đặt đúng đường dẫn của ảnh đại diện mặc định
             $user->avatar = $defaultAvatarPath;
 
             // Lưu thông tin người dùng
