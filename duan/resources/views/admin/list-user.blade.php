@@ -3,7 +3,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Danh Sách Khach Hang</h1>
+    <h2>Danh sách người dùng</h2>
 
 
     {{-- {{-- <!-- DataTales Example --> --}}

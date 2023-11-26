@@ -5,11 +5,8 @@ Use App\Http\Controllers\AdminController;
 Use App\Http\Controllers\UserController;    
 Use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ContactController;
-<<<<<<< Updated upstream
-=======
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CommentController;
->>>>>>> Stashed changes
 use App\Http\Controllers\TinController;
 use App\Models\User;
 use App\Http\Requests\RuleRegister;
@@ -39,11 +36,7 @@ Route::post('/admin/themtin', [TinController::class, 'themtin_'])->name('themtin
 Route::get('xoa/{id}', [TinController::class, 'xoa']);
 Route::get('/admin/suatin/{id}', [TinController::class, 'suatin'])->name('suatin');
 Route::put('/admin/capnhat/{id}', [TinController::class, 'capnhat'])->name('capnhat');
-<<<<<<< Updated upstream
 
-
-
-=======
 //quanlisanpham
 Route::get('/admin/list',[ProductController::class,'list']);
 Route::get('/admin/add',[ProductController::class,'add']);
@@ -63,7 +56,6 @@ Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timk
 Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
 //chitiet
 Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
->>>>>>> Stashed changes
 
  // adduser
  Route::get('/adduser', [UserController::class,'create']);

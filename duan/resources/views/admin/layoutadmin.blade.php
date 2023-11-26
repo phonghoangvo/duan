@@ -87,9 +87,6 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản Lý Đanh Mục:</h6>
                         <a class="collapse-item" href="utilities-color.html">Tất Cả Danh Mục</a>
-                        <a class="collapse-item" href="utilities-border.html">Thêm Danh Mục</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>
                 </div>
             </li>
@@ -97,7 +94,7 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="true" aria-controls="collapseThree">
                     <i class="fas fa-comment"></i>
-                    <span>Quản Lý Binh Luan</span>
+                    <span>Quản Lý Bình Luận</span>
                 </a>
                 <div id="collapseThree" class="collapse" aria-labelledby="collapseThree"
                     data-parent="#accordionSidebar">
