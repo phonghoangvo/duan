@@ -12,7 +12,7 @@
     <div class="container pt-3 pb-3 px-0">
         <h2>Trang Thanh Toán</h2>
         <div class="row">
-            <div class="col-lg-7 p-5 left">
+            <div class="col-lg-6 p-5 left">
                 <h5>Thông tin giao hàng</h5>
                 <form>
                     <div class="mb-3">
@@ -89,13 +89,13 @@
                     </div>
                 </form>
             </div>
-            <div class="col-lg-5 p-5">
+            <div class="col-lg-6 p-5">
                 <div>
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Sản phẩm</th>
+                                <th scope="col">Hình ảnh</th>
                                 <th scope="col">Số lượng</th>
                                 <th scope="col">Giá</th>
                                 <th scope="col">Thành tiền</th>
@@ -111,8 +111,9 @@
                                     $total += $details['price'] * $details['quanlity']
                                 @endphp
                                 <tr>
-                                    <th scope="row">{{ $details['id'] }}</th>
+                                  
                                     <td>{{ $details['name'] }}</td>
+                                    <td><img src="/uploads/{{ $details['img'] }}" alt="" width="50px" height="50px"></td>
                                     <td> 
                                         <input type="number" value="{{ $details['quanlity'] }}" class="form-control quanlity cart-update" min="1">
                                     </td>

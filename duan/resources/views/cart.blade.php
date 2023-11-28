@@ -43,7 +43,7 @@
                                 @endphp
                                 <tr data-id="{{ $id }}">
                                     <th scope="row">{{ $details['id'] }}</th>
-                                    <td>{{ $details['img'] }}</td>
+                                    <td><img src="/uploads/{{ $details['img'] }}" alt="" width="50px" height="50px"></td>
                                     <td>{{ $details['name'] }}</td>
                                     <td> 
                                         <input type="number" value="{{ $details['quanlity'] }}" class="form-control quantity cart-update" min="1">
