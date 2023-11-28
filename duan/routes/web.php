@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Tincontroller;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +18,6 @@ Route::get('/',[TinController::class, 'index']);
 Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
 
 Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
-
 
 
 //giohang
