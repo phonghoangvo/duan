@@ -78,7 +78,7 @@ Dashboard - Quản Trị Website
                                 </td>
                                 
                                   <td>
-                                      <a href="{{ url("xoa/{$loadtin->id}") }}" class="btn btn-danger w-100" onclick="return confirm('Bạn có thật sự muốn xóa không?')">Xóa</a>
+                                      <a href="{{ url("xoa/{$loadtin->id}") }}" class="btn btn-danger w-100 mb-2" onclick="return confirm('Bạn có thật sự muốn xóa không?')">Xóa</a>
 
                                       <a href="{{ route('suatin', ['id' => $loadtin->id]) }}" class="btn btn-info w-100">Sửa</a>
                                   </td>

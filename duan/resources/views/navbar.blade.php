@@ -3,7 +3,7 @@
         <div class="container px-0">
             <!-- Logo -->
             <a class="navbar-brand" href="/">
-                <img src="/img/logo.png" alt="" style="width: 180px;">
+                <img src="/img/logo.jpg" alt="" style="width: 180px; height:80px">
             </a>
             <!-- Toggle Btn -->
             <button class="navbar-toggler shadow-none border-" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -50,16 +50,45 @@
                         <li class="nav-item d-flex">
                             <a class="nav-link text-primary" href="giohang.html">
                                 <button class="btn">
-                                    <i class="bi bi-cart-check-fill"></i>
+                                    <i class="bi bi-cart-check-fill" style="font-size: 1.5em"></i>
                                     0
                                 </button>
                             </a>
                         </li>
                     </ul>
                     <!-- Login/Logout -->
-                    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                        <a href="dangnhap.html" class="text-dark text-decoration-none px-3 py-1 rounded-4" style="background-color: antiquewhite;">Đăng nhập</a>
-                    </div>
+                    @if(Auth::check())
+                        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+                            <div class="dropdown">
+                                <div class="d-flex align-items-center" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="{{ Auth::user()->avatar }}" alt="User Avatar" class="avatar" width="25px"> 
+                                    <span style="margin-left: 5px;">{{ Auth::user()->name }}</span>
+                                </div>
+                        
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+
+                                <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item" href="#">Chỉnh sửa thông tin</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <!-- Thêm mục "Trang quản trị" nếu idGroup là 1 -->
+                                        @if(Auth::user()->id_group == 1)
+                                            <a class="dropdown-item" href="{{ route('admin') }}">Trang quản trị</a>
+                                            <li><hr class="dropdown-divider"></li>
+                                        @endif
+                                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    @else
+                        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+                            <a href="/login" class="text-dark text-decoration-none px-3 py-1 rounded-4" style="background-color: antiquewhite;">Đăng nhập</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

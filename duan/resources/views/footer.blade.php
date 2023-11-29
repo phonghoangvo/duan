@@ -1,9 +1,9 @@
 <section>
-            <div class="container pt-5">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-5 text-start">
                         <a href="#">
-                            <img class="w-75 mb-3" src="img/logo.png" alt="">
+                            <img class="w-75 mb-3" src="img/logo.jpg" alt="">
                         </a>
                         <p>
                             <i class="bi bi-geo-alt"></i>

@@ -16,9 +16,12 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">  
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">  
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom styles for this template-->
-    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../css/add.css" rel="stylesheet">
 
 </head>
 
@@ -31,11 +34,14 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+                {{-- <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
+                </div> --}}
+                <div>
+                    <img src="/upload/logo.png" alt="" style="width: 200px">
                 </div>
-                <div class="sidebar-brand-text mx-3">FPOLY BOOK <sup>Admin</sup></div>
+                {{-- <div class="sidebar-brand-text mx-3">FPOLY BOOK <sup>Admin</sup></div> --}}
             </a>
 
             <!-- Divider -->
@@ -66,8 +72,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản Lý Sản Phẩm:</h6>
-                        <a class="collapse-item" href="buttons.html">Tất Cả Sản Phẩm</a>
-                        <a class="collapse-item" href="cards.html">Thêm Sản Phẩm</a>
+                        <a class="collapse-item" href="{{url('admin/list')}}">Tất Cả Sản Phẩm</a>
+                        <a class="collapse-item" href="{{url('admin/add')}}">Thêm Sản Phẩm</a>
                     </div>
                 </div>
             </li>
@@ -84,9 +90,20 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản Lý Đanh Mục:</h6>
                         <a class="collapse-item" href="utilities-color.html">Tất Cả Danh Mục</a>
-                        <a class="collapse-item" href="utilities-border.html">Thêm Danh Mục</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="true" aria-controls="collapseThree">
+                    <i class="fas fa-comment"></i>
+                    <span>Quản Lý Bình Luận</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="collapseThree"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Quản Lý Bình Luận</h6>
+                        <a class="collapse-item" href="{{url('/admin/comment/list')}}">Tất Cả Bình Luận</a>
                     </div>
                 </div>
             </li>
@@ -107,17 +124,6 @@
                 </div>
             </li>
 
-            
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Mục Khác
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
@@ -126,19 +132,13 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="{{route('listuser')}}">Quản lý user</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Charts -->
+            <!-- Divider -->
+
             <!-- <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -342,10 +342,15 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Khoa Phan</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
-                            </a>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                        @if(Auth::check())
+                                            {{ Auth::user()->name }}
+                                        @endif
+                                        <img class="img-profile rounded-circle" src="{{ Auth::user()->avatar }}">
+                                    </span>
+                                   
+                                </a>
+
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
