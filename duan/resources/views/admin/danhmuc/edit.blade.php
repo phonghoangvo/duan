@@ -18,9 +18,9 @@ Dashboard - Quản Trị Website
                 <div class="formbold-input-flex">
                     <div>
                         <input type="hidden" name="id" value="{{$cate->id}}">
-                        <input type="text" style="width:550px" name="name" id="name" placeholder="Nhập Tên Sản Phẩm"
+                        <input type="text" style="width:550px" name="name" id="name" placeholder="Nhập Tên Danh Mục"
                             class="formbold-form-input" value="{{$cate->name}}" />
-                        <label for="name" class="formbold-form-label"> Tên Sản Phẩm </label>
+                        <label for="name" class="formbold-form-label"> Tên Danh Mục </label>
                     </div>
                 </div>
 
