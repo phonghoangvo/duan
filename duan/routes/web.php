@@ -53,7 +53,7 @@ Route::get('/admin/listcate',[CategoryController::class,'listcate']);
 Route::get('/admin/addcate',[CategoryController::class,'addcate']);
 Route::post('save_cate',[CategoryController::class,'save_cate'])->name('save_cate');
 Route::get('/admin/editcate/{id}',[CategoryController::class,'edit'])->name('edit');
-Route::put('update/{id}',[CategoryController::class,'update']);
+// Route::put('update/{id}',[CategoryController::class,'update']);
 Route::get('/delcate/{id}',[CategoryController::class,'del']);
 //Cửahang
 Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');

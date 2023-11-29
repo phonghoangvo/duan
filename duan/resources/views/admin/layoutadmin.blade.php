@@ -89,7 +89,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Quản Lý Đanh Mục:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Tất Cả Danh Mục</a>
+                        <a class="collapse-item" href="{{url('admin/listcate')}}">Tất Cả Danh Mục</a>
                     </div>
                 </div>
             </li>
