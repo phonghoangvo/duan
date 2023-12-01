@@ -42,7 +42,7 @@ class RuleThemsp extends FormRequest
             'nhaxuatban.required'=> 'Phải nhập nhà xuất bản',
             'tacgia.required'=> 'Phải nhập tên tác giả',
             'ngayDang.required'=> 'Cần nhập ngày đăng ',
-            'moTa.required'=> 'Phải có moTa',
+            'moTa.required'=> 'Phải có mô tả',
             'idCategory.required'=> 'Phải có danh mục sản phẩm',
             'img.required'=> 'Phải có hình ảnh'
         ];
