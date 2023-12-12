@@ -12,7 +12,7 @@
         <div class="row  pt-2 pb-2">
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$giamgia[0]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$giamgia[0]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -38,7 +38,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$giamgia[1]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$giamgia[1]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -64,7 +64,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$giamgia[2]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$giamgia[2]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -90,7 +90,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$giamgia[3]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$giamgia[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -116,7 +116,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$giamgia[4]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$giamgia[4]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -142,7 +142,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$giamgia[5]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$giamgia[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -194,7 +194,7 @@
         <div class="row  pt-2 pb-2">
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$hot[0]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$hot[0]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -220,7 +220,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$hot[1]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$hot[1]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -246,7 +246,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$hot[2]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$hot[2]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -272,7 +272,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$hot[3]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$hot[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -298,7 +298,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$hot[4]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$hot[4]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -324,7 +324,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$hot[5]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$hot[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -374,7 +374,7 @@
         <div class="row  pt-2 pb-2">
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$vanphongpham[0]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$vanphongpham[0]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -400,7 +400,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$vanphongpham[1]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$vanphongpham[1]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -426,7 +426,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$vanphongpham[2]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$vanphongpham[2]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -452,7 +452,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$vanphongpham[3]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$vanphongpham[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -478,7 +478,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$vanphongpham[4]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$vanphongpham[4]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -504,7 +504,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$vanphongpham[5]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$vanphongpham[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -553,7 +553,7 @@
         <div class="row  pt-2 pb-2">
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$lich[0]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$lich[0]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -579,7 +579,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$lich[1]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$lich[1]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -605,7 +605,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$lich[2]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$lich[2]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -631,7 +631,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$lich[3]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$lich[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -657,7 +657,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$lich[4]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$lich[4]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -683,7 +683,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$lich[5]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$lich[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -731,7 +731,7 @@
         <div class="row pt-2 pb-2">
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$tap[0]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$tap[0]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -757,7 +757,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$tap[1]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$tap[1]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -783,7 +783,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$tap[2]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$tap[2]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -809,7 +809,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$tap[3]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$tap[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -835,7 +835,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$tap[4]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$tap[4]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
@@ -861,7 +861,7 @@
             </div>
             <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
-                    <img class="card-img-top" src="uploads/{{$tap[5]->img}}" alt="" width="100%" height="250px">
+                    <img class="card-img-top" src=" {{$tap[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
                         <a href="ctsp.html" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
