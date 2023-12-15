@@ -91,7 +91,7 @@ Dashboard - Quản Trị Website
                                     id="customFile" />
                             </label>
                             @if($product->img)
-                            <img src="{{$product->img}}">
+                            <img src="/uploads/{{$product->img}}">
                             @endif
                             <div class="button">
                             <input type="submit" value="Cập Nhật" class="formbold-btn">
