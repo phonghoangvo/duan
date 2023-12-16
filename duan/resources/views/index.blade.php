@@ -450,7 +450,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-2 col-sm-4 p-1 px-1">
+            {{-- <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$vanphongpham[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
@@ -527,7 +527,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             
         </div>
         <div class="text-center">
@@ -681,7 +681,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-2 col-sm-4 p-1 px-1">
+            {{-- <div class="col-xl-2 col-sm-4 p-1 px-1">
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$lich[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
@@ -706,7 +706,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="text-center">
             <a class="" href="{{ route('cuahang', ['id' => 29]) }}">
