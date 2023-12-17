@@ -27,5 +27,5 @@ Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang')
 Route::get('/giohang',[CartController::class,'cart']);
 Route::get('/thanhtoan',[CartController::class,'cartcheck']);
 Route::get('add-to-cart/{id}', [CartController::class,'addToCart'])->name('add_to_cart');
-Route::match(['patch'], '/update-cart', 'CartController@updateCart')->name('update_cart');
+Route::put('update-cart', [CartController::class,'updateCart'])->name('update_cart');
 Route::delete('remove-from-cart', [CartController::class,'remove'])->name('remove_from_cart');
