@@ -58,7 +58,8 @@ Route::get('/delcate/{id}',[CategoryController::class,'del']);
 //Cửahang
 Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
 Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
-
+//comment
+Route::post('/comment/{idProduct}',[TinController::class,'post_comment'])->name('comment');
 //chitiet
 Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 
