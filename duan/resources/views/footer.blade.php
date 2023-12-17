@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-lg-5 text-start">
                         <a href="#">
-                            <img class="w-75 mb-3" src="img/logo.jpg" alt="">
+                            <img class="w-75 mb-3" src="/img/logo.jpg" alt="">
                         </a>
                         <p>
                             <i class="bi bi-geo-alt"></i>
@@ -47,7 +47,7 @@
                         <p>Gọi mua hàng: <b>0938.897.895</b> (7h30-17h00)</p>
                         <p>Gọi khiếu nại: <b>0938.897.895</b> (7h30-17h00)</p>
                         <h5>Phương thức thanh toán</h5>
-                        <p><img class="w-75" src="upload/footer-pay.jpg" alt=""></p>
+                        <p><img class="w-75" src="/upload/footer-pay.jpg" alt=""></p>
                     </div>
                 </div>
             </div>
