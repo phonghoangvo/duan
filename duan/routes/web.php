@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Tincontroller;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,8 +22,6 @@ Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang')
 Route::get('/giohang',[Tincontroller::class,'cart']);
 Route::get('/thanhtoan',[Tincontroller::class,'cartcheck']);
 
-
 //giohang
-Route::get('add-to-cart/{id}', [Tincontroller::class,'addToCart'])->name('add_to_cart');
-Route::patch('update-cart', [Tincontroller::class,'updateCart'])->name('update_cart');
-Route::delete('remove-from-cart', [Tincontroller::class,'remove'])->name('remove_from_cart');
+Route::get('/giohang',[CartController::class,'giohang'])->name('giohang');
+Route::get('/giohang/cuahang',[CartController::class,'themgiohang'])->name('giohang.cuahang');
