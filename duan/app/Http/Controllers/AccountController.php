@@ -49,7 +49,11 @@ class AccountController extends Controller
             // Thiết lập thông tin người dùng
             $user->name = $_POST['name'] . ' ' . $_POST['lastname'];
             $user->email = $_POST['email'];
+            $user->address = $_POST['address'];
+            $user->phone = $_POST['phone'];
             $user->password = $_POST['password'];
+
+            
 
             // Đặt ảnh đại diện mặc định
             $defaultAvatarPath = '/img/user.png'; // Đặt đúng đường dẫn của ảnh đại diện mặc định
@@ -81,9 +85,9 @@ class AccountController extends Controller
     }
     public function reset_password(Request $request){
         $token = bcrypt($request->token);
-        dd($token);
+        // dd($token);
         $email = $request->email;
-        $password_reset_token = password_reset_tokens::where('email',$email)->first();
+        // $password_reset_token = password_reset_tokens::where('email',$email)->first();
     }
     public function logout(){
         Auth::logout();
