@@ -65,42 +65,6 @@
           document.documentElement.scrollTop = 0;
         }
         </script>
-        <script type="text/javascript">
-          $(".cart-update").change(function (e){
-              e.preventDefault();
-              var ele = $(this);
-              $.ajax({
-                  url: '{{ route('update_cart') }}',
-                  method: "patch",
-                  data: {
-                      _token: '{{ csrf_token() }}',
-                      id: ele.parents("tr").attr("data-id"),
-                      quanlity: ele.parents("tr").find(".quanlity").val()
-                  },
-                  success: function(response){
-                      window.location.reload();
-                  }
-              });
-          });
-  
-          $(".cart-remove").click(function(e){
-              e.preventDefault();
-              var ele = $(this);
-              if(confirm("Bạn có muốn xóa sản phẩm khỏi giỏ hàng không?")){
-                  $.ajax({
-                      url: '{{ route('remove_from_cart') }}',
-                      method: "DELETE",
-                      data: {
-                          _token: '{{ csrf_token() }}',
-                          id: ele.parents("tr").attr("data-id")
-                      },
-                      success: function (response) {
-                          window.location.reload();
-                      }
-                  });
-              }
-          });
-      </script>
   
 </body>
 </html>
