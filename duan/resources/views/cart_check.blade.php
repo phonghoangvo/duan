@@ -1,3 +1,4 @@
+
 @extends('layout')
 @section('tieudetrang')
     Thanh toán
@@ -12,46 +13,65 @@
     <div class="container pt-3 pb-3 px-0">
         <h2>Trang Thanh Toán</h2>
         <div class="row">
-            <div class="col-lg-7 p-5 left">
+            <div class="col-lg-5 p-5 left">
                 <h5>Thông tin giao hàng</h5>
                 <form>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="hoTen" placeholder="Họ và Tên" required>
                     </div>
                     <div class="row">
-                        <div class="col-lg-8 mb-3">
+                         <div class="col-lg-8 mb-3">
                             <input type="email" class="form-control" id="email" placeholder="Email" required>
                         </div>
                         <div class="col-lg-4 mb-3">
                             <input type="tel" class="form-control" id="soDienThoai" placeholder="Số điện thoại"
-                                required>
+                                 required>
                         </div>
                     </div>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="diaChi" placeholder="Địa chỉ" required>
                     </div>
-
-
+                
+                        
                     <div class="mb-3">
                         <label for="" class="form-label">Phương thức giao hàng:</label>
                         <div class="form-control">
                             <input type="radio" checked>
-                            <span> Giao hàng tận nơi</span>
-                            <span class="text-end">30.000 Đ</span>
+                                    <span> Giao hàng tận nơi</span>
+                                    <span class="text-end">30.000 Đ</span>
                         </div>
                     </div>
-
+                
                     <div class="mb-3">
                         <label for="phuongThucThanhToan" class="form-label">Phương Thức Thanh Toán:</label>
-                        <div class="">
-                            <input type="radio" name="phuongthucthanhtoan" value="tructiep" id="thanhtoan1">
+                        <div class="form-check">
+                            <input type="radio" name="phuongthucthanhtoan" value="tructiep" id="thanhtoan1" class="form-check-input">
                             <label for="thanhtoan1" class="form-check-label">Trực tiếp</label>
                         </div>
-                        <div class="">
-                            <input type="radio" name="phuongthucthanhtoan" value="thetindung" id="thanhtoan2">
+                        <div class="form-check">
+                            <input type="radio" name="phuongthucthanhtoan" value="thetindung" id="thanhtoan2" class="form-check-input">
                             <label for="thanhtoan2" class="form-check-label">Thẻ tín dụng</label>
                         </div>
                     </div>
+                
+                    <div class="form-row d-none" id="card-thanhtoan-form">
+                        <div class="form-group col mb-3">
+                            <label for="inputCardNumber">Số thẻ:</label>
+                            <input type="text" class="form-control" id="inputCardNumber" placeholder="Điền số trên thẻ">
+                        </div>
+                        <div class="row mb-3">
+                            <div class="form-group col-md-6">
+                                <label for="inputCardHolder">Tên chủ thẻ:</label>
+                                <input type="text" class="form-control" id="inputCardHolder" placeholder="VD: NGUYEN VAN A">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputExpiration">Thời gian hiệu lực:</label>
+                                <input type="text" class="form-control" id="inputExpiration" placeholder="MM/YYYY">
+                            </div>
+                        </div>
+                    </div>
+                    
+                                                   
                     <div class="mb-3">
                         <label for="ghiChu" class="form-label">Ghi Chú:</label>
                         <textarea class="form-control" id="ghiChu" rows="3"></textarea>
@@ -63,16 +83,15 @@
                         <div class="col-lg-6 text-end">
                             <button type="submit" class="btn btn-primary">Hoàn tất đơn hàng</button>
                         </div>
-
                     </div>
                 </form>
             </div>
-            <div class="col-lg-5 p-5">
+            <div class="col-lg-7 p-5">
                 <div>
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">STT</th>
                                 <th scope="col">Sản phẩm</th>
                                 <th scope="col">Hình ảnh</th>
                                 <th scope="col">Số lượng</th>
@@ -82,25 +101,26 @@
                         </thead>
                         <tbody>
                             @php
-                            $total = 0
-                        @endphp
-                        @if (session('cart'))
-                            @foreach (session('cart') as $id => $details)
-                                @php
-                                    $total += $details['price'] * $details['quanlity']
-                                @endphp
-                                <tr>
-                                    <th scope="row">{{ $details['id'] }}</th>
-                                    <td>{{ $details['name'] }}</td>
-                                    <td><img src="/uploads/{{ $details['img'] }}" alt="" width="50px" height="50px"></td>
-                                    <td> 
-                                        <input type="number" value="{{ $details['quanlity'] }}" class="form-control quanlity cart-update" min="1">
-                                    </td>
-                                    <td>{{number_format( $details['price']) }}₫</td>
-                                    <td>{{number_format( $details['price'] * $details['quanlity'] )}}₫</td>
-                                </tr>
-                            @endforeach
-                        @endif
+                            $total = 0;
+                            $stt = 1;
+                            @endphp
+                            @if (session('cart'))
+                                @foreach (session('cart') as $id => $details)
+                                    @php
+                                    $total += $details['price'] * ($details['quantity'] ?? 1);
+                                    @endphp
+                                    <tr>
+                                        <td>{{$stt++}}</td>
+                                        <td>{{ $details['name'] }}</td>
+                                        <td class="col-2"><img src="/uploads/{{ $details['img'] }}" alt="" width="50px" height="50px"></td>
+                                        <td> 
+                                            <input type="number" value="{{ $details['quantity'] ?? 1 }}" class="form-control quantity cart-update" min="1" name="quantity[{{ $details['id'] }}]">
+                                        </td>
+                                        <td>{{number_format( $details['price']) }}₫</td>
+                                        <td class="col-2">{{number_format( $details['price'] * ($details['quantity'] ?? 1) )}}₫</td>
+                                    </tr>
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -142,4 +162,26 @@
             </div>
         </div>
     </div>
+   
+@endsection
+
+@section('custom')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    var thanhtoan1 = document.getElementById('thanhtoan1');
+    var thanhtoan2 = document.getElementById('thanhtoan2');
+    var cardThanhtoanForm = document.getElementById('card-thanhtoan-form');
+
+    thanhtoan1.addEventListener('input', function () {
+        console.log('Thanh toan 1 selected');
+        cardThanhtoanForm.classList.add('d-none');
+    });
+
+    thanhtoan2.addEventListener('input', function () {
+        console.log('Thanh toan 2 selected');
+        cardThanhtoanForm.classList.remove('d-none');
+    });
+});
+
+    </script>
 @endsection

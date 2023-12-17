@@ -14,6 +14,7 @@
     <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.theme.default.min.css">
+    
 </head>
 <body>
     @include('navbar')
@@ -27,9 +28,7 @@
 
 
     <!-- Footer Start -->
-    <footer>
-        @include('footer')
-    </footer>
+   
     <!-- Footer End -->
 
     <!-- Back-to-top -->
@@ -38,7 +37,9 @@
     </button>
 
 
-
+    <footer>
+        @include('footer')
+    </footer>
 
     <!-- javascript -->
     <script src="/assets/vendors/jquery.min.js"></script>
@@ -102,43 +103,6 @@
             }
         });
     </script>
-
-        <script type="text/javascript">
-          $(".cart-update").change(function (e){
-              e.preventDefault();
-              var ele = $(this);
-              $.ajax({
-                  url: '{{ route('update_cart') }}',
-                  method: "patch",
-                  data: {
-                      _token: '{{ csrf_token() }}',
-                      id: ele.parents("tr").attr("data-id"),
-                      quanlity: ele.parents("tr").find(".quanlity").val()
-                  },
-                  success: function(response){
-                      window.location.reload();
-                  }
-              });
-          });
-  
-          $(".cart-remove").click(function(e){
-              e.preventDefault();
-              var ele = $(this);
-              if(confirm("Bạn có muốn xóa sản phẩm khỏi giỏ hàng không?")){
-                  $.ajax({
-                      url: '{{ route('remove_from_cart') }}',
-                      method: "DELETE",
-                      data: {
-                          _token: '{{ csrf_token() }}',
-                          id: ele.parents("tr").attr("data-id")
-                      },
-                      success: function (response) {
-                          window.location.reload();
-                      }
-                  });
-              }
-          });
-      </script>
 
 </body>
 </html>

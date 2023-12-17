@@ -15,23 +15,23 @@ class CartController extends Controller
     public function addToCart($id){
         $product = Cuahang::findOrFail($id);
         $cart = session()->get('cart', []);
-
+    
         if(isset($cart[$id])){
-            $cart[$id]['quanlity']++;
-        }else{
+            $cart[$id]['quantity']++; 
+        } else {
             $cart[$id] = [
                 "id" => $product->id,
                 "name" => $product->name,
                 "img" => $product->img,
-                "quanlity" => 1,
+                "quantity" => 1,
                 "price" => $product->price,
             ];
         }
-
+    
         session()->put("cart", $cart);
         return redirect()->back()->with("add-to-cart","Bạn đã thêm sản phẩm vào giỏ hàng");
-
     }
+    
     public function updateCart(Request $request){
         if($request->id && $request->quanlity){
             $cart = session()->get('cart');
