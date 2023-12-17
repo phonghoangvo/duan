@@ -5,6 +5,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Tintuc;
 use App\Models\Cuahang;
+use App\Models\Comment;
 use App\Models\Category;
 Paginator::useBootstrap();
 
@@ -174,7 +175,17 @@ public function timkiem(Request $request)
             ->limit(7)
             ->get();
         $products = cuahang::where('id','=',$id)->get();
-        return view('chitiet',compact('products','hot'));
+        $comment = Comment::where('idProduct',$products[0]->id)->orderBy('id','DESC')->get();
+        return view('chitiet',compact('products','hot','comment'));
+    }
+    public function post_comment($proId){
+        $data = request()->all('content');
+        $data['idProduct'] = $proId;
+        $data['idUser'] = auth()->id();
+        if(comment::create($data)){
+            return redirect()->back()->with('success','Bình luận đã được gửi');
+        }
+        return redirect()->back()->with('error', 'Bình luận chua được gửi');
     }
 
     //Tintuc
@@ -255,9 +266,4 @@ public function timkiem(Request $request)
     function gioithieu() {
         return view('gioithieu');
     }
-
-    
-
-
-    
 }
