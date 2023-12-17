@@ -345,8 +345,8 @@
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                         @if(Auth::check())
                                             {{ Auth::user()->name }}
+                                            <img class="img-profile rounded-circle" src="{{ Auth::user()->avatar }}">
                                         @endif
-                                        <img class="img-profile rounded-circle" src="{{ Auth::user()->avatar }}">
                                     </span>
                                    
                                 </a>
@@ -421,28 +421,30 @@
                 <div class="modal-body">Chọn "Đăng Xuất" phía bên dưới nếu bạn chắc chắn muốn thoát.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
-                    <a class="btn btn-primary" href="login.html">Đăng Xuất</a>
+                    <a class="btn btn-primary" href="/">Đăng Xuất</a>
                 </div>
             </div>
         </div>
     </div>
 
+   
+
     <!-- Bootstrap core JavaScript-->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="ad/vendor/jquery/jquery.min.js"></script>
+    <script src="ad/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="ad/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="/js/sb-admin-2.min.js"></script>
+    <script src="ad/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="/vendor/chart.js/Chart.min.js"></script>
+    <script src="ad/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/js/demo/chart-area-demo.js"></script>
-    <script src="/js/demo/chart-pie-demo.js"></script>
+    <script src="ad/js/demo/chart-area-demo.js"></script>
+    <script src="ad/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

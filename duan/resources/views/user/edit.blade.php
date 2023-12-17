@@ -1,5 +1,5 @@
-@extends('admin.layout')
-@section('container')
+@extends('admin.layoutadmin')
+@section('noidung')
 
     <h2>Edit user</h2>
     <form action="/user/update/{{ $user->id }}" method="post" style="padding: 32px; max-width: 50%; border:solid 2px 
@@ -33,10 +33,10 @@
         <input type="number" class="form-control" id="phone" name="phone"value="{{ $user->phone }}">
     </div>
    
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="role">Role:</label>
         <input type="text" class="form-control" id="role" name="role"value="{{ $user->role }}">
-    </div>
+    </div> --}}
     <div class="form-group">
         <button style="cursor:pointer" type="submit" class="btn btn-primary">Sửa</button>
     </div>

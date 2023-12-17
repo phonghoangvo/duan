@@ -203,9 +203,7 @@ public function timkiem(Request $request)
         return view('admin.listtintuc', compact('listtintuc'));
     }
 
-    function admin() {
-        return view('admin.admin');
-    }
+   
 
     function themtin() {
         return view('admin.tin.themtin');
