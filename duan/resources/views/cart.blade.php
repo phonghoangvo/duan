@@ -41,9 +41,15 @@
                             
                         
                                 <tr data-id="{{ $id }}">
+<<<<<<< HEAD
                                     <th scope="row">{{ $item['id'] }}</th>
                                     <td><img src="/uploads/{{ $item['img'] }}" alt="" width="50px" height="50px"></td>
                                     <td>{{ $item['name'] }}</td>
+=======
+                                    <th scope="row">{{ $details['id'] }}</th>
+                                    <td>{{ $details['img'] }}</td>
+                                    <td>{{ $details['name'] }}</td>
+>>>>>>> parent of db173bd (suahinhanh)
                                     <td> 
                                         <input type="number" value="{{ $item['quanlity'] }}" class="form-control quantity cart-update" min="1">
                                     </td>
