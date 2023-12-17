@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Đăng nhập</title>
+    <title>SB Admin 2 - Forgot Password</title>
 
     <!-- Custom fonts for this template-->
     <link href="/ad/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -21,7 +21,6 @@
     <link href="/ad/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-
 <body class="bg-gradient-primary">
 
     <div class="container">
@@ -35,51 +34,36 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Chào mừng trở lại!</h1>
+                                        <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
+                                        <p class="mb-4">We get it, stuff happens. Just enter your email address below
+                                            and we'll send you a link to reset your password!</p>
                                     </div>
-                                    @if(session('thongbao'))
-                                        <div class="alert alert-success">
-                                            {{ session('thongbao') }}
-                                        </div>
-                                    @endif
+                                        @if (session('thongbao'))
+                                            <div class="alert alert-success">
+                                                {{ session('thongbao') }}
+                                            </div>
+                                        @endif
                                     <form class="user" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Nhập địa chỉ email...." name="email">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Mật Khẩu" name="password">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Ghi nhớ đăng nhập</label>
-                                            </div>
+                                                placeholder="Enter Email Address..." name="email">
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Đăng Nhập
+                                            Reset Password
                                         </button>
-                                        <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Đăng nhập bằng Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Đăng nhập bằng Facebook
-                                        </a>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password1">Quên mật khẩu?</a>
+                                        <a class="small" href="register.html">Create an Account!</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register">Đăng ký tài khoản mới!</a>
+                                        <a class="small" href="login.html">Already have an account? Login!</a>
                                     </div>
                                 </div>
                             </div>

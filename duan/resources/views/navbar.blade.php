@@ -75,10 +75,10 @@
                                     <li><hr class="dropdown-divider"></li>
                                     <li>
                                         <!-- Thêm mục "Trang quản trị" nếu idGroup là 1 -->
-                                        @if(Auth::user()->id_group == 1)
+                                        {{-- @if(Auth::user()->id_group == 1)
                                             <a class="dropdown-item" href="{{ route('admin') }}">Trang quản trị</a>
                                             <li><hr class="dropdown-divider"></li>
-                                        @endif
+                                        @endif --}}
                                         <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng xuất</a>
                                     </li>
                                 </ul>
