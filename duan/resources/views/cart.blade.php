@@ -9,10 +9,7 @@
         </a> /
         <small>Giỏ hàng</small>
     </div>
-    
     <div class="container pt-3 pb-3 px-0">
-        
-            
         <h4 class="mb-4">Giỏ hàng</h4>
         <div class="container px-0">
             @if (session('success'))
@@ -23,7 +20,6 @@
         </div>
         <div class="row">
             <div class=" p-3">
-                @if ($giohang->Count()>0)
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -37,10 +33,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($giohang as $item)
-                            
-                        
+                        @php
+                            $total = 0
+                        @endphp
+                        @if (session('cart'))
+                            @foreach (session('cart') as $id => $details)
+                                @php
+                                    $total += $details['price'] * $details['quanlity']
+                                @endphp
                                 <tr data-id="{{ $id }}">
+<<<<<<< HEAD
 <<<<<<< HEAD
                                     <th scope="row">{{ $item['id'] }}</th>
                                     <td><img src="/uploads/{{ $item['img'] }}" alt="" width="50px" height="50px"></td>
@@ -50,17 +52,24 @@
                                     <td>{{ $details['img'] }}</td>
                                     <td>{{ $details['name'] }}</td>
 >>>>>>> parent of db173bd (suahinhanh)
+=======
+                                    <th scope="row">{{ $details['id'] }}</th>
+                                    <td><img src="/uploads/{{ $details['img'] }}" alt="" width="50px" height="50px"></td>
+                                    <td>{{ $details['name'] }}</td>
+>>>>>>> parent of cd97b92 (giohang)
                                     <td> 
-                                        <input type="number" value="{{ $item['quanlity'] }}" class="form-control quantity cart-update" min="1">
+                                        <input type="number" value="{{ $details['quanlity'] }}" class="form-control quantity cart-update" min="1">
                                     </td>
-                                    <td>{{number_format($item['price']) }}₫</td>
-                                    <td>{{number_format ($item['price'] * $item['quanlity']) }}₫</td>
+                                    <td>{{number_format($details['price']) }}₫</td>
+                                    <td>{{number_format ($details['price'] * $details['quanlity']) }}₫</td>
                                     <td><button class="btn btn-danger btn-sm cart-remove">Xóa</button></td>
                                 </tr>
-                        @endforeach
+                            @endforeach
+                        @endif
                     </tbody>
                 </table>
-                
+                <label>Ghi chú đơn hàng</label>
+                <textarea class="form-control" id="ghiChu" rows="3"></textarea>
             </div>
             <div class="col-lg-3 p-3 hg">
                 <div class="p-2">
@@ -69,10 +78,10 @@
                 <div class="p-2">
                     <div class="row">
                         <div class="col-6">
-                            <h5>Tổng cộng: {{Cart::instance('giohang')->total()}}</h5>
+                            <h5>Tổng cộng:</h5>
                         </div>
                         <div class="col-6">
-                            <h5 class="text-end text-danger">₫</h5>
+                            <h5 class="text-end text-danger">{{number_format($total) }}₫</h5>
                         </div>
                     </div>
                 </div>
@@ -84,15 +93,6 @@
                     </button>
                 </div>
             </div>
-            @else
-                <table class="table table-hover">
-                    <thead>
-                        <h2>Giỏ hàng của bạn đang trống!</h2>
-                        <h5 class="mt-3">Thêm sản phẩm vào ngay!!</h5>
-                        <a href="{{route('cuahang')}}" class="btn btn-warning mt-5">Mua ngay</a>
-                    </thead>
-                </table>
-             @endif
         </div>
     </div>
 @endsection
