@@ -11,9 +11,12 @@ class Comment extends Model
     protected $table = 'comment';
     protected $primaryKey = 'id';
     protected $fillable =[
-        'id_user',
-        'id_product',
-        'content',
-        'time'
+        'idUser',
+        'idProduct',
+        'content'
     ];
+    public function users()
+    {
+        return $this->hasOne(Users::class,'id','idUser');
+    }
 }
