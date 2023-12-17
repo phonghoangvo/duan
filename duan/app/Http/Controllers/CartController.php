@@ -23,7 +23,7 @@ class CartController extends Controller
                 "id" => $product->id,
                 "name" => $product->name,
                 "img" => $product->img,
-                "quanlity" => 1,
+                "quantity" => 1,
                 "price" => $product->price,
             ];
         }
@@ -33,15 +33,18 @@ class CartController extends Controller
 
     }
     public function updateCart(Request $request){
-        if($request->id && $request->quanlity){
-            $cart = session()->get('cart');
-            $cart[$request->id]["quanlity"] = $request->quanlity;
-            session()->put('cart', $cart);
-            session()->flash('success','Gio hang da duoc cap nhat');
-
+        dd($request->all());
+        if($request->id && $request->quantity){
+            $cart = session()->get('cart', []);
+    
+            if(isset($cart[$request->id])){
+                $cart[$request->id]["quantity"] = $request->quantity;
+                session()->put('cart', $cart);
+                session()->flash('success', 'Giỏ hàng đã được cập nhật');
+            }
         }
-
-    }
+    }    
+    
     public function remove(Request $request){
         if($request->id){
             $cart = session()->get('cart');
