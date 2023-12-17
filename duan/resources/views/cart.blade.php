@@ -42,21 +42,10 @@
                                     $total += $details['price'] * $details['quanlity']
                                 @endphp
                                 <tr data-id="{{ $id }}">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                    <th scope="row">{{ $item['id'] }}</th>
-                                    <td><img src="/uploads/{{ $item['img'] }}" alt="" width="50px" height="50px"></td>
-                                    <td>{{ $item['name'] }}</td>
-=======
-                                    <th scope="row">{{ $details['id'] }}</th>
-                                    <td>{{ $details['img'] }}</td>
-                                    <td>{{ $details['name'] }}</td>
->>>>>>> parent of db173bd (suahinhanh)
-=======
                                     <th scope="row">{{ $details['id'] }}</th>
                                     <td><img src="/uploads/{{ $details['img'] }}" alt="" width="50px" height="50px"></td>
                                     <td>{{ $details['name'] }}</td>
->>>>>>> parent of cd97b92 (giohang)
+
                                     <td> 
                                         <input type="number" value="{{ $details['quanlity'] }}" class="form-control quantity cart-update" min="1">
                                     </td>
