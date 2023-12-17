@@ -31,32 +31,6 @@
                         <input type="text" class="form-control" id="diaChi" placeholder="Địa chỉ" required>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-4 mb-3">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Chọn tỉnh / thành</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-4 mb-3">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Chọn quận / huyện</option>
-                                <option field-input value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-4 mb-3">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Chọn phường / xã</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                    </div>
 
                     <div class="mb-3">
                         <label for="" class="form-label">Phương thức giao hàng:</label>
@@ -69,10 +43,14 @@
 
                     <div class="mb-3">
                         <label for="phuongThucThanhToan" class="form-label">Phương Thức Thanh Toán:</label>
-                        <select class="form-select" id="phuongThucThanhToan" required>
-                            <option value="the_tin_dung">Thẻ Tín Dụng</option>
-                            <option value="chuyen_khoan">Chuyển Khoản Ngân Hàng</option>
-                        </select>
+                        <div class="">
+                            <input type="radio" name="phuongthucthanhtoan" value="tructiep" id="thanhtoan1">
+                            <label for="thanhtoan1" class="form-check-label">Trực tiếp</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="phuongthucthanhtoan" value="thetindung" id="thanhtoan2">
+                            <label for="thanhtoan2" class="form-check-label">Thẻ tín dụng</label>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="ghiChu" class="form-label">Ghi Chú:</label>
