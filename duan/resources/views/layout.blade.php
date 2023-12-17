@@ -66,6 +66,7 @@
         }
         </script>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <script type="text/javascript">
         $(".cart-update").change(function (e){
             e.preventDefault();
@@ -104,6 +105,8 @@
     </script>
 
 =======
+=======
+>>>>>>> parent of 2dc8eba (1)
         <script type="text/javascript">
           $(".cart-update").change(function (e){
               e.preventDefault();
@@ -141,6 +144,9 @@
           });
       </script>
   
+<<<<<<< HEAD
+>>>>>>> parent of 2dc8eba (1)
+=======
 >>>>>>> parent of 2dc8eba (1)
 </body>
 </html>

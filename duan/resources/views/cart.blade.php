@@ -10,6 +10,7 @@
         <small>Giỏ hàng</small>
     </div>
     <div class="container pt-3 pb-3 px-0">
+        <h4 class="mb-4">Giỏ hàng</h4>
         <div class="container px-0">
             @if (session('success'))
                 <div class="alert alert-success">
@@ -19,7 +20,6 @@
         </div>
         <div class="row">
             <div class=" p-3">
-                @if (session('cart') && count(session('cart')) > 0)
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -57,6 +57,8 @@
                         @endif
                     </tbody>
                 </table>
+                <label>Ghi chú đơn hàng</label>
+                <textarea class="form-control" id="ghiChu" rows="3"></textarea>
             </div>
             <div class="col-lg-3 p-3 hg">
                 <div class="p-2">
@@ -80,13 +82,6 @@
                     </button>
                 </div>
             </div>
-            @else
-        <div class="col p-3 text-center">
-            <h2>Giỏ hàng của bạn đang trống!</h2>
-            <h5>Hãy thêm sản phẩm vào ngay!!</h5>
-            <a href="{{ url("/cuahang") }}" class="btn btn-primary">Mua ngay</a>
-        </div>
-    @endif
         </div>
     </div>
 @endsection
