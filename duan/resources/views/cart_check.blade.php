@@ -12,7 +12,7 @@
     <div class="container pt-3 pb-3 px-0">
         <h2>Trang Thanh Toán</h2>
         <div class="row">
-            <div class="col-lg-7 p-5 left">
+            <div class="col-lg-6 p-5 left">
                 <h5>Thông tin giao hàng</h5>
                 <form>
                     <div class="mb-3">
@@ -89,12 +89,12 @@
                     </div>
                 </form>
             </div>
-            <div class="col-lg-5 p-5">
+            <div class="col-lg-6 p-5">
                 <div>
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">Hình ảnh</th>
                                 <th scope="col">Sản phẩm</th>
                                 <th scope="col">Số lượng</th>
                                 <th scope="col">Giá</th>
@@ -111,13 +111,13 @@
                                     $total += $details['price'] * $details['quanlity']
                                 @endphp
                                 <tr>
-                                    <th scope="row">{{ $details['id'] }}</th>
+                                    <td scope="row"><img src="/uploads/{{ $details['img'] }}" width="80px" height="80px" alt=""></td>
                                     <td>{{ $details['name'] }}</td>
                                     <td> 
                                         <input type="number" value="{{ $details['quanlity'] }}" class="form-control quanlity cart-update" min="1">
                                     </td>
                                     <td>{{number_format( $details['price']) }}₫</td>
-                                    <td>{{number_format( $details['price'] * $details['quanlity'] )}}₫</td>
+                                    <td class="col-2">{{number_format( $details['price'] * $details['quanlity'] )}}₫</td>
                                 </tr>
                             @endforeach
                         @endif

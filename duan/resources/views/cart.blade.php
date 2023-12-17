@@ -43,7 +43,7 @@
                                 @endphp
                                 <tr data-id="{{ $id }}">
                                     <th scope="row">{{ $details['id'] }}</th>
-                                    <td>{{ $details['img'] }}</td>
+                                    <td><img src="/uploads/{{ $details['img'] }}" width="80px" height="80px" alt=""></td>
                                     <td>{{ $details['name'] }}</td>
 
                                     <td> 
