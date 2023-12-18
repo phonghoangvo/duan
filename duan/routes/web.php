@@ -11,10 +11,9 @@ use App\Http\Controllers\TinController;
 use App\Models\User;
 use App\Http\Requests\RuleRegister;
 Use App\Http\Controllers\SessionsController;   
-
-
 use App\Http\Controllers\Auth\LoginController;
-Route::get('logout', [LoginController::class,'logout']);
+
+// Route::get('logout', [LoginController::class,'logout']);
 
 //giaodien
 Route::get('/', [TinController::class, 'index']);
@@ -30,13 +29,12 @@ Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 //admin
 //chỉ có tài khoản đã đăng nhập mới được vào
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/account', function () {
-        return view('trangtestdangnhap');
-    })->name('account');
-});        
-
-Route::group(['middleware' => 'auth','checkAdmin'], function () {
+// Route::group(['middleware' => 'auth'], function () {
+//     Route::get('/account', function () {
+//         return view('trangtestdangnhap');
+//     })->name('account');
+// });        
+// Route::group(['middleware' => 'auth','checkAdmin'], function () {
     // Route::prefix('admin')->group(function () {
 
         Route::get('/admin', [AdminController::class, 'index_admin'])->name('admin');
@@ -73,11 +71,11 @@ Route::group(['middleware' => 'auth','checkAdmin'], function () {
         // Route::put('update/{id}',[CategoryController::class,'update']);
         Route::get('/delcate/{id}',[CategoryController::class,'del']);
         //Cửahang
-        Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
-        Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
+        // Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
+        // Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
 
         //chitiet
-        Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
+        // Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 
         // adduser
         Route::get('/adduser', [UserController::class,'create']);
@@ -87,7 +85,7 @@ Route::group(['middleware' => 'auth','checkAdmin'], function () {
 
         Route::get('/user/delete/{id}', [UserController::class, 'delete']);
 
-    });
+    // }); 
 // });
 // account
 Route::get('login',[AccountController::class,'login'])->name('login');
