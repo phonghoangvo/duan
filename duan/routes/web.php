@@ -74,11 +74,11 @@ Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
         // Route::put('update/{id}',[CategoryController::class,'update']);
         Route::get('/delcate/{id}',[CategoryController::class,'del']);
         //Cửahang
-        Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
-        Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
+        // Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timkiem');
+        // Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
 
         //chitiet
-        Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
+        // Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 
         // adduser
         Route::get('/adduser', [UserController::class,'create']);

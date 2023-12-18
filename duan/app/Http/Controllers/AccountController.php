@@ -25,7 +25,7 @@ class AccountController extends Controller
         if (Auth::attempt($credentials)) {  
             // nếu role = 1 thì vào admin nếu role = 0 thì vào home
 
-
+            
                 return redirect('/')->with('thongbao','Đăng nhập thành công');
 
         }

@@ -6,17 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use DB;
+use Illuminate\Pagination\Paginator;
 use App\Http\Requests\RuleThemsp;
 use  Illuminate\Support\Facades\File;
-use Illuminate\Pagination\Paginator;
 Paginator::useBootstrap();
 class ProductController extends Controller
 {
     public function list()
     {
-        $data = Product::get();
+        $page = Product::paginate(15);
+        $data = $page->items();
         $category = Category::all();
-        return view ('admin.sanpham.list',compact('data'));
+        return view ('admin.sanpham.list',compact('data','page'));
     }
 
     /**
