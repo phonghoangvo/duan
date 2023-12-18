@@ -202,20 +202,17 @@ public function timkiem(Request $request)
         $listtintuc = Tintuc::all();
         return view('admin.listtintuc', compact('listtintuc'));
     }
-
-<<<<<<< HEAD
-   
-    //giohang
-    public function cart(){
-        return view('cart');
-=======
     function admin() {
         return view('admin.admin');
     }
 
     function themtin() {
         return view('admin.tin.themtin');
->>>>>>> parent of 6e248a6 (Merge pull request #11 from phonghoangvo/quanlyuser/phuc)
+    }
+   
+    //giohang
+    public function cart(){
+        return view('cart');
     }
     public function cartcheck(){
         return view('cart_check');
