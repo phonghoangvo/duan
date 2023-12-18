@@ -53,7 +53,7 @@
                     </ul>
                     <!-- Login/Logout -->
                     <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                        <a href="dangnhap.html" class="text-dark text-decoration-none px-3 py-1 rounded-4" style="background-color: antiquewhite;">Đăng nhập</a>
+                        <a href="/login" class="text-dark text-decoration-none px-3 py-1 rounded-4" style="background-color: antiquewhite;">Đăng nhập</a>
                     </div>
                 </div>
             </div>

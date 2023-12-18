@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Tincontroller;
 use App\Http\Controllers\CartController;
@@ -21,6 +22,7 @@ Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timk
 
 Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
 
+Route::get('/login',[AccountController::class,'login'])->name('login');
 
 //giohang
 Route::get('/giohang',[CartController::class,'cart'])->name('giohang');
