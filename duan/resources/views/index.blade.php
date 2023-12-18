@@ -19,7 +19,7 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[0]->name}}</a>
+                        <a href="{{url('/chitiet',$giamgia[0]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[0]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
