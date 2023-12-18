@@ -106,7 +106,7 @@ Route::delete('logout',[AccountController::class,'logout'])->name('logout');
 // })->name('404');
 
 //checkadmin
-// Route::group(['middleware' => 'auth','checkAdmin'], function () {
+Route::group(['middleware' => 'auth','checkAdmin'], function () {
     Route::prefix('/')->middleware('checkAdmin')->group(function () {
 
         Route::get('/admin', [AdminController::class, 'index_admin'])->name('admin');
@@ -159,7 +159,7 @@ Route::delete('logout',[AccountController::class,'logout'])->name('logout');
 
         Route::get('/user/delete/{id}', [UserController::class, 'delete']);
 
-    // }); 
+}); 
 // });
 // account
 Route::get('login',[AccountController::class,'login'])->name('login');
