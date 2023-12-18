@@ -352,6 +352,11 @@
                                 </a>
 
                             <!-- Dropdown - User Information -->
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
@@ -367,10 +372,12 @@
                                     Nhật Ký Hoạt Động
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Đăng xuất</a>
+                                {{-- <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Đăng Xuất
-                                </a>
+                                </a> --}}
                             </div>
                         </li>
 
@@ -421,7 +428,7 @@
                 <div class="modal-body">Chọn "Đăng Xuất" phía bên dưới nếu bạn chắc chắn muốn thoát.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
-                    <a class="btn btn-primary" href="/">Đăng Xuất</a>
+                    <a class="btn btn-primary" href="/login">Đăng Xuất</a>
                 </div>
             </div>
         </div>
