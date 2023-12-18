@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Auth;
+
 class checkAdmin
 {
     /**
@@ -15,9 +15,8 @@ class checkAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->id_group == 1) {
+        if (auth()->user()->id_group == 1) {
             return $next($request);
-        }
-        return redirect('login');
+        }else return redirect('/');
     }
 }

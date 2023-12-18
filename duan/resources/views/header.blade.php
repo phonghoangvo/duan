@@ -16,7 +16,7 @@
                         </div>
                         <div class="btn-group drop">
                             <button type="button" class="btn align-items-center justify-content-between shadow-none d-flex w-100 dropdown-toggle border-bottom border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                SÁCH TIẾNG VIỆT
+                                <span>SÁCH TIẾNG VIỆT</span>
                             </button>
                             <ul class="dropdown-menu">
                                 @foreach ($danhmucsach as $dms)
