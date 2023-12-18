@@ -13,7 +13,7 @@ use App\Http\Requests\RuleRegister;
 class AccountController extends Controller
 {
     public function login(){
-        return view('admin.login');
+        return view('login');
     }
     public function login_(){
         $credentials = [
