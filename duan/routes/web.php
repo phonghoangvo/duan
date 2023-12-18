@@ -22,8 +22,6 @@ Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timk
 
 Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
 
-Route::get('/login',[AccountController::class,'login'])->name('login');
-
 //giohang
 Route::get('/giohang',[CartController::class,'cart'])->name('giohang');
 Route::get('/thanhtoan',[CartController::class,'cartcheck']);
