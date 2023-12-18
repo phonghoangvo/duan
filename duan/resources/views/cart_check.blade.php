@@ -49,7 +49,7 @@
                     <div class="mb-3">
                         <label for="phuongThucThanhToan" class="form-label">Phương Thức Thanh Toán:</label>
                         <div class="">
-                            <input type="radio" name="phuongthucthanhtoan" value="tructiep" id="thanhtoan1">
+                            <input type="radio" name="phuongthucthanhtoan" value="tructiep" id="thanhtoan1" checked>
                             <label for="thanhtoan1" class="form-check-label">Trực tiếp</label>
                         </div>
                         <div class="">

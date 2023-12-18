@@ -14,7 +14,8 @@
     <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.theme.default.min.css">
-    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
     @include('navbar')
@@ -105,67 +106,71 @@
         });
         
        //checkout
-       $("#oderForm").submit(function(event){
-           event.preventDefault();
-   
-           $.ajax({
-               url: '{{route("quatrinhtt")}}',
-               type: 'POST',
-               data: $(this).serializeArray(),
-               dataType: 'json',
-               headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-               success: function(response){
+      
+    $("#oderForm").submit(function(event) {
+        event.preventDefault();
+
+        $.ajax({
+            url: '{{ route("quatrinhtt") }}',
+            type: 'POST',
+            data: $(this).serialize(), // Sử dụng serialize() thay vì serializeArray()
+            dataType: 'json',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                console.log(response);
                 var errors = response.errors;
-                if(errors.hoTen){
+                if (errors.hoTen) {
                     $("#hoTen").addClass('is-invalid')
-                    .siblings("p")
-                    .addClass('invalid-feedback')
-                    .html(errors.hoTen);
-                }else{
+                        .siblings("p")
+                        .addClass('invalid-feedback')
+                        .html(errors.hoTen);
+                } else {
                     $("#hoTen").removeClass('is-invalid')
-                    .siblings("p")
-                    .removeClass('invalid-feedback')
-                    .html('');
+                        .siblings("p")
+                        .removeClass('invalid-feedback')
+                        .html('');
                 }
 
-                if(errors.email){
+                if (errors.email) {
                     $("#email").addClass('is-invalid')
-                    .siblings("p")
-                    .addClass('invalid-feedback')
-                    .html(errors.email);
-                }else{
+                        .siblings("p")
+                        .addClass('invalid-feedback')
+                        .html(errors.email);
+                } else {
                     $("#email").removeClass('is-invalid')
-                    .siblings("p")
-                    .removeClass('invalid-feedback')
-                    .html('');
+                        .siblings("p")
+                        .removeClass('invalid-feedback')
+                        .html('');
                 }
-                if(errors.soDienThoai){
+                if (errors.soDienThoai) {
                     $("#soDienThoai").addClass('is-invalid')
-                    .siblings("p")
-                    .addClass('invalid-feedback')
-                    .html(errors.soDienThoai);
-                }else{
+                        .siblings("p")
+                        .addClass('invalid-feedback')
+                        .html(errors.soDienThoai);
+                } else {
                     $("#soDienThoai").removeClass('is-invalid')
-                    .siblings("p")
-                    .removeClass('invalid-feedback')
-                    .html('');
+                        .siblings("p")
+                        .removeClass('invalid-feedback')
+                        .html('');
                 }
-                if(errors.diaChi){
+                if (errors.diaChi) {
                     $("#diaChi").addClass('is-invalid')
-                    .siblings("p")
-                    .addClass('invalid-feedback')
-                    .html(errors.diaChi);
-                }else{
+                        .siblings("p")
+                        .addClass('invalid-feedback')
+                        .html(errors.diaChi);
+                } else {
                     $("#diaChi").removeClass('is-invalid')
-                    .siblings("p")
-                    .removeClass('invalid-feedback')
-                    .html('');
+                        .siblings("p")
+                        .removeClass('invalid-feedback')
+                        .html('');
                 }
-               }
-           })
-       })
+            }
+        });
+    });
+
+
 
     //phuongthucthanhtoan
     $("#thanhtoan1").click(function(){

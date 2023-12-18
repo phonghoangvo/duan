@@ -71,7 +71,8 @@ class CartController extends Controller
             'hoTen' => 'required|min:5',
             'email' => 'required',
             'soDienThoai' => 'required|min:10|max:11',
-            'diaChi' => 'required|min:30',
+            // 'diaChi' => 'required|min:30',
+            // 'diaChi' => 'required',
         ]);
 
         if($validator->fails()){
@@ -85,22 +86,27 @@ class CartController extends Controller
         // $diachiuse
         $user = auth()->user();
 
-if ($user) {
-    DiachiKhachhang::updateOrCreate(
-        ['user' => $user->id],
-        [
-            'hoTen' => $request->hoTen,
-            'email' => $request->email,
-            'soDienThoai' => $request->soDienThoai,
-            'diaChi' => $request->diaChi,
-            'phuongthucthanhtoan' => $request->phuongthucthanhtoan,
-        ]
-    );
-} else {
-    // Xử lý trường hợp khi người dùng không được xác thực
-}
+        if ($user) {
+            DiachiKhachhang::updateOrCreate(
+                ['user' => $user->id],
+                [
+                    'hoTen' => $request->hoTen,
+                    'email' => $request->email,
+                    'soDienThoai' => $request->soDienThoai,
+                    'diaChi' => $request->diaChi,
+                    'phuongthucthanhtoan' => $request->phuongthucthanhtoan,
+                ]
+            );
+            return response()->json([
+                'message' => 'ok',
+                'status' => true,
+                'errors' => []
+            ]);
+        } else {
+            // Xử lý trường hợp khi người dùng không được xác thực
+        }
 
 
-             
-    }
+                    
+            }
 }
