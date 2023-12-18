@@ -21,8 +21,9 @@
                             <ul class="dropdown-menu">
                                 @foreach ($danhmucsach as $dms)
                                 <li class="m-2">
-                                    <a href="{{ route('cuahang', ['id' => $dms->id]) }}"><span>{{$dms->name}}</span></a>
+                                    <a href="{{ route('cuahang', ['id' => $dms->id]) }}"><small>{{$dms->name}}</small></a>
                                 </li>
+                                <hr>
                                 @endforeach
                             </ul>
                         </div>

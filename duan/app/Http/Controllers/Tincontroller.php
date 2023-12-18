@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
+use App\Models\Tintuc;
 use App\Models\Cuahang;
+use App\Models\Comment;
 use App\Models\Category;
 Paginator::useBootstrap();
 
@@ -56,7 +58,8 @@ class Tincontroller extends Controller
             ->where('hidden', '=', '1')
             ->get();
 
-        $danhmucvpp = DB::table('category')
+
+            $danhmucvpp = DB::table('category')
             ->select('id', 'name')
             ->orderby('thutu', 'asc')
             ->where('name', 'LIKE', '%Văn phòng phẩm%')
@@ -136,26 +139,69 @@ class Tincontroller extends Controller
 }
 
     
-    public function timkiem(Request $request)
-    {
-        $searchTerm = $request->input('timkiem');
-        $page = 24;
-    
-        // Thực hiện tìm kiếm dựa trên $searchTerm
-        $query = Cuahang::where('name', 'like', '%' . $searchTerm . '%');
+public function timkiem(Request $request)
+{
+    $searchTerm = $request->input('timkiem');
+    $page = 24;
 
-        // Lọc theo
-        if ($sortBy = $request->input('sort_by')) {
-            $validSortOptions = ['giagiamdan', 'giatangdan', 'tuadenz', 'tuzdena'];
-            if (in_array($sortBy, $validSortOptions)) {
-                $direction = $sortBy === 'giatangdan' ? 'ASC' : 'DESC';
-                $query->orderBy('name', $direction)->orderBy('price', $direction);
-            }
+    // Thực hiện tìm kiếm dựa trên $searchTerm
+    $productsQuery = Cuahang::with('category')
+        ->where('name', 'like', '%' . $searchTerm . '%');
+
+    // Thực hiện tìm kiếm theo tên danh mục
+    $productsQuery->orWhereHas('category', function ($q) use ($searchTerm) {
+        $q->where('name', 'like', '%' . $searchTerm . '%');
+    });
+
+    // Lọc theo
+    if ($sortBy = $request->input('sort_by')) {
+        $validSortOptions = ['giagiamdan', 'giatangdan', 'tuadenz', 'tuzdena'];
+        if (in_array($sortBy, $validSortOptions)) {
+            $direction = $sortBy === 'giatangdan' ? 'ASC' : 'DESC';
+            $productsQuery->orderBy('name', $direction)->orderBy('price', $direction);
         }
-    
-        $products = $query->paginate($page)->withQueryString();
-    
-        return view('cuahang', ['products' => $products]);
+    }
+
+    $products = $productsQuery->paginate($page)->appends(request()->query());
+
+    return view('cuahang', ['products' => $products]);
+}
+
+    //chitietsanpham
+    public function chitiet($id){ 
+        $hot = DB::table('product')
+            ->where('hot', 1)
+            ->where('hidden', 1)
+            ->orderBy('ngayDang', 'desc')
+            ->limit(7)
+            ->get();
+        $products = cuahang::where('id','=',$id)->get();
+        $comment = Comment::where('idProduct',$products[0]->id)->orderBy('id','DESC')->get();
+        return view('chitiet',compact('products','hot','comment'));
+    }
+    public function post_comment($proId){
+        $data = request()->all('content');
+        $data['idProduct'] = $proId;
+        $data['idUser'] = auth()->id();
+        if(comment::create($data)){
+            return redirect()->back()->with('success','Bình luận đã được gửi');
+        }
+        return redirect()->back()->with('error', 'Bình luận chua được gửi');
+    }
+
+    //Tintuc
+    public function news()
+    {
+        $news = Tintuc::where('hidden', 1)->paginate(8);
+        return view('news', ['news' => $news]);
+    }
+    function chitietnew($id){
+        $chitietnew = Tintuc::find($id);
+        return view('chitietnew',['chitietnew'=>$chitietnew]);
+    }
+    public function listtintuc() {
+        $listtintuc = Tintuc::all();
+        return view('admin.listtintuc', compact('listtintuc'));
     }
 
    

@@ -42,8 +42,8 @@
 
         </section>
         <section class="col-lg-9">
-            <div class="thanhchucnang mt-3 bg-white">
-                <div class="row p-3">
+            <div class="thanhchucnang bg-white">
+                <div class="row p-3" >
                     <div class="col-sm-3 mt-2"> <label>Sắp xếp theo: </label></div>
                     <div class="col-sm-5">
                         <form action="">
@@ -58,19 +58,20 @@
                         </form>
                     </div>
                 </div>
+                <hr>
             </div>
-            <div class="box bg-white">
-                <div class="row p-3">
+            <div class="box  bg-white">
+                <div class="row p-3 ">
                     @foreach ($products as $sanpham)
-                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 sanpham ">
-                        <div class="boxsanpham  p-2">
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 sanpham mb-2">
+                        <div class="boxsanpham  p-2"><a href="{{url('/chitiet/'.$sanpham->id)}}">
                             <div class="img">
-                                <img src="/uploads/{{$sanpham->img}}"
-                                    alt="{{$sanpham->img}}" width="200px" height="200px">
+                                <img src="{{$sanpham->img}}"
+                                    alt="{{$sanpham->name}}" width="200px" height="200px">
                             </div>
                             <div class="title">
                                 <h3>
-                                    <a href="">{{$sanpham->name}}</a>
+                                    <a href="{{url('/chitiet/'.$sanpham->id)}}">{{$sanpham->name}}</a>
                                 </h3>
                             </div>
                             <div class="row">
