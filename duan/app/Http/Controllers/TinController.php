@@ -91,6 +91,7 @@ class Tincontroller extends Controller
             'danhmuclich' => $danhmuclich,
             'danhmuctap' => $danhmuctap,
 
+            
         ]);
     }
 
@@ -204,64 +205,55 @@ public function timkiem(Request $request)
     }
 
    
-
-    function themtin() {
-        return view('admin.tin.themtin');
+    //giohang
+    public function cart(){
+        return view('cart');
     }
-
-    function themtin_(Request $request) {
-        $imgPath = $request->file('img')->store('img', 'public');
-        $t = new Tintuc;
-        $t->title = $request->input('title');
-        $t->img = '/storage/' . $imgPath;
-        $t->summary = $request->input('summary');
-        $t->content = $request->input('content');
-        $t->hidden = $request->input('visibility',1);
-        $t->save();
-    
-        return redirect()->route('listtintuc');
+    public function cartcheck(){
+        return view('cart_check');
     }
-    
+    public function addToCart($id){
+        $product = Cuahang::findOrFail($id);
+        $cart = session()->get('cart', []);
 
-    function xoa($id) {
-        $t = Tintuc::find($id);
-        $t->delete();
-        return redirect()->route('listtintuc');
-    }
-
-    function suatin($id) {
-        $tintuc = Tintuc::find($id);
-        return view("admin.tin.suatin", compact('tintuc'));
-    }    
-
-    public function capnhat(Request $request, $id) {
-        $tintuc = Tintuc::find($id);
-    
-        // Kiểm tra xem người dùng đã tải lên ảnh mới hay chưa
-        if ($request->hasFile('img')) {
-            // Nếu có ảnh mới, lưu và cập nhật đường dẫn hình ảnh
-            $imgPath = $request->file('img')->store('img', 'public');
-            $tintuc->img = '/storage/' . $imgPath;
+        if(isset($cart[$id])){
+            $cart[$id]['quanlity']++;
+        }else{
+            $cart[$id] = [
+                "id" => $product->id,
+                "name" => $product->name,
+                "img" => $product->img,
+                "quanlity" => 1,
+                "price" => $product->price,
+            ];
         }
-    
-        // Cập nhật các trường khác
-        $tintuc->title = $request->input('title');
-        $tintuc->summary = $request->input('summary');
-        $tintuc->content = $request->input('content');
-        $tintuc->hidden = $request->input('visibility', 1);
-    
-        // Lưu các thay đổi
-        $tintuc->save();
-    
-        // Chuyển hướng về trang danh sách tin tức
-        return redirect()->route('listtintuc');
-    }
-    
-    function lienhe() {
-        return view('lienhe');
-    }
 
-    function gioithieu() {
-        return view('gioithieu');
+        session()->put("cart", $cart);
+        return redirect()->back()->with("add-to-cart","Bạn đã thêm sản phẩm vào giỏ hàng");
+
     }
+    public function updateCart(Request $request){
+        if($request->id && $request->quanlity){
+            $cart = session()->get('cart');
+            $cart[$request->id]["quanlity"] = $request->quanlity;
+            session()->put('cart', $cart);
+            session()->flash('success','Gio hang da duoc cap nhat');
+
+        }
+
+    }
+    public function remove(Request $request){
+        if($request->id){
+            $cart = session()->get('cart');
+            if(isset($cart[$request->id])){
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash("success", "Bạn đã xóa sản phẩm khỏi giỏ hàng");
+        }
+    }
+    
+
+
+
 }
