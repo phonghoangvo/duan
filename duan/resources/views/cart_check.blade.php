@@ -35,8 +35,8 @@
                         <input type="text" class="form-control" name="diaChi" id="diaChi" placeholder="Địa chỉ" >
                         <p></p>
                     </div>
-                
-                        
+
+
                     <div class="mb-3">
                         <label for="" class="form-label">Phương thức giao hàng:</label>
                         <div class="form-control">
@@ -48,12 +48,12 @@
                 
                     <div class="mb-3">
                         <label for="phuongThucThanhToan" class="form-label">Phương Thức Thanh Toán:</label>
-                        <div class="form-check">
-                            <input type="radio" name="phuongthucthanhtoan" value="tructiep" id="thanhtoan1" class="form-check-input" checked>
+                        <div class="">
+                            <input type="radio" name="phuongthucthanhtoan" value="tructiep" id="thanhtoan1">
                             <label for="thanhtoan1" class="form-check-label">Trực tiếp</label>
                         </div>
-                        <div class="form-check">
-                            <input type="radio" name="phuongthucthanhtoan" value="thetindung" id="thanhtoan2" class="form-check-input">
+                        <div class="">
+                            <input type="radio" name="phuongthucthanhtoan" value="thetindung" id="thanhtoan2">
                             <label for="thanhtoan2" class="form-check-label">Thẻ tín dụng</label>
                         </div>
                     </div>

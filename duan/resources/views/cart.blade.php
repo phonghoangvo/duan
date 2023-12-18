@@ -48,6 +48,7 @@
                                     <td>{{ $stt++ }}</td>
                                     <td><img src="/uploads/{{ $details['img'] }}" alt="" width="80px" height="80px"></td>
                                     <td>{{ $details['name'] }}</td>
+
                                     <td> 
                                         <input type="number" value="{{ $quantity }}" class="form-control quantity cart-update" min="1">
                                     </td>

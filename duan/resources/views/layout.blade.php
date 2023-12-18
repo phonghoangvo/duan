@@ -67,6 +67,7 @@
         }
         </script>
 
+
       <script type="text/javascript">
         $(".cart-update").change(function (e){
             e.preventDefault();
@@ -179,6 +180,7 @@
         })
     
     </script>
+
 
 </body>
 </html>
