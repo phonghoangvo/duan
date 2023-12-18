@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\Cuahang;
+use App\Models\DiachiKhachhang;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
@@ -10,6 +14,12 @@ class CartController extends Controller
         return view('cart');
     }
     public function cartcheck(){
+    
+        // if(Auth::check() == false){
+        //     return redirect()->route('login');
+        // }
+    
+      
         return view('cart_check');
     }
     public function addToCart($id){
@@ -53,4 +63,44 @@ class CartController extends Controller
         }
     }
     
+    public function processCheckout(Request $request){
+
+
+        //Validation
+        $validator = Validator::make($request->all(),[
+            'hoTen' => 'required|min:5',
+            'email' => 'required',
+            'soDienThoai' => 'required|min:10|max:11',
+            'diaChi' => 'required|min:30',
+        ]);
+
+        if($validator->fails()){
+            return response()->json([
+                'message' => 'Hãy sửa những chố lỗi',
+                'status' => false,
+                'errors' => $validator->errors()
+            ]);
+        }
+        //saveuser
+        // $diachiuse
+        $user = auth()->user();
+
+if ($user) {
+    DiachiKhachhang::updateOrCreate(
+        ['user' => $user->id],
+        [
+            'hoTen' => $request->hoTen,
+            'email' => $request->email,
+            'soDienThoai' => $request->soDienThoai,
+            'diaChi' => $request->diaChi,
+            'phuongthucthanhtoan' => $request->phuongthucthanhtoan,
+        ]
+    );
+} else {
+    // Xử lý trường hợp khi người dùng không được xác thực
+}
+
+
+             
+    }
 }

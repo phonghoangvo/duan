@@ -15,21 +15,25 @@
         <div class="row">
             <div class="col-lg-5 p-5 left">
                 <h5>Thông tin giao hàng</h5>
-                <form>
+                <form id="oderForm" name="oderForm" action="" method="POST">
+                    @csrf
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="hoTen" placeholder="Họ và Tên" required>
+                        <input type="text" class="form-control" name="hoTen" id="hoTen" placeholder="Họ và Tên" >
+                        <p></p>
                     </div>
                     <div class="row">
-                         <div class="col-lg-8 mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                         <div class="col-lg-7 mb-3">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" >
+                            <p></p>
                         </div>
-                        <div class="col-lg-4 mb-3">
-                            <input type="tel" class="form-control" id="soDienThoai" placeholder="Số điện thoại"
-                                 required>
+                        <div class="col-lg-5 mb-3">
+                            <input type="tel" class="form-control" name="soDienThoai" id="soDienThoai" placeholder="Số điện thoại">
+                            <p></p>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="diaChi" placeholder="Địa chỉ" required>
+                        <input type="text" class="form-control" name="diaChi" id="diaChi" placeholder="Địa chỉ" >
+                        <p></p>
                     </div>
                 
                         
@@ -45,7 +49,7 @@
                     <div class="mb-3">
                         <label for="phuongThucThanhToan" class="form-label">Phương Thức Thanh Toán:</label>
                         <div class="form-check">
-                            <input type="radio" name="phuongthucthanhtoan" value="tructiep" id="thanhtoan1" class="form-check-input">
+                            <input type="radio" name="phuongthucthanhtoan" value="tructiep" id="thanhtoan1" class="form-check-input" checked>
                             <label for="thanhtoan1" class="form-check-label">Trực tiếp</label>
                         </div>
                         <div class="form-check">
@@ -74,7 +78,7 @@
                                                    
                     <div class="mb-3">
                         <label for="ghiChu" class="form-label">Ghi Chú:</label>
-                        <textarea class="form-control" id="ghiChu" rows="3"></textarea>
+                        <textarea class="form-control" name="ghiChu" id="ghiChu" rows="3"></textarea>
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
@@ -133,7 +137,7 @@
                 <div class="mb-3">
                     <div class="row">
                         <div class="col-lg-6">
-                            <p>Tạm tính</p>
+                            <p>Tạm tính:</p>
                         </div>
                         <div class="col-lg-6 text-end">
                             <p>{{number_format( $total) }}₫</p>
@@ -141,7 +145,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
-                            <p>Phí vận chuyển</p>
+                            <p>Phí vận chuyển:</p>
                         </div>
                         <div class="col-lg-6 text-end">
                             <p>30.000₫</p>
@@ -152,7 +156,7 @@
                 <div class="mb-3">
                     <div class="row">
                         <div class="col-lg-6">
-                            <p>Tổng cộng</p>
+                            <p>Tổng cộng:</p>
                         </div>
                         <div class="col-lg-6 text-end">
                             <span>{{number_format ($total + 30000) }}₫</span>
@@ -165,23 +169,3 @@
    
 @endsection
 
-@section('custom')
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-    var thanhtoan1 = document.getElementById('thanhtoan1');
-    var thanhtoan2 = document.getElementById('thanhtoan2');
-    var cardThanhtoanForm = document.getElementById('card-thanhtoan-form');
-
-    thanhtoan1.addEventListener('input', function () {
-        console.log('Thanh toan 1 selected');
-        cardThanhtoanForm.classList.add('d-none');
-    });
-
-    thanhtoan2.addEventListener('input', function () {
-        console.log('Thanh toan 2 selected');
-        cardThanhtoanForm.classList.remove('d-none');
-    });
-});
-
-    </script>
-@endsection
