@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -12,7 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-<<<<<<<< HEAD:duan/database/migrations/2023_10_09_095822_user.php
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->timestamps();
@@ -25,14 +23,6 @@ return new class extends Migration
             $table->tinyInteger('status')->default(1);
             $table->tinyInteger('role')->default(1);
 
-========
-        Schema::create('categories', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->timestamps();
-            $table->string('name',50);
-            $table->tinyInteger('hidden')->default(1);
-            $table->string('slug',100);
->>>>>>>> main:duan/database/migrations/2023_10_09_095402_categorie.php
         });
     }
 
@@ -41,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('users');
     }
 };

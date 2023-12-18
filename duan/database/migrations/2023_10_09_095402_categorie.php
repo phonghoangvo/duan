@@ -12,27 +12,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-<<<<<<<< HEAD:duan/database/migrations/2023_10_09_095822_user.php
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->timestamps();
-            $table->string('name',50);
-            $table->string('img',100)->nullable();
-            $table->string('email',100)->nullable()->unique();
-            $table->string('password',100);
-            $table->string('address',100)->nullable();
-            $table->string('phone',13)->nullable();
-            $table->tinyInteger('status')->default(1);
-            $table->tinyInteger('role')->default(1);
-
+<<<<<<<< HEAD:duan/database/migrations/2023_12_18_033431_create_customer_addresses_table.php
+        Schema::create('customer_addresses', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('users')->constrained()->onDelete('cascade');
+            $table->string('hoTen');
+            $table->string('email');
+            $table->string('soDienThoai');
+            $table->string('diaChi');
+            $table->string('phuongthucthanhtoan');
 ========
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id')->unsigned();
+>>>>>>>> main:duan/database/migrations/2023_10_09_095402_categorie.php
             $table->timestamps();
             $table->string('name',50);
             $table->tinyInteger('hidden')->default(1);
             $table->string('slug',100);
->>>>>>>> main:duan/database/migrations/2023_10_09_095402_categorie.php
         });
     }
 
@@ -41,6 +37,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<<< HEAD:duan/database/migrations/2023_12_18_033431_create_customer_addresses_table.php
+        Schema::dropIfExists('customer_addresses');
+========
         Schema::dropIfExists('categories');
+>>>>>>>> main:duan/database/migrations/2023_10_09_095402_categorie.php
     }
 };
