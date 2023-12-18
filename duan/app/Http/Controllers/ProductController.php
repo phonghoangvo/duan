@@ -8,6 +8,8 @@ use App\Models\Category;
 use DB;
 use App\Http\Requests\RuleThemsp;
 use  Illuminate\Support\Facades\File;
+use Illuminate\Pagination\Paginator;
+Paginator::useBootstrap();
 class ProductController extends Controller
 {
     public function list()

@@ -22,4 +22,7 @@ class Product extends Model
         'tomTat',
         'idCategory'
 ];
+    public function comment(){
+        return $this->hasMany(comment::class);
+    }
 }

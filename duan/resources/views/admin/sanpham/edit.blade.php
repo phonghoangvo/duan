@@ -80,7 +80,10 @@ Dashboard - Quản Trị Website
                                 <select name="idCategory" required class="form-control">
                                     <option value="1">--Danh Mục--</option>
                                     @foreach ($category as $category)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                    <option @if($category->idCategory == $product->idCategory) selected @endif value="{{$category->id}}">
+                                        {{$category->name}}
+                                    </option>
+                                    {{-- <option value="{{$category->id}}">{{$category->name}}</option> --}}
                                     @endforeach
                                 </select>
                             </div><br>
@@ -91,13 +94,12 @@ Dashboard - Quản Trị Website
                                     id="customFile" />
                             </label>
                             @if($product->img)
-                            <img src="{{$product->img}}">
+                            <img src="/uploads/{{$product->img}}">
                             @endif
                             <div class="button">
                             <input type="submit" value="Cập Nhật" class="formbold-btn">
                             <button class="formbold-btn">
-                                <a style="text-decoration: none;color:white" href="{{url('admin/list')}}">Danh sách sản
-                                    phẩm </a>
+                                <a style="text-decoration: none;color:white" href="{{url('admin/list')}}">Danh sách sản phẩm </a>
                             </button>
                             </div>
                         </form>
