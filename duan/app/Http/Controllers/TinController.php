@@ -91,7 +91,6 @@ class Tincontroller extends Controller
             'danhmuclich' => $danhmuclich,
             'danhmuctap' => $danhmuctap,
 
-            
         ]);
     }
 
