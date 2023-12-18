@@ -12,17 +12,9 @@ use App\Http\Controllers\CartController;
 use App\Models\User;
 use App\Http\Requests\RuleRegister;
 Use App\Http\Controllers\SessionsController;   
+use App\Http\Controllers\Auth\LoginController;
 
-
-
-
-//chỉ có tài khoản đã đăng nhập mới được vào
-// Route::group(['middleware' => 'auth'], function () {
-//     Route::get('/account', function () {
-//         return view('trangtestdangnhap');
-//     })->name('account');
-// });  
-
+// Route::get('logout', [LoginController::class,'logout']);
 
 //giaodien
 Route::get('/', [TinController::class, 'index']);
@@ -35,9 +27,16 @@ Route::get('/cuahang', 'App\Http\Controllers\TinController@timkiem')->name('timk
 Route::get('/cuahang/{id?}', [TinController::class, 'cuahang'])->name('cuahang');
 Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 
-//checkadmin
+//admin
+//chỉ có tài khoản đã đăng nhập mới được vào
+
+// Route::group(['middleware' => 'auth'], function () {
+//     Route::get('/account', function () {
+//         return view('trangtestdangnhap');
+//     })->name('account');
+// });        
 // Route::group(['middleware' => 'auth','checkAdmin'], function () {
-    Route::prefix('/')->middleware('checkAdmin')->group(function () {
+    // Route::prefix('admin')->group(function () {
 
         Route::get('/admin', [AdminController::class, 'index_admin'])->name('admin');
 
@@ -52,8 +51,6 @@ Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
         Route::get('/admin/suatin/{id}', [TinController::class, 'suatin'])->name('suatin');
         Route::put('/admin/capnhat/{id}', [TinController::class, 'capnhat'])->name('capnhat');
 
-        
-    });
         //quanlisanpham
         Route::get('/admin/list',[ProductController::class,'list']);
         Route::get('/admin/add',[ProductController::class,'add']);
@@ -162,7 +159,7 @@ Route::delete('logout',[AccountController::class,'logout'])->name('logout');
 
         Route::get('/user/delete/{id}', [UserController::class, 'delete']);
 
-  
+    // }); 
 // });
 // account
 Route::get('login',[AccountController::class,'login'])->name('login');
@@ -175,9 +172,9 @@ Route::get('forgot-password',[AccountController::class,'reset_password'])->name(
 Route::delete('logout',[AccountController::class,'logout'])->name('logout');  
 
     
-//  Route::get('404', function () {
-//     return view('404');
-// })->name('404');
+ Route::get('404', function () {
+    return view('404');
+})->name('404');
 
 //checkadmin
 // Route::group(['middleware' => 'auth','checkAdmin'], function () {
