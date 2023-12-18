@@ -14,7 +14,7 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$giamgia[0]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$giamgia[0]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
@@ -40,12 +40,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$giamgia[1]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$giamgia[1]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[1]->name}}</a>
+                        <a href="{{url('/chitiet',$giamgia[1]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[1]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -66,12 +66,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$giamgia[2]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$giamgia[2]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[2]->name}}</a>
+                        <a href="{{url('/chitiet',$giamgia[2]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[2]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -92,12 +92,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$giamgia[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$giamgia[3]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[3]->name}}</a>
+                        <a href="{{url('/chitiet',$giamgia[3]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[3]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -118,12 +118,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$giamgia[4]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$giamgia[4]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[4]->name}}</a>
+                        <a href="{{url('/chitiet',$giamgia[4]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[4]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -144,12 +144,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$giamgia[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$giamgia[5]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[5]->name}}</a>
+                        <a href="{{url('/chitiet',$giamgia[5]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$giamgia[5]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -196,12 +196,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$hot[0]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$hot[0]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[0]->name}}</a>
+                        <a href="{{url('/chitiet',$hot[0]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[0]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -222,12 +222,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$hot[1]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$hot[1]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[1]->name}}</a>
+                        <a href="{{url('/chitiet',$hot[1]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[1]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -248,12 +248,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$hot[2]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$hot[2]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[2]->name}}</a>
+                        <a href="{{url('/chitiet',$hot[2]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[2]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -274,12 +274,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$hot[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$hot[3]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[3]->name}}</a>
+                        <a href="{{url('/chitiet',$hot[3]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[3]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -300,12 +300,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$hot[4]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$hot[4]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[4]->name}}</a>
+                        <a href="{{url('/chitiet',$hot[4]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[4]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -326,12 +326,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$hot[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$hot[5]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[5]->name}}</a>
+                        <a href="{{url('/chitiet',$hot[5]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[5]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -376,12 +376,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$vanphongpham[0]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$vanphongpham[0]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[0]->name}}</a>
+                        <a href="{{url('/chitiet',$vanphongpham[0]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[0]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -402,12 +402,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$vanphongpham[1]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$vanphongpham[1]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[1]->name}}</a>
+                        <a href="{{url('/chitiet',$vanphongpham[1]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[1]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -428,12 +428,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$vanphongpham[2]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$vanphongpham[2]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[2]->name}}</a>
+                        <a href="{{url('/chitiet',$vanphongpham[2]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[2]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -454,12 +454,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$vanphongpham[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$vanphongpham[3]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[3]->name}}</a>
+                        <a href="{{url('/chitiet',$vanphongpham[3]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[3]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -480,12 +480,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$vanphongpham[4]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$vanphongpham[4]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[4]->name}}</a>
+                        <a href="{{url('/chitiet',$vanphongpham[4]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[4]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -506,12 +506,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$vanphongpham[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$vanphongpham[5]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[5]->name}}</a>
+                        <a href="{{url('/chitiet',$vanphongpham[5]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$vanphongpham[5]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -555,12 +555,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$lich[0]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$lich[0]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[0]->name}}</a>
+                        <a href="{{url('/chitiet',$lich[0]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[0]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -581,12 +581,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$lich[1]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$lich[1]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[1]->name}}</a>
+                        <a href="{{url('/chitiet',$lich[0]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[1]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -607,12 +607,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$lich[2]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$lich[2]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[2]->name}}</a>
+                        <a href="{{url('/chitiet',$lich[2]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[2]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -633,12 +633,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$lich[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$lich[3]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[3]->name}}</a>
+                        <a href="{{url('/chitiet',$lich[3]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[3]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -659,12 +659,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$lich[4]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$lich[4]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[4]->name}}</a>
+                        <a href="{{url('/chitiet',$lich[4]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[4]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -685,12 +685,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$lich[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$lich[5]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[5]->name}}</a>
+                        <a href="{{url('/chitiet',$lich[5]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$lich[5]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -733,12 +733,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$tap[0]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$tap[0]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[0]->name}}</a>
+                        <a href="{{url('/chitiet',$tap[0]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[0]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -759,12 +759,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$tap[1]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$tap[1]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[1]->name}}</a>
+                        <a href="{{url('/chitiet',$tap[1]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[1]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -785,12 +785,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$tap[2]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$tap[2]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[2]->name}}</a>
+                        <a href="{{url('/chitiet',$tap[2]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[2]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -811,12 +811,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$tap[3]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$tap[3]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[3]->name}}</a>
+                        <a href="{{url('/chitiet',$tap[3]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[3]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -837,12 +837,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$tap[4]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$tap[4]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[4]->name}}</a>
+                        <a href="{{url('/chitiet',$tap[4]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[4]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>
@@ -863,12 +863,12 @@
                 <div class="card border-0">
                     <img class="card-img-top" src=" {{$tap[5]->img}}" alt="" width="100%" height="250px">
                     <div class="middle">
-                        <a href="ctsp.html" class="btn btn-light zoom border-0">
+                        <a href="{{url('/chitiet',$tap[5]->id)}}" class="btn btn-light zoom border-0">
                             <i class=" bi bi-zoom-in"></i>
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[5]->name}}</a>
+                        <a href="{{url('/chitiet',$tap[5]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$tap[5]->name}}</a>
                         <div class="row d-flex">
                             <div class="col-sm-10">
                                 <p>

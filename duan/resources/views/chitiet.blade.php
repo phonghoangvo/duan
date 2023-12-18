@@ -188,12 +188,12 @@ Chi tiết sản phẩm
             <div class="card border-1">
               <img class="card-img-top" width="200px" height="200px" src="{{$hot[0]->img}}" alt="{{$hot[0]->img}}">
               <div class="middle">
-                <a href="#" class="btn btn-light zoom border-0">
+                <a href="{{url('/chitiet',$hot[0]->id)}}" class="btn btn-light zoom border-0">
                   <i class=" bi bi-zoom-in"></i>
                 </a>
               </div>
               <div class="card-body">
-                <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[0]->name}}</a>
+                <a href="{{url('/chitiet',$hot[0]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[0]->name}}</a>
                 <div class="row d-flex">
                   <div class="col-sm-10">
                     <p>
@@ -213,15 +213,15 @@ Chi tiết sản phẩm
           </div>
           <div class="col-xl-2 col-sm-4 p-1 px-1">
             <div class="card border-1">
-              <img class="card-img-top" width="200px" height="200px" src="/uploads/{{$hot[1]->img}}"
+              <img class="card-img-top" width="200px" height="200px" src="{{$hot[1]->img}}"
                 alt="{{$hot[1]->img}}">
               <div class="middle">
-                <a href="#" class="btn btn-light zoom border-0">
+                <a href="{{url('/chitiet',$hot[2]->id)}}" class="btn btn-light zoom border-0">
                   <i class=" bi bi-zoom-in"></i>
                 </a>
               </div>
               <div class="card-body">
-                <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[1]->name}}</a>
+                <a href="{{url('/chitiet',$hot[1]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[1]->name}}</a>
                 <div class="row d-flex">
                   <div class="col-sm-10">
                     <p>
@@ -241,15 +241,15 @@ Chi tiết sản phẩm
           </div>
           <div class="col-xl-2 col-sm-4 p-1 px-1">
             <div class="card border-1">
-              <img class="card-img-top" width="200px" height="200px" src="/uploads/{{$hot[2]->img}}"
+              <img class="card-img-top" width="200px" height="200px" src="{{$hot[2]->img}}"
                 alt="{{$hot[2]->img}}">
               <div class="middle">
-                <a href="#" class="btn btn-light zoom border-0">
+                <a href="{{url('/chitiet',$hot[2]->id)}}" class="btn btn-light zoom border-0">
                   <i class=" bi bi-zoom-in"></i>
                 </a>
               </div>
               <div class="card-body">
-                <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[2]->name}}</a>
+                <a href="{{url('/chitiet',$hot[2]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[2]->name}}</a>
                 <div class="row d-flex">
                   <div class="col-sm-10">
                     <p>
@@ -269,15 +269,15 @@ Chi tiết sản phẩm
           </div>
           <div class="col-xl-2 col-sm-4 p-1 px-1">
             <div class="card border-1">
-              <img class="card-img-top" width="200px" height="200px" src="/uploads/{{$hot[3]->img}}"
+              <img class="card-img-top" width="200px" height="200px" src="{{$hot[3]->img}}"
                 alt="{{$hot[3]->img}}">
               <div class="middle">
-                <a href="#" class="btn btn-light zoom border-0">
+                <a href="{{url('/chitiet',$hot[3]->id)}}" class="btn btn-light zoom border-0">
                   <i class=" bi bi-zoom-in"></i>
                 </a>
               </div>
               <div class="card-body">
-                <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[3]->name}}</a>
+                <a href="{{url('/chitiet',$hot[3]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[3]->name}}</a>
                 <div class="row d-flex">
                   <div class="col-sm-10">
                     <p>
@@ -297,15 +297,15 @@ Chi tiết sản phẩm
           </div>
           <div class="col-xl-2 col-sm-4 p-1 px-1">
             <div class="card border-1">
-              <img class="card-img-top" width="200px" height="200px" src="/uploads/{{$hot[4]->img}}"
+              <img class="card-img-top" width="200px" height="200px" src="{{$hot[4]->img}}"
                 alt="{{$hot[4]->img}}">
               <div class="middle">
-                <a href="#" class="btn btn-light zoom border-0">
+                <a href="{{url('/chitiet',$hot[4]->id)}}" class="btn btn-light zoom border-0">
                   <i class=" bi bi-zoom-in"></i>
                 </a>
               </div>
               <div class="card-body">
-                <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[4]->name}}</a>
+                <a href="{{url('/chitiet',$hot[4]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[4]->name}}</a>
                 <div class="row d-flex">
                   <div class="col-sm-10">
                     <p>
@@ -325,15 +325,15 @@ Chi tiết sản phẩm
           </div>
           <div class="col-xl-2 col-sm-4 p-1 px-1">
             <div class="card border-1">
-              <img class="card-img-top" width="200px" height="200px" src="/uploads/{{$hot[5]->img}}"
+              <img class="card-img-top" width="200px" height="200px" src="{{$hot[5]->img}}"
                 alt="{{$hot[5]->img}}">
               <div class="middle">
-                <a href="#" class="btn btn-light zoom border-0">
+                <a href="{{url('/chitiet',$hot[5]->id)}}" class="btn btn-light zoom border-0">
                   <i class=" bi bi-zoom-in"></i>
                 </a>
               </div>
               <div class="card-body">
-                <a href="#" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[5]->name}}</a>
+                <a href="{{url('/chitiet',$hot[5]->id)}}" class="text-decoration-none " style="font-size: 13px; color: gray;">{{$hot[5]->name}}</a>
                 <div class="row d-flex">
                   <div class="col-sm-10">
                     <p>

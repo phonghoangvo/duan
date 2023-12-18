@@ -87,6 +87,7 @@ Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
         Route::post('/user/update/{id}', [UserController::class, 'update']);
 
         Route::get('/user/delete/{id}', [UserController::class, 'delete']);
+        Route::post('/comment/{idProduct}',[TinController::class,'post_comment'])->name('comment');
 
   
 // });

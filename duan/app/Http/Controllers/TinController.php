@@ -175,8 +175,9 @@ public function timkiem(Request $request)
             ->limit(7)
             ->get();
         $products = cuahang::where('id','=',$id)->get();
+        // $giamgia = giamgia::where('id','=',$id)->get();
         $comment = Comment::where('idProduct',$products[0]->id)->orderBy('id','DESC')->get();
-        return view('chitiet',compact('products','hot','comment'));
+        return view('chitiet',compact('products','hot','comment',));
     }
     public function post_comment($proId){
         $data = request()->all('content');
