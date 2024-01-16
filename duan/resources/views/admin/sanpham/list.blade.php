@@ -72,6 +72,7 @@ Dashboard - Quản Trị Website
             </table>
           </div>
         </div>
+        {{ $page->links()}}
       </div>
     </div>
   </div>
