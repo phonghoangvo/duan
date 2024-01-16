@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('container')
+@section('noidung')
 <div class="container-fluid">
 <h2>Đăng kí tài khoản </h2>
 {{-- <div class="card-body">

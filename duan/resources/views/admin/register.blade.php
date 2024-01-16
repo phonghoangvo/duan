@@ -47,36 +47,57 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Họ" name="name">
+                                            placeholder="Họ"   name="name">
+                                            @error('name')
+                                            {{ $message }}
+                                         @enderror
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id="exampleLastName"
                                             placeholder="Tên" name="lastname">
+                                            @error('lastname')
+                                            {{ $message }}
+                                         @enderror
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Địa chỉ email" name="email">
+                                        @error('email')
+                                            {{ $message }}
+                                         @enderror
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleInputAddress"
                                         placeholder="Địa chỉ" name="address">
+                                        @error('address')
+                                        {{ $message }}
+                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control form-control-user" id="exampleInputPhone"
                                         placeholder="Số điện thoại" name="phone">
+                                        @error('phone')
+                                        {{ $message }}
+                                     @enderror
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Mật khẩu" name="password">
+                                            @error('password')
+                                        {{ $message }}
+                                     @enderror
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
                                             id="exampleRepeatPassword" placeholder="Nhập lại mật khẩu" name="repassword">
+                                            @error('password')
+                                            {{ $message }}
+                                         @enderror
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" class="btn btn-primary btn-user btn-block" name="btn-register">
                                     Đăng ký tài khoản
                                 </button>
                                 <hr>

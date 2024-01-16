@@ -23,8 +23,11 @@ class RuleRegister extends FormRequest
     {
         return [
             'name' => ['required','min:3','max:20'],
-            'email'=> ['required'],
-            'password'=> ['required']
+            'lastname' =>['required','max:20'],
+            'email' => ['required','\b[\w.-]+@[\w.-]+\.[A-Za-z]{2,6}\b/'],
+            'password'=> ['required'],
+            'address' => ['required'],
+            'phone'=> ['required']
             // 'tuoi' => 'required|integer|min:16|max:100',
             // 'ns' =>['required','regex:/\d{1,2}\/\d{1,2}\/\d{4}/'],
             // 'cmnd' => 'digits_between:9,10',
@@ -33,10 +36,13 @@ class RuleRegister extends FormRequest
     }
     public function messages() {
         return [
-         'name.required' => 'Phải nhập họ tên chứ',
+         'name.required' => 'Không được để trống họ',
+         'lastname.required' => 'Không được để trống tên',
          'name.min' => 'Họ tên ngắn quá vậy',
          'email.required'=> 'Không được để trống email',
-         'password.required'=>'Không được để trống password'
+         'password.required'=>'Không được để trống password',
+         'address.required' => 'Không được để trống địa chỉ',
+         'phone.required' => 'Không được để trống số điện thoại'
         //  'ns.required' => 'Nhập ngày sinh nữa',
         //  'tuoi.required' => 'Nhập :attribute vào đi',
         //  'cmnd.digits_between' => 'CMND nhập 9 hoặc 10 ký tự'

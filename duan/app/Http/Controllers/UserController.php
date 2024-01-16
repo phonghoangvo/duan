@@ -78,7 +78,7 @@ public function create()
     
             // Update user
             User::find($id)->update($data);
-            echo"success update user";
+            return redirect()->to('/admin/list-user');
         }
 
         // delete user

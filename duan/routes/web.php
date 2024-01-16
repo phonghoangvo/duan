@@ -51,8 +51,8 @@ Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
         Route::get('/admin/suatin/{id}', [TinController::class, 'suatin'])->name('suatin');
         Route::put('/admin/capnhat/{id}', [TinController::class, 'capnhat'])->name('capnhat');
 
-        
     });
+   
         //quanlisanpham
         Route::get('/admin/list',[ProductController::class,'list']);
         Route::get('/admin/add',[ProductController::class,'add']);
@@ -88,17 +88,31 @@ Route::get('/chitiet/{id}',[TinController::class,'chitiet'])->name('chitiet');
 
         Route::get('/user/delete/{id}', [UserController::class, 'delete']);
 
-  
+   
 // });
 // account
 Route::get('login',[AccountController::class,'login'])->name('login');
 Route::post('login',[AccountController::class,'login_'])->name('logingo');
 Route::get('register',[AccountController::class,'register'])->name('register');
 Route::post('register',[AccountController::class,'register_']);
-Route::get('forgot-password1',[AccountController::class,'forgot_password'])->name('forgot-password');
-Route::post('forgot-password1',[AccountController::class,'forgot_password_'])->name('password.reset');
+
+
+Route::get('forgot-password1',[AccountController::class,'forgot_password'])->name('forgot_password');
+Route::post('forgot-password1',[AccountController::class,'forgot_password_']);
+
+Route::get('reset-password',[AccountController::class,'reset_password'])->name('reset_password');
+Route::post('reset-password/{token}',[AccountController::class,'reset_password_']);
+
 Route::get('forgot-password',[AccountController::class,'reset_password'])->name('password.reset');
+Route::post('forgot-password',[AccountController::class,'reset_password_']);
+
+
 Route::delete('logout',[AccountController::class,'logout'])->name('logout');  
+
+// Route::get('/reset-password/{token}', function (string $token) {
+//     // dd($token);
+//     return view('auth.reset-password', ['token' => $token]);
+// })->middleware('guest')->name('password.reset');
 
     
 //  Route::get('404', function () {

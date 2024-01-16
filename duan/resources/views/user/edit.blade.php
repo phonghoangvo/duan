@@ -5,16 +5,22 @@
     <form action="/user/update/{{ $user->id }}" method="post" style="padding: 32px; max-width: 50%; border:solid 2px 
         box-shadow: -1px 0px 10px 12px rgba(204,187,187,0.41);
         -webkit-box-shadow: -1px 0px 10px 12px rgba(204,187,187,0.41);
-        -moz-box-shadow: -1px 0px 10px 12px rgba(204,187,187,0.41); margin:32px; border-radius : 10px">
+        -moz-box-shadow: -1px 0px 10px 12px rgba(204,187,187,0.41); margin:32px; border-radius : 10px"    enctype="multipart/form-data">
         {{ csrf_field() }}
     <div class="form-group">
         <label for="name">Họ Tên:</label>
         <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}">
     </div>
-    <div class="form-group">
-        <label for="img">img</label>
-        <input type="file" class="form-control" id="img" name="img"value="{{ $user->img }}">
-    </div>
+    {{-- <div class="form-group">
+        <label for="img">avatar</label>
+
+        <input type="file"  class="form-control" id="exampleFormControlInput1"  name="avatar" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+            
+        <img src="{{asset($avatar->urlHinh)}}" id="output"  alt="">
+
+
+        <input type="file" class="form-control" id="avatar" name="avatar"value="{{ $user->avatar }}">
+    </div> --}}
     <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" class="form-control" id="email" name="email"value="{{ $user->email }}">

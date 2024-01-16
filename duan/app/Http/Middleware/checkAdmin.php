@@ -15,7 +15,7 @@ class checkAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->id_group == 1) {
+        if (Auth::check() && Auth::user()->idgroup == 1) {
             return $next($request);
         }
         return redirect('login');

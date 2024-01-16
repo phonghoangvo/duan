@@ -29,12 +29,12 @@ class Tincontroller extends Controller
             ->limit(6)
             ->get();
 
-        $vanphongpham = DB::table('product')
-            ->where('idCategory', 28)
-            ->where('hidden', 1)
-            ->orderBy('ngayDang', 'desc')
-            ->limit(6)
-            ->get();
+        // $vanphongpham = DB::table('product')
+        //     ->where('idCategory', 28)
+        //     ->where('hidden', 1)
+        //     ->orderBy('ngayDang', 'desc')
+        //     ->limit(6)
+        //     ->get();
 
         $lich = DB::table('product')
             ->where('idCategory', 29)

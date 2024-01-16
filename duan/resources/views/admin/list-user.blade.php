@@ -48,7 +48,7 @@
                         <tr>
                             <th>id</th>
                             <th>Ten</th>
-                            {{-- <th>img</th> --}}
+                            <th>avatar</th>
                             <th>email</th>
                             <th>password</th>
                             {{-- <th>Dia Chi</th>
@@ -68,7 +68,7 @@
                         <tr>
                         <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
-                        {{-- <td> {{$user ->img}}</td> --}}
+                        <td> <img src="{{$user ->avatar}}" alt="" style=" width : 50px"> </td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->password}}</td>
                         {{-- <td>{{$user->address}}</td>      --}}

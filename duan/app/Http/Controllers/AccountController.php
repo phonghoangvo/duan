@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use App\Models\password_reset_tokens;
@@ -36,7 +37,7 @@ class AccountController extends Controller
     public function register(){
         return view('admin.register');
     }
-    public function register_()
+    public function register_(RuleRegister $request)
     {
         $user = new User();
 
@@ -74,21 +75,40 @@ class AccountController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-        ]);
-
+        ]); 
+        // dd($request);
         $status = Password::sendResetLink($request->only('email'));
+        // dd($status);
+        // $status->update(['token' => $token]);  
+        // $token = strtoupper(Str:: random(10));
+        
 
         return $status === Password::RESET_LINK_SENT
             ? back()->with(['thongbao' => 'Đã gửi liên kết đặt lại mật khẩu vào email của bạn!'])
             : back()->withErrors(['email' => __($status)]);
 
+            
     }
-    public function reset_password(Request $request){
-        $token = bcrypt($request->token);
-        // dd($token);
-        $email = $request->email;
+
+
+    public function reset_password_()
+    {
+        return view('admin/login');
+    }
+
+    public function reset_password(Request $request ){
+        $token =  ($request->token);
+        // dd($token);   
+        // $email = $request->email;
         // $password_reset_token = password_reset_tokens::where('email',$email)->first();
+
+        if($request -> token === $token){
+            // dd($token);
+            return view('Auth/reset-password');
+        }
+        
     }
+
     public function logout(){
         Auth::logout();
         return redirect('/');
